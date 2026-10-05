@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inside KPI Dashboard - Đội Đỗ Văn Tiên (16 Nhân Viên)</title>
+  <meta name="description" content="Bảng tổng hợp theo dõi chỉ số KPI Đúng hẹn, Checklist Lặp, Checklist 7 ngày và hiệu suất 16 nhân viên đội Đỗ Văn Tiên">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- html2canvas: Chụp trọn vẹn 16 nhân viên gửi Zalo (Offline & Online) -->
+  <script src="html2canvas.min.js"></script>
+  <script>
+    if (typeof html2canvas === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"><\/script>');
+    }
+  </script>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="view-table-active density-compact">
+  <div class="dashboard-container">
+    
+    <!-- HEADER -->
+    <header class="header-card" id="headerSection">
+      <div class="brand-wrapper">
+        <div class="brand-icon">⚡</div>
+        <div>
+          <h1 class="brand-title" id="dashboardTitle">
+            DASHBOARD KPI HIỆU SUẤT ĐỘI
+            <span class="badge-live"><span class="pulse-dot"></span> LIVE DATA</span>
+          </h1>
+          <div class="brand-subtitle">
+            <span>Trưởng nhóm: <strong style="color: #f8fafc;">Đỗ Văn Tiên</strong></span>
+            <span>•</span>
+            <span id="sourceFileLabel">Nguồn: Đúng hẹn.xlsx (Sheet Tong hop)</span>
+            <span>•</span>
+            <span id="lastUpdatedLabel">Cập nhật: Đang tải...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN VIEW SWITCHER (CHẾ ĐỘ XEM) -->
+      <nav class="main-view-switcher" id="mainViewSwitcher" aria-label="Chế độ xem Dashboard">
+        <button class="view-switch-btn active" data-view="table" id="btnViewTable" title="Xem ngay bảng tổng hợp 16 nhân viên với đầy đủ chỉ số">
+          <span class="view-icon">👥</span>
+          <span class="view-text">Bảng 16 Nhân Viên</span>
+          <span class="view-tag">Ưu tiên</span>
+        </button>
+        <button class="view-switch-btn" data-view="emp-issues" id="btnViewEmpIssues" title="Soát chi tiết toàn bộ lỗi của từng anh em KTV (Trễ hẹn, RT cao, CLL, 7N)">
+          <span class="view-icon">🚨</span>
+          <span class="view-text">Soát Lỗi Từng KTV</span>
+          <span class="view-tag badge-alert-tag" id="tagTotalIssuesCount">-- Lỗi</span>
+        </button>
+        <button class="view-switch-btn" data-view="charts" id="btnViewCharts" title="Xem biểu đồ so sánh trực quan các chỉ số Đúng hẹn, CLL, 7N">
+          <span class="view-icon">📊</span>
+          <span class="view-text">Biểu Đồ So Sánh</span>
+        </button>
+        <button class="view-switch-btn" data-view="full" id="btnViewFull" title="Hiển thị toàn bộ thẻ chỉ số, biểu đồ và bảng dữ liệu">
+          <span class="view-icon">⚡</span>
+          <span class="view-text">Toàn Cảnh</span>
+        </button>
+        <a href="m.html" class="view-switch-btn btn-mobile-mode-link" id="btnSwitchMobile" title="Chuyển sang giao diện rút gọn tối ưu cho điện thoại di động" style="text-decoration: none; border-color: rgba(56, 189, 248, 0.4);">
+          <span class="view-icon">📱</span>
+          <span class="view-text">Bản Mobile</span>
+          <span class="view-tag" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8;">Gọn Nhẹ</span>
+        </a>
+      </nav>
+      
+      <!-- MOBILE SUGGESTION BANNER -->
+      <div id="mobileBannerPrompt" style="display: none; background: linear-gradient(90deg, rgba(2,132,199,0.25), rgba(15,23,42,0.8)); border: 1px solid rgba(56,189,248,0.4); border-radius: 10px; padding: 10px 14px; margin-top: 10px; align-items: center; justify-content: space-between; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #f8fafc;">
+          <span style="font-size: 18px;">📱</span>
+          <span>Bạn đang xem trên điện thoại? Hãy chuyển sang <strong>Bản Mobile Gọn Nhẹ</strong> để xem và thao tác dễ hơn!</span>
+        </div>
+        <a href="m.html" style="background: #38bdf8; color: #0b0f19; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; white-space: nowrap;">Mở Mobile 👉</a>
+      </div>
+      <script>
+        if (window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)) {
+          const mb = document.getElementById('mobileBannerPrompt');
+          if (mb) mb.style.display = 'flex';
+        }
+      </script>
+      
+      <div class="header-actions">
+        <a href="#cllTableCard" class="btn btn-secondary" id="btnJumpToCll" title="Xem ngay Bảng Thống Kê Sheet CLL">
+          🔁 Bảng Sheet CLL
+        </a>
+        <button class="btn btn-screenshot" id="btnCaptureTable" title="Chụp trọn vẹn 16 nhân sự độ nét cao để gửi Zalo / báo cáo">
+          📸 Chụp Bảng Gửi Zalo
+        </button>
+        <button class="btn btn-secondary" id="btnExportCsv" title="Tải xuống dữ liệu bảng dưới dạng CSV">
+          📥 Xuất CSV
+        </button>
+        <button class="btn btn-primary" id="btnRefresh" title="Tải lại dữ liệu mới nhất từ file Excel">
+          🔄 Làm mới
+        </button>
+
+        <!-- NÚT NGẮT BOT KHẨN CẤP -->
+        <div style="display:flex; gap:6px; align-items:center; border-left: 1px solid rgba(255,255,255,0.15); padding-left:10px; margin-left:4px;">
+          <button id="btnBotEmergencyStop"
+            onclick="foxoneBotEmergencyStop()"
+            title="Ngắt bot Foxone ngay lập tức và bỏ qua tin nhắn hiện tại để không gọi lại"
+            style="background: linear-gradient(135deg,#ef4444,#b91c1c); color:#fff; border:none; border-radius:8px; padding:7px 13px; font-size:12px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:5px; transition:all .2s; box-shadow:0 2px 8px rgba(239,68,68,0.4);">
+            🔴 NGẮT BOT
+          </button>
+          <button id="btnBotStart"
+            onclick="foxoneBotStart()"
+            title="Bật lại bot Foxone giám sát sau khi ngắt khẩn cấp"
+            style="background: linear-gradient(135deg,#22c55e,#15803d); color:#fff; border:none; border-radius:8px; padding:7px 13px; font-size:12px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:5px; transition:all .2s; box-shadow:0 2px 8px rgba(34,197,94,0.4); display:none;">
+            🟢 BẬT LẠI
+          </button>
+          <span id="botStatusDot" title="Trạng thái bot Foxone"
+            style="font-size:18px; line-height:1;" title="Đang kiểm tra...">⚪</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ULTRA-COMPACT KPI SUMMARY RIBBON (TỔNG HỢP NHANH TOÀN ĐỘI) -->
+    <section class="kpi-summary-ribbon" id="kpiRibbon" aria-label="Tóm tắt KPI toàn đội">
+      <div class="ribbon-card" id="rbCardOnTime" title="Tỷ lệ đúng hẹn toàn đội (Chuẩn ≥ 98.0%)">
+        <div class="rb-icon">🎯</div>
+        <div class="rb-info">
+          <span class="rb-label">Đúng Hẹn</span>
+          <div class="rb-value-row">
+            <span class="rb-val" id="rbValOnTime">--%</span>
+            <span class="rb-badge tag-success" id="rbBadgeOnTime">≥ 98%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-card" id="rbCardCLL" title="Tỷ lệ checklist lặp toàn đội (Chuẩn ≤ 6.0%)">
+        <div class="rb-icon">🛡️</div>
+        <div class="rb-info">
+          <span class="rb-label">Tỷ Lệ CLL</span>
+          <div class="rb-value-row">
+            <span class="rb-val" id="rbValCLL">--%</span>
+            <span class="rb-badge tag-success" id="rbBadgeCLL">≤ 6%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-card" id="rbCardCLL3" title="Checklist lặp ≥ 3 lần toàn đội (Chuẩn ≤ 0.5%)">
+        <div class="rb-icon">🔁</div>
+        <div class="rb-info">
+          <span class="rb-label">CLL3 (≥3 Lần)</span>
+          <div class="rb-value-row">
+            <span class="rb-val" id="rbValCLL3">--%</span>
+            <span class="rb-badge tag-success" id="rbBadgeCLL3">≤ 0.5%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-card" id="rbCard7N" title="Tổng checklist 7 ngày toàn đội (Chuẩn ≤ 2.5%)">
+        <div class="rb-icon">📦</div>
+        <div class="rb-info">
+          <span class="rb-label">Tổng 7 Ngày</span>
+          <div class="rb-value-row">
+            <span class="rb-val" id="rbVal7N">--%</span>
+            <span class="rb-badge tag-success" id="rbBadge7N">≤ 2.5%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-card" id="rbCardRT" title="Thời gian phản hồi RT TK (≤18h) và RT BT (≤9h)">
+        <div class="rb-icon">⏱️</div>
+        <div class="rb-info">
+          <span class="rb-label">RT TK / BT</span>
+          <div class="rb-value-row">
+            <span class="rb-val" id="rbValRT">-- / --</span>
+            <span class="rb-sub" id="rbSubRT">≤18h / ≤9h</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-card" id="rbCardCsat" title="Điểm CSAT xấu (Chuẩn = 0)">
+        <div class="rb-icon">⭐</div>
+        <div class="rb-info">
+          <span class="rb-label">CSAT Xấu</span>
+          <div class="rb-value-row">
+            <span class="rb-val" id="rbValCsat">0</span>
+            <span class="rb-sub" id="rbSubCsat">Chuẩn = 0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ribbon-card team-kpi-summary" id="rbCardKpiSummary" title="Xếp loại toàn bộ 16 nhân sự theo 7 tiêu chí KPI: 5-7 Đạt, 4 Cảnh báo, <4 Chưa đạt">
+        <div class="rb-icon">🏆</div>
+        <div class="rb-info">
+          <span class="rb-label">Xếp Loại 16 NV</span>
+          <div class="rb-value-row">
+            <span class="rb-val" id="rbValKpiPass" style="color: #10b981;">-- Đạt</span>
+            <span class="rb-sub" id="rbSubKpiBreakdown">-- Cảnh Báo • -- Chưa Đạt</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: YESTERDAY ALERTS BANNER (CẢNH BÁO SỰ CỐ NGÀY HÔM QUA) -->
+    <section class="yesterday-alert-card" id="yesterdayAlertCard" aria-label="Cảnh báo sự cố ngày hôm qua">
+      <div class="alert-banner-header">
+        <div class="alert-title-wrapper">
+          <div class="alert-icon-pulse">🚨</div>
+          <div>
+            <div class="alert-title-row">
+              <h2 class="alert-main-title">CẢNH BÁO SỰ CỐ HOÀN TẤT TRONG NGÀY</h2>
+              <span class="badge-target-date" id="alertTargetDateBadge">Ngày --/--/----</span>
+              <span class="badge-severity-live" id="alertSeverityBadge">⚠️ Cần Rà Soát</span>
+            </div>
+            <p class="alert-desc">
+              Tự động soát các ca lỗi hoàn tất ngày hôm qua: <strong>Checklist Lặp (CLL)</strong>, <strong>Trễ Hẹn (TK/BT)</strong>, <strong>Response Time (RT) Cao</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="alert-controls-group">
+          <div class="alert-date-picker-wrap">
+            <span class="alert-date-icon">📅</span>
+            <select id="alertDateSelect" class="alert-date-select" title="Chọn ngày để soát sự cố"></select>
+          </div>
+          <button class="btn btn-zalo-copy" id="btnCopyZaloAlert" title="Sao chép toàn bộ nội dung cảnh báo để gửi vào nhóm Zalo / Telegram">
+            📋 Sao Chép Báo Cáo Zalo
+          </button>
+          <button class="btn btn-view-alerts" id="btnOpenAlertModal" title="Xem danh sách chi tiết từng ca hợp đồng bị lỗi">
+            🔍 Xem Chi Tiết Từng Ca
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick summary chips -->
+      <div class="alert-chips-grid">
+        <div class="alert-chip chip-cll" id="chipAlertCll" data-filter="CLL" title="Nhấn để xem danh sách ca CLL">
+          <div class="chip-icon-box">🔁</div>
+          <div class="chip-content">
+            <div class="chip-value-row">
+              <span class="chip-number" id="alertCllVal">0</span>
+              <span class="chip-unit">ca</span>
+            </div>
+            <span class="chip-title">Checklist Lặp (CLL)</span>
+          </div>
+        </div>
+
+        <div class="alert-chip chip-late" id="chipAlertLate" data-filter="LATE" title="Nhấn để xem danh sách ca Trễ Hẹn">
+          <div class="chip-icon-box">❌</div>
+          <div class="chip-content">
+            <div class="chip-value-row">
+              <span class="chip-number" id="alertLateVal">0</span>
+              <span class="chip-unit">ca</span>
+            </div>
+            <span class="chip-title">Trễ Hẹn (<span id="alertLateTkmVal">0</span> TKM · <span id="alertLateBtVal">0</span> BT)</span>
+          </div>
+        </div>
+
+        <div class="alert-chip chip-rt" id="chipAlertRt" data-filter="HIGH_RT" title="Nhấn để xem danh sách ca RT Cao">
+          <div class="chip-icon-box">⏱️</div>
+          <div class="chip-content">
+            <div class="chip-value-row">
+              <span class="chip-number" id="alertRtVal">0</span>
+              <span class="chip-unit">ca</span>
+            </div>
+            <span class="chip-title">RT Cao (TK &gt; 18h, BT &gt; 9h)</span>
+          </div>
+        </div>
+
+        <div class="alert-chip chip-emp" id="chipAlertEmp" data-filter="ALL" title="Nhấn để xem danh sách tất cả nhân sự có lỗi">
+          <div class="chip-icon-box">👥</div>
+          <div class="chip-content">
+            <div class="chip-value-row">
+              <span class="chip-number" id="alertEmpVal">0 / 16</span>
+              <span class="chip-unit">KTV</span>
+            </div>
+            <span class="chip-title">Nhân Sự Phát Sinh Lỗi</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TRA CỨU & SOÁT LỖI TỪNG KTV (QUICK EMPLOYEE ERROR LOOKUP BAR & CHIPS) -->
+    <section class="emp-lookup-section" id="empLookupSection" aria-label="Tra cứu lỗi từng nhân sự">
+      <div class="emp-lookup-header">
+        <div class="lookup-title-wrap">
+          <div class="lookup-icon-badge">👤</div>
+          <div>
+            <div class="lookup-title-row">
+              <h2 class="lookup-title">HỒ SƠ &amp; SOÁT CHI TIẾT LỖI TỪNG NHÂN SỰ</h2>
+              <span class="badge-quick-hint">💡 Nhấp chọn KTV để xem trọn bộ hợp đồng &amp; gửi Zalo</span>
+            </div>
+            <p class="lookup-desc">
+              Xem toàn bộ ca sự cố của từng anh em: <strong>Trễ hẹn</strong>, <strong>RT cao</strong>, <strong>Checklist lặp (CLL)</strong>, <strong>Checklist 7 ngày</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="lookup-controls-wrap">
+          <div class="lookup-select-box">
+            <span class="lookup-select-icon">🔍</span>
+            <select id="empQuickSelect" class="emp-quick-select" title="Chọn nhanh nhân sự để mở hồ sơ lỗi">
+              <option value="">-- Chọn nhanh KTV để xem chi tiết lỗi --</option>
+            </select>
+          </div>
+          <div class="btn-group-toggle" id="empLookupFilterGroup">
+            <button class="btn-pill active" data-emp-filter="ALL">Tất cả (16)</button>
+            <button class="btn-pill" data-emp-filter="HAS_ISSUES">🚨 Có Sự Cố</button>
+            <button class="btn-pill" data-emp-filter="FAIL_KPI">🔴 Rớt KPI (&lt;5)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick horizontal avatar chips for all 16 employees -->
+      <div class="emp-chips-scroll" id="empChipsContainer" title="Bấm vào KTV để mở ngay hồ sơ lỗi chi tiết">
+        <!-- Rendered dynamically by dashboard.js -->
+      </div>
+    </section>
+
+    <!-- SECTION: DETAILED KPI TABLE (BẢNG 16 NHÂN VIÊN) -->
+    <main class="table-section-wrapper" id="tableSectionWrapper">
+      
+      <!-- FILTER & SEARCH CONTROLS -->
+      <section class="controls-card" id="controlsCard">
+        
+        <!-- Search & Block Row -->
+        <div class="controls-top-row">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm nhanh tên nhân sự hoặc block...">
+            <button class="search-clear-btn" id="searchClearBtn" title="Xóa tìm kiếm" style="display: none;">✕</button>
+          </div>
+
+          <div class="block-filter-wrap">
+            <select id="blockFilter" class="filter-select" aria-label="Lọc theo Block">
+              <option value="ALL">🌐 Tất cả các Block</option>
+            </select>
+          </div>
+
+          <!-- View Presets & Row Density Controls -->
+          <div class="table-view-controls">
+            <!-- Column presets -->
+            <div class="btn-group-toggle" id="colPresetGroup" title="Chọn bộ cột hiển thị">
+              <span class="group-label">Cột:</span>
+              <button class="btn-pill active" data-col="core" title="Hiển thị đủ 7 tiêu chí KPI + Điểm + Xếp loại (Vừa khít 1 màn hình!)">
+                🎯 7 Tiêu Chí KPI
+              </button>
+              <button class="btn-pill" data-col="full" title="Hiện đầy đủ toàn bộ cột bao gồm chi tiết 7N TK/BT và Quá hạn">
+                📋 Tất cả các cột
+              </button>
+              <button class="btn-pill" data-col="overdue" title="Tập trung ca quá hạn và checklist 7 ngày">
+                🚨 Sự cố & Quá hạn
+              </button>
+            </div>
+
+            <!-- Density switcher -->
+            <div class="btn-group-toggle" id="densityGroup" title="Chế độ khoảng cách dòng">
+              <span class="group-label">Kiểu:</span>
+              <button class="btn-pill-icon active" data-density="compact" id="btnDensityCompact" title="Chế độ Gọn: Xem trọn 16 nhân viên không cần cuộn">
+                📏 Gọn
+              </button>
+              <button class="btn-pill-icon" data-density="standard" id="btnDensityStandard" title="Chế độ Tiêu chuẩn: Thoáng rộng, thanh tiến trình">
+                📐 Chuẩn
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Status Tabs with Live Badges -->
+        <div class="filter-tabs-row">
+          <span class="filter-label">Lọc nhanh:</span>
+          <div class="filter-tabs" id="statusFilterTabs">
+            <button class="tab-btn active" data-filter="ALL">
+              <span>Tất cả</span>
+              <span class="filter-count-badge" id="badgeCountAll">16</span>
+            </button>
+            <button class="tab-btn" data-filter="PASS">
+              <span>🟢 Đạt (5-7)</span>
+              <span class="filter-count-badge badge-success" id="badgeCountPass">0</span>
+            </button>
+            <button class="tab-btn" data-filter="WARNING">
+              <span>🟡 Cảnh Báo (4)</span>
+              <span class="filter-count-badge badge-warning" id="badgeCountWarning">0</span>
+            </button>
+            <button class="tab-btn" data-filter="DANGER">
+              <span>🔴 Chưa Đạt (&lt;4)</span>
+              <span class="filter-count-badge badge-danger" id="badgeCountDanger">0</span>
+            </button>
+            <button class="tab-btn" data-filter="FAIL_ONTIME">
+              <span>⚠️ Rớt Đúng Hẹn (&lt;98%)</span>
+              <span class="filter-count-badge badge-warning" id="badgeCountFailOnTime">0</span>
+            </button>
+            <button class="tab-btn" data-filter="FAIL_CLL">
+              <span>❌ Vượt CLL (&gt;6%)</span>
+              <span class="filter-count-badge badge-danger" id="badgeCountFailCll">0</span>
+            </button>
+            <button class="tab-btn" data-filter="HAS_OVERDUE">
+              <span>🚨 Có Ca Quá Hạn</span>
+              <span class="filter-count-badge badge-danger" id="badgeCountOverdue">0</span>
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- DETAILED KPI TABLE CARD -->
+      <section class="table-card" id="tableCard">
+        <div class="table-header-bar">
+          <div class="table-title">
+            <span class="table-title-icon">👥</span>
+            <span>Bảng Chi Tiết Hiệu Suất & Đánh Giá 7 Tiêu Chí KPI (16 Nhân Sự)</span>
+            <span class="table-count-badge" id="tableRowCount">16 / 16 Nhân sự</span>
+          </div>
+          
+          <div class="table-header-tools">
+            <button class="btn-toggle-scroll active" id="btnToggleTableScroll" title="Bật/Tắt cuộn dọc: Xem trọn vẹn 16 dòng không cần kéo chuột">
+              <span id="scrollToggleIcon">📄</span> <span id="scrollToggleText">Hiện đủ 16 dòng</span>
+            </button>
+            <button class="btn-screenshot-sm" id="btnQuickCapture" title="Chụp trọn vẹn 16 nhân viên + dòng Tổng toàn đội (Tự động copy Zalo)">
+              <span>📸</span> Chụp Bảng 16 NV (Zalo)
+            </button>
+            <div class="table-hints">
+              <span class="hint-freeze">📌 Cố định tên</span>
+              <span class="hint-sort">▲▼ Sắp xếp</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table Viewport with Freeze Panes (Mặc định mở đủ 16 dòng không cần cuộn chuột) -->
+        <div class="table-responsive-freeze table-no-scroll" id="tableScrollContainer">
+          <table class="kpi-table" id="employeeTable">
+            <thead>
+              <tr>
+                <th class="sticky-col col-emp" data-sort="name" title="Nhân sự (Cố định cột)">
+                  <div class="th-content">Nhân Sự</div>
+                </th>
+                <th class="col-block" data-sort="block" title="Block địa bàn quản lý">
+                  <div class="th-content">Block Quản Lý</div>
+                </th>
+                <!-- 7 TIÊU CHÍ KPI CHÍNH THỨC -->
+                <th class="col-ontime" data-sort="on_time_rate" title="Đúng Hẹn (Mục tiêu ≥ 98.0%)">
+                  <div class="th-content">Đúng Hẹn (≥98%)</div>
+                </th>
+                <th class="col-cll" data-sort="cll_rate" title="Checklist Lặp CLL (Mục tiêu ≤ 6.0%)">
+                  <div class="th-content">CLL (≤6%)</div>
+                </th>
+                <th class="col-cll3" data-sort="cll3_rate" title="Checklist Lặp ≥ 3 lần CLL3 (Mục tiêu ≤ 0.5%)">
+                  <div class="th-content">CLL3 (≤0.5%)</div>
+                </th>
+                <th class="col-7n-total" data-sort="cl_7n_total_rate" title="Tổng Checklist 7 Ngày TK & BT (Mục tiêu ≤ 2.5%)">
+                  <div class="th-content">7N Tổng (≤2.5%)</div>
+                </th>
+                <th class="col-repon-tk" data-sort="repontime_tk" title="Thời gian phản hồi Triển Khai (Mục tiêu ≤ 18h)">
+                  <div class="th-content">RT TK (≤18h)</div>
+                </th>
+                <th class="col-repon-bt" data-sort="repontime_bt" title="Thời gian phản hồi Bảo Trì (Mục tiêu ≤ 9h)">
+                  <div class="th-content">RT BT (≤9h)</div>
+                </th>
+                <th class="col-csat" data-sort="csat" title="Điểm CSAT xấu (Mục tiêu = 0)">
+                  <div class="th-content">CSAT (=0)</div>
+                </th>
+                <!-- ĐIỂM KPI & XẾP LOẠI -->
+                <th class="col-kpi-score" data-sort="kpi_score" title="Tổng số tiêu chí đạt trên thang 7 tiêu chí (5-7 Đạt, 4 Cảnh báo, <4 Chưa đạt)">
+                  <div class="th-content">Điểm KPI</div>
+                </th>
+                <th class="col-status" data-sort="kpi_score" title="Xếp loại KPI: 🟢 ĐẠT (5-7), 🟡 CẢNH BÁO (4), 🔴 CHƯA ĐẠT (<4)">
+                  <div class="th-content">Xếp Loại</div>
+                </th>
+                <!-- HỒ SƠ LỖI CHI TIẾT TỪNG KTV -->
+                <th class="col-actions col-dossier" title="Nhấp xem chi tiết toàn bộ các ca lỗi của KTV (Trễ hẹn, RT cao, CLL, 7N...)">
+                  <div class="th-content">Hồ Sơ Lỗi</div>
+                </th>
+                <!-- CÁC CỘT CHI TIẾT SỰ CỐ BỔ SUNG (DRILL DOWN SHD) -->
+                <th class="col-7n-tk col-optional" data-sort="cl_7n_tk_rate" title="Tỷ lệ checklist 7 ngày sau triển khai">
+                  <div class="th-content">7N TK</div>
+                </th>
+                <th class="col-7n-bt col-optional" data-sort="cl_7n_bt_rate" title="Tỷ lệ checklist 7 ngày sau bảo trì">
+                  <div class="th-content">7N BT</div>
+                </th>
+                <th class="col-tk-72h col-optional" data-sort="tk_over_72h" title="Số ca triển khai quá hạn 72 giờ">
+                  <div class="th-content">TK &gt; 72H</div>
+                </th>
+                <th class="col-bt-24h col-optional" data-sort="bt_over_24h" title="Số ca bảo trì quá hạn 24 giờ">
+                  <div class="th-content">BT &gt; 24H</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="employeeTableBody">
+              <!-- Rendered dynamically by dashboard.js -->
+            </tbody>
+            <tfoot id="employeeTableFoot">
+              <!-- Team Total Sticky Row rendered dynamically by dashboard.js -->
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SECTION: BẢNG SHEET CLL (CHECKLIST LẶP & NGÀY T-1) -->
+    <section class="table-card cll-sheet-card" id="cllTableCard" aria-label="Bảng theo dõi Sheet CLL">
+      <div class="table-header-bar cll-header-bar">
+        <div class="table-title">
+          <span class="table-title-icon">🔁</span>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <span style="font-weight: 700; font-size: 15px; color: #f8fafc;">BẢNG THỐNG KÊ SHEET CLL (CHECKLIST LẶP &amp; PHÁT SINH NGÀY T-1)</span>
+              <span class="badge-target-date" id="cllTargetDateBadge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;">Ngày T-1: --/--/----</span>
+              <span class="badge-status-tag" id="cllTeamStatusBadge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;">Đạt Chuẩn (≤6%)</span>
+            </div>
+            <p style="font-size: 11.5px; color: #94a3b8; margin-top: 3px;">
+              Dữ liệu đối soát trực tiếp từ Sheet <strong>CLL</strong>, Sheet <strong>1</strong> (CLL Lũy kế) và Sheet <strong>2</strong> (Tổng hoàn tất)
+            </p>
+          </div>
+        </div>
+        
+        <div class="table-header-tools">
+          <button class="btn btn-zalo-copy" id="btnCopyZaloCll" title="Sao chép báo cáo CLL để gửi nhóm Zalo">
+            📋 Sao Chép Báo Cáo CLL
+          </button>
+          <button class="btn-screenshot-sm" id="btnCaptureCllTable" title="Chụp Bảng Sheet CLL độ nét cao gửi Zalo">
+            <span>📸</span> Chụp Bảng CLL
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick stats ribbon inside CLL Card -->
+      <div class="cll-quick-ribbon" id="cllQuickRibbon">
+        <div class="cll-rib-item">
+          <span class="cll-rib-label">CLL Lũy Kế L2/L3:</span>
+          <span class="cll-rib-val" id="cllRibLuyKe">0 / 0 ca</span>
+        </div>
+        <div class="cll-rib-item">
+          <span class="cll-rib-label">Tổng Hoàn Tất Đội:</span>
+          <span class="cll-rib-val" id="cllRibTongHt">0 ca</span>
+        </div>
+        <div class="cll-rib-item">
+          <span class="cll-rib-label">Tỷ Lệ CLL Toàn Đội:</span>
+          <span class="cll-rib-val" id="cllRibTyLe" style="color: #10b981;">0.00%</span>
+          <span class="cll-rib-sub">(Trần ≤ 7.0%)</span>
+        </div>
+        <div class="cll-rib-item">
+          <span class="cll-rib-label">Phát Sinh Ngày T-1:</span>
+          <span class="cll-rib-val" id="cllRibT1" style="color: #f59e0b;">0 ca</span>
+        </div>
+      </div>
+
+      <!-- CLL Table Responsive Viewport -->
+      <div class="table-responsive-freeze" id="cllTableScrollContainer" style="max-height: none;">
+        <table class="kpi-table cll-data-table" id="cllDataTable">
+          <thead>
+            <tr>
+              <th class="sticky-col col-emp" style="width: 140px;">Nhân Sự</th>
+              <th style="width: 160px;">Block Quản Lý</th>
+              <th title="Checklist Lặp lần 2 lũy kế" style="width: 90px; text-align: center;">CLL2 Lũy Kế</th>
+              <th title="Checklist Lặp ≥3 lần lũy kế" style="width: 90px; text-align: center;">CLL3 Lũy Kế</th>
+              <th title="Tổng số ca hoàn tất từ Sheet 2" style="width: 95px; text-align: center;">Tổng Hoàn Tất</th>
+              <th title="Tỷ lệ CLL = (CLL2+CLL3)/Tổng HT" style="width: 110px; text-align: center;">Tỷ Lệ CLL</th>
+              <th title="Checklist Lặp L2 hoàn tất trong ngày T-1" style="width: 105px; text-align: center; background: rgba(245, 158, 11, 0.1);">CLL L2 (T-1)</th>
+              <th title="Checklist Lặp L3 hoàn tất trong ngày T-1" style="width: 105px; text-align: center; background: rgba(245, 158, 11, 0.1);">CLL L3 (T-1)</th>
+              <th title="Tỷ lệ lặp 3 = CLL3 / Tổng HT (Chuẩn ≤0.5%)" style="width: 100px; text-align: center;">Tỷ Lệ Lặp 3</th>
+              <th title="Số ca cần hoàn tất thêm để tỷ lệ đạt trần ≤ 7%" style="width: 130px; text-align: center;">Cần HT Đạt ≤7%</th>
+              <th style="width: 110px; text-align: center;">Trạng Thái</th>
+            </tr>
+          </thead>
+          <tbody id="cllTableBody">
+            <!-- Dynamic rows rendered by dashboard.js -->
+          </tbody>
+          <tfoot id="cllTableFoot">
+            <!-- Dynamic total row rendered by dashboard.js -->
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION: CHẾ ĐỘ SOÁT LỖI TỪNG KTV (ALL-IN-ONE TECHNICIAN ISSUE REVIEW MODE) -->
+    <section class="emp-issues-section" id="empIssuesSectionWrapper" aria-label="Chế độ soát chi tiết lỗi từng nhân sự">
+      <div class="emp-issues-header-card">
+        <div class="emp-issues-headline">
+          <div class="headline-icon-pulse">🚨</div>
+          <div>
+            <div class="headline-title-row">
+              <h2 class="headline-title">BẢNG TỔNG HỢP &amp; SOÁT LỖI TOÀN BỘ 16 NHÂN SỰ</h2>
+              <span class="badge-total-issues" id="summaryTotalIssuesBadge">0 Ca Sự Cố</span>
+            </div>
+            <p class="headline-desc">
+              Rà soát tập trung tất cả ca lỗi của từng anh em: Trễ hẹn Triển khai/Bảo trì, Response Time cao, Checklist lặp và Quá hạn. Bấm vào từng thẻ KTV để xem chi tiết từng hợp đồng hoặc gửi Zalo nhắc nhở.
+            </p>
+          </div>
+        </div>
+
+        <!-- Metric breakdown mini-ribbon -->
+        <div class="issues-overview-ribbon">
+          <div class="iss-ov-card ov-danger" id="ovLateTkmCard">
+            <span class="ov-icon">❌</span>
+            <div class="ov-info">
+              <span class="ov-num" id="ovLateTkmVal">0</span>
+              <span class="ov-label">Ca Trễ TKM</span>
+            </div>
+          </div>
+          <div class="iss-ov-card ov-warning" id="ovLateBtCard">
+            <span class="ov-icon">⚠️</span>
+            <div class="ov-info">
+              <span class="ov-num" id="ovLateBtVal">0</span>
+              <span class="ov-label">Ca Trễ BT</span>
+            </div>
+          </div>
+          <div class="iss-ov-card ov-warning" id="ovRtCard">
+            <span class="ov-icon">⏱️</span>
+            <div class="ov-info">
+              <span class="ov-num" id="ovRtVal">0</span>
+              <span class="ov-label">Ca RT Cao</span>
+            </div>
+          </div>
+          <div class="iss-ov-card ov-danger" id="ovCllCard">
+            <span class="ov-icon">🔁</span>
+            <div class="ov-info">
+              <span class="ov-num" id="ovCllVal">0</span>
+              <span class="ov-label">Ca CLL Lặp</span>
+            </div>
+          </div>
+          <div class="iss-ov-card ov-warning" id="ov7nCard">
+            <span class="ov-icon">📦</span>
+            <div class="ov-info">
+              <span class="ov-num" id="ov7nVal">0</span>
+              <span class="ov-label">Ca CL 7 Ngày</span>
+            </div>
+          </div>
+          <div class="iss-ov-card ov-emp" id="ovEmpCard">
+            <span class="ov-icon">👥</span>
+            <div class="ov-info">
+              <span class="ov-num" id="ovEmpVal">0 / 16</span>
+              <span class="ov-label">KTV Có Sự Cố</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls & Filter Toolbar for Issues Mode -->
+      <div class="issues-controls-card">
+        <div class="issues-filter-tabs" id="issuesModeFilterTabs">
+          <button class="tab-btn active" data-issues-filter="ALL">
+            <span>Tất Cả 16 KTV</span>
+            <span class="filter-count-badge" id="badgeIssuesAll">16</span>
+          </button>
+          <button class="tab-btn" data-issues-filter="HAS_ISSUES">
+            <span>🚨 Chỉ KTV Có Lỗi</span>
+            <span class="filter-count-badge badge-danger" id="badgeIssuesHasErrors">0</span>
+          </button>
+          <button class="tab-btn" data-issues-filter="HAS_LATE">
+            <span>❌ Tổng Trễ Hẹn</span>
+            <span class="filter-count-badge badge-warning" id="badgeIssuesLate">0</span>
+          </button>
+          <button class="tab-btn" data-issues-filter="HAS_LATE_TKM">
+            <span>❌ Trễ TKM</span>
+            <span class="filter-count-badge badge-danger" id="badgeIssuesLateTkm">0</span>
+          </button>
+          <button class="tab-btn" data-issues-filter="HAS_LATE_BT">
+            <span>⚠️ Trễ BT</span>
+            <span class="filter-count-badge badge-warning" id="badgeIssuesLateBt">0</span>
+          </button>
+          <button class="tab-btn" data-issues-filter="HAS_RT">
+            <span>⏱️ Có RT Cao</span>
+            <span class="filter-count-badge badge-warning" id="badgeIssuesRt">0</span>
+          </button>
+          <button class="tab-btn" data-issues-filter="HAS_CLL">
+            <span>🔁 Có CLL / 7N</span>
+            <span class="filter-count-badge badge-danger" id="badgeIssuesCll">0</span>
+          </button>
+          <button class="tab-btn" data-issues-filter="FAIL_KPI">
+            <span>🔴 Rớt KPI (&lt;5)</span>
+            <span class="filter-count-badge badge-danger" id="badgeIssuesFailKpi">0</span>
+          </button>
+        </div>
+
+        <div class="issues-sort-group">
+          <span class="sort-label">Sắp xếp:</span>
+          <select id="issuesSortSelect" class="filter-select issues-sort-select">
+            <option value="ISSUES_DESC">🚨 Số lỗi giảm dần (Nhiều nhất trước)</option>
+            <option value="SCORE_ASC">🔴 Điểm KPI thấp nhất trước</option>
+            <option value="ONTIME_ASC">⚠️ Đúng hẹn thấp nhất trước</option>
+            <option value="NAME_ASC">🔤 Tên KTV (A - Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Grid of 16 Technician Cards -->
+      <div class="emp-issues-cards-grid" id="empIssuesGrid">
+        <!-- Rendered dynamically by dashboard.js -->
+      </div>
+    </section>
+
+    <!-- SECTION: EXECUTIVE KPI HERO CARDS (HIỂN THỊ KHI CHỌN TOÀN CẢNH HOẶC MỞ RỘNG) -->
+    <section class="stats-section-collapsible" id="statsSectionWrapper">
+      <div class="section-title-bar">
+        <h2 class="section-title">📊 Các Chỉ Số KPI Trọng Điểm Toàn Đội</h2>
+        <button class="section-toggle-btn" id="btnToggleStats" title="Thu gọn / Mở rộng">
+          <span class="toggle-icon">▼</span>
+        </button>
+      </div>
+      
+      <div class="stats-grid" id="statsGrid">
+        <!-- Card 1: Đúng Hẹn -->
+        <div class="stat-card success" id="cardOnTime">
+          <div class="stat-header">
+            <span class="stat-label">1. Tỷ Lệ Đúng Hẹn</span>
+            <div class="stat-icon">🎯</div>
+          </div>
+          <div class="stat-value">
+            <span id="valTeamOnTime">--</span><span class="stat-unit">%</span>
+          </div>
+          <div class="stat-footer">
+            <span class="stat-tag tag-success" id="tagTeamOnTime">Mục tiêu ≥ 98.0%</span>
+            <span class="stat-meta">Toàn đội</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Checklist Lặp CLL -->
+        <div class="stat-card success" id="cardCLL">
+          <div class="stat-header">
+            <span class="stat-label">2. Tỷ Lệ CLL</span>
+            <div class="stat-icon">🛡️</div>
+          </div>
+          <div class="stat-value">
+            <span id="valTeamCLL">--</span><span class="stat-unit">%</span>
+          </div>
+          <div class="stat-footer">
+            <span class="stat-tag tag-success" id="tagTeamCLL">Mục tiêu ≤ 6.0%</span>
+            <span class="stat-meta">Trong ngưỡng an toàn</span>
+          </div>
+        </div>
+
+        <!-- Card 3: CLL3 -->
+        <div class="stat-card info" id="cardCLL3">
+          <div class="stat-header">
+            <span class="stat-label">3. Checklist Lặp ≥ 3 (CLL3)</span>
+            <div class="stat-icon">🔁</div>
+          </div>
+          <div class="stat-value">
+            <span id="valTeamCLL3">--</span><span class="stat-unit">%</span>
+          </div>
+          <div class="stat-footer">
+            <span class="stat-tag tag-success" id="tagTeamCLL3">Mục tiêu ≤ 0.5%</span>
+            <span class="stat-meta">Lặp từ 3 lần</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Tổng 7N -->
+        <div class="stat-card warning" id="cardTotal7N">
+          <div class="stat-header">
+            <span class="stat-label">4. Tổng Checklist 7 Ngày</span>
+            <div class="stat-icon">📦</div>
+          </div>
+          <div class="stat-value">
+            <span id="valTeam7NTotal">--</span><span class="stat-unit">%</span>
+          </div>
+          <div class="stat-footer">
+            <span class="stat-tag tag-success" id="tagTeam7NTotalCount">Mục tiêu ≤ 2.5%</span>
+            <span class="stat-meta">TK + BT</span>
+          </div>
+        </div>
+
+        <!-- Card 5: RT Triển Khai -->
+        <div class="stat-card info" id="cardRTTK">
+          <div class="stat-header">
+            <span class="stat-label">5. Phản Hồi Triển Khai (RT TK)</span>
+            <div class="stat-icon">⚡</div>
+          </div>
+          <div class="stat-value">
+            <span id="valTeamRTTK">--</span><span class="stat-unit">h</span>
+          </div>
+          <div class="stat-footer">
+            <span class="stat-tag tag-success" id="tagTeamRTTK">Mục tiêu ≤ 18h</span>
+            <span class="stat-meta">Thời gian hoàn tất</span>
+          </div>
+        </div>
+
+        <!-- Card 6: RT Bảo Trì -->
+        <div class="stat-card info" id="cardRTBT">
+          <div class="stat-header">
+            <span class="stat-label">6. Phản Hồi Bảo Trì (RT BT)</span>
+            <div class="stat-icon">🔧</div>
+          </div>
+          <div class="stat-value">
+            <span id="valTeamRTBT">--</span><span class="stat-unit">h</span>
+          </div>
+          <div class="stat-footer">
+            <span class="stat-tag tag-success" id="tagTeamRTBT">Mục tiêu ≤ 9h</span>
+            <span class="stat-meta">Thời gian xử lý</span>
+          </div>
+        </div>
+
+        <!-- Card 7: Đánh Giá CSAT -->
+        <div class="stat-card info" id="cardCSAT">
+          <div class="stat-header">
+            <span class="stat-label">7. CSAT Không Hài Lòng</span>
+            <div class="stat-icon">⭐</div>
+          </div>
+          <div class="stat-value">
+            <span id="valTeamCSAT">--</span><span class="stat-unit">ca</span>
+          </div>
+          <div class="stat-footer">
+            <span class="stat-tag tag-success" id="tagTeamCSAT">Mục tiêu = 0 ca</span>
+            <span class="stat-meta" id="valTeamAU">AU: --</span>
+          </div>
+        </div>
+
+        <!-- Card 8: Tồn Đọng Quá Hạn -->
+        <div class="stat-card danger" id="cardOverdue">
+          <div class="stat-header">
+            <span class="stat-label">Cảnh Báo Quá Hạn</span>
+            <div class="stat-icon">⚠️</div>
+          </div>
+          <div class="stat-value">
+            <span id="valOverdueSum">--</span><span class="stat-unit">ca</span>
+          </div>
+          <div class="stat-footer">
+            <span class="stat-tag tag-danger" id="tagOverdueBreakdown">TK: 31 | BT: 147</span>
+            <span class="stat-meta">Cần xử lý gấp</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CHARTS SECTION (BIỂU ĐỒ SO SÁNH) -->
+    <section class="charts-section-collapsible" id="chartsSectionWrapper">
+      <div class="section-title-bar">
+        <h2 class="section-title">📈 Biểu Đồ Trực Quan So Sánh Nhân Sự & Khu Vực</h2>
+        <button class="section-toggle-btn" id="btnToggleCharts" title="Thu gọn / Mở rộng">
+          <span class="toggle-icon">▼</span>
+        </button>
+      </div>
+
+      <div class="charts-grid" id="chartsGrid">
+        <!-- Chart 1: Đúng Hẹn -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">🎯 Tỷ Lệ Đúng Hẹn Từng Nhân Sự</h3>
+              <span class="chart-subtitle">So sánh với vạch mục tiêu KPI tối thiểu ≥ 98%</span>
+            </div>
+          </div>
+          <div class="chart-body">
+            <canvas id="chartOnTime"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: CLL -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">🛡️ Tỷ Lệ Checklist Lặp (CLL)</h3>
+              <span class="chart-subtitle">So sánh với vạch trần cho phép tối đa ≤ 6.0%</span>
+            </div>
+          </div>
+          <div class="chart-body">
+            <canvas id="chartCLL"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 3: Checklist 7N -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">📋 Tỷ Lệ Checklist 7N (Sau TK vs Sau BT)</h3>
+              <span class="chart-subtitle">Đánh giá chất lượng dịch vụ và tỷ lệ phát sinh sự cố</span>
+            </div>
+          </div>
+          <div class="chart-body">
+            <canvas id="chart7N"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 4: Thống kê theo Block -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">🗺️ Thống Kê Theo Từng Block</h3>
+              <span class="chart-subtitle">Tỷ lệ đúng hẹn trung bình và số ca quá hạn theo khu vực</span>
+            </div>
+          </div>
+          <div class="chart-body">
+            <canvas id="chartBlock"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="dashboard-footer">
+      <p>Inside Report Dashboard • Tự động đồng bộ từ file Excel <code>Đúng hẹn.xlsx</code> (Sheet Tong hop)</p>
+      <p style="font-size: 11.5px;">Phát triển cho Đội Đỗ Văn Tiên • 16 Nhân sự • Tối ưu theo dõi hiệu suất nhanh</p>
+    </footer>
+
+    <!-- FLOATING QUICK NAVIGATION -->
+    <div class="floating-nav" id="floatingNav">
+      <button class="float-btn" id="btnScrollToTable" title="Nhảy nhanh đến Bảng 16 Nhân Viên">
+        👥 Bảng 16 NV
+      </button>
+      <button class="float-btn" id="btnScrollToTop" title="Cuộn lên đầu trang">
+        ⬆️
+      </button>
+    </div>
+
+    <!-- DRILL-DOWN SHD DETAIL MODAL (BUNG RA SHD CHI TIẾT KHI CLICK SỐ LIỆU) -->
+    <div class="modal-backdrop" id="shdModalBackdrop" style="display: none;">
+      <div class="modal-container" id="shdModalContainer">
+        
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="modal-header-info">
+            <div class="modal-icon-badge" id="modalIconBadge">📋</div>
+            <div>
+              <div class="modal-title-row">
+                <h3 class="modal-title" id="modalTitle">Danh Sách Ca Sự Cố Chi Tiết</h3>
+                <span class="modal-badge-count" id="modalCaseCount">0 ca</span>
+              </div>
+              <div class="modal-subtitle" id="modalSubtitle">
+                <span>Nhân sự: <strong id="modalEmpName" style="color: #fff;">--</strong></span>
+                <span class="sub-sep">•</span>
+                <span id="modalEmpBlock">Block: --</span>
+                <span class="sub-sep">•</span>
+                <span id="modalMetricCategory" style="color: #38bdf8; font-weight: 600;">Loại: --</span>
+              </div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="modalCloseBtn" title="Đóng cửa sổ (Esc)">✕</button>
+        </div>
+
+        <!-- Modal Toolbar -->
+        <div class="modal-toolbar">
+          <div class="modal-search-box">
+            <span class="m-search-icon">🔍</span>
+            <input type="text" id="modalSearchInput" class="modal-search-input" placeholder="Lọc nhanh theo Số HĐ (SHD), Tên KH, Account, Lỗi...">
+            <button class="m-search-clear" id="modalSearchClear" style="display: none;">✕</button>
+          </div>
+          
+          <div class="modal-actions">
+            <button class="btn btn-secondary btn-sm" id="btnCopyAllShd" title="Sao chép toàn bộ mã hợp đồng (SHD) vào clipboard">
+              📋 Sao chép danh sách SHD
+            </button>
+            <button class="btn btn-secondary btn-sm" id="btnExportModalCsv" title="Tải xuống file CSV danh sách này">
+              📥 Xuất CSV
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Body / Table Viewport -->
+        <div class="modal-body" id="modalBody">
+          <div class="modal-table-responsive" id="modalTableResponsive">
+            <table class="modal-table" id="modalTable">
+              <thead id="modalTableHead">
+                <!-- Dynamically populated based on metric type -->
+              </thead>
+              <tbody id="modalTableBody">
+                <!-- Dynamically populated rows -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Empty State -->
+          <div class="modal-empty-state" id="modalEmptyState" style="display: none;">
+            <div class="empty-icon">🎉</div>
+            <div class="empty-title">Không có ca sự cố nào</div>
+            <div class="empty-desc">Nhân sự đạt chuẩn chỉ số, không phát sinh ca sự cố nào trong kỳ này.</div>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <div class="modal-footer-stats">
+            <span>Hiển thị <strong id="modalVisibleCount" style="color: var(--accent-blue);">0</strong> / <span id="modalTotalCount">0</span> ca</span>
+            <span class="sub-sep">•</span>
+            <span class="modal-tip">💡 Nhấp vào mã SHD hoặc nút 📋 để copy nhanh từng số hợp đồng</span>
+          </div>
+          <button class="btn btn-primary" id="modalCloseFooterBtn">Đóng cửa sổ</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MASTER TECHNICIAN ERROR DOSSIER MODAL (HỒ SƠ CHI TIẾT LỖI TỪNG NHÂN SỰ) -->
+    <div class="modal-backdrop" id="empDossierModalBackdrop" style="display: none;">
+      <div class="modal-container modal-emp-dossier-container" id="empDossierModalContainer">
+        
+        <!-- Modal Header -->
+        <div class="modal-header dossier-header">
+          <div class="modal-header-info">
+            <div class="dossier-avatar" id="dossierAvatar">HV</div>
+            <div>
+              <div class="modal-title-row">
+                <h3 class="modal-title" id="dossierEmpName">PNC01.HAIVV</h3>
+                <span class="dossier-score-badge" id="dossierScoreBadge">4/7 ĐIỂM • CẢNH BÁO</span>
+                <span class="modal-badge-count dossier-issue-count" id="dossierTotalIssuesBadge">8 ca sự cố</span>
+              </div>
+              <div class="modal-subtitle">
+                <span>Mã KTV: <strong id="dossierEmpId">8</strong></span>
+                <span class="sub-sep">•</span>
+                <span>Block: <strong id="dossierEmpBlock" style="color: #38bdf8;">Phuong Binh Trung-017</strong></span>
+                <span class="sub-sep">•</span>
+                <span>Đội: <strong style="color: #fff;">Đỗ Văn Tiên</strong></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="dossier-header-nav">
+            <button class="btn-dossier-nav" id="btnDossierPrev" title="Xem nhân sự trước (Phím Mũi tên trái)">
+              ◀ KTV Trước
+            </button>
+            <button class="btn-dossier-nav" id="btnDossierNext" title="Xem nhân sự tiếp theo (Phím Mũi tên phải)">
+              KTV Tiếp ▶
+            </button>
+            <button class="modal-close-btn" id="btnDossierClose" title="Đóng cửa sổ (Esc)">✕</button>
+          </div>
+        </div>
+
+        <!-- 7-KPI Health Scorecard Strip -->
+        <div class="dossier-kpi-ribbon" id="dossierKpiRibbon">
+          <!-- Dynamically populated 7 cards -->
+        </div>
+
+        <!-- Modal Toolbar: Category Filter Tabs, Search & Zalo Action -->
+        <div class="modal-toolbar dossier-toolbar">
+          <div class="dossier-categories" id="dossierCategoryTabs">
+            <button class="btn-pill active" data-cat="ALL">
+              <span>📑 Tất Cả Sự Cố</span>
+              <span class="cat-count-badge" id="catCountAll">0</span>
+            </button>
+            <button class="btn-pill" data-cat="LATE">
+              <span>❌ Tổng Trễ</span>
+              <span class="cat-count-badge badge-danger" id="catCountLate">0</span>
+            </button>
+            <button class="btn-pill" data-cat="LATE_TKM">
+              <span>❌ Trễ TKM</span>
+              <span class="cat-count-badge badge-danger" id="catCountLateTkm">0</span>
+            </button>
+            <button class="btn-pill" data-cat="LATE_BT">
+              <span>⚠️ Trễ BT</span>
+              <span class="cat-count-badge badge-warning" id="catCountLateBt">0</span>
+            </button>
+            <button class="btn-pill" data-cat="HIGH_RT">
+              <span>⏱️ RT Cao</span>
+              <span class="cat-count-badge badge-warning" id="catCountRt">0</span>
+            </button>
+            <button class="btn-pill" data-cat="CLL">
+              <span>🔁 CLL Lặp</span>
+              <span class="cat-count-badge badge-danger" id="catCountCll">0</span>
+            </button>
+            <button class="btn-pill" data-cat="SEVEN_N">
+              <span>📦 7 Ngày</span>
+              <span class="cat-count-badge badge-warning" id="catCount7N">0</span>
+            </button>
+            <button class="btn-pill" data-cat="OVERDUE">
+              <span>🚨 Quá Hạn</span>
+              <span class="cat-count-badge badge-danger" id="catCountOverdue">0</span>
+            </button>
+          </div>
+
+          <div class="dossier-actions-group">
+            <div class="modal-search-box dossier-search-box">
+              <span class="m-search-icon">🔍</span>
+              <input type="text" id="dossierSearchInput" class="modal-search-input" placeholder="Lọc SHD, KH, ghi chú...">
+              <button class="m-search-clear" id="dossierSearchClear" style="display: none;">✕</button>
+            </div>
+            
+            <button class="btn btn-secondary btn-sm" id="btnDossierCopyShd" title="Sao chép toàn bộ danh sách SHD">
+              📋 Chép SHD
+            </button>
+            <button class="btn btn-primary btn-sm btn-zalo-direct" id="btnDossierCopyZalo" title="Sao chép toàn bộ tin nhắn cảnh báo gửi riêng cho KTV này qua Zalo">
+              💬 Chép Báo Cáo Zalo
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Table Body -->
+        <div class="modal-body dossier-modal-body">
+          <div class="modal-table-responsive">
+            <table class="modal-table dossier-table" id="dossierTable">
+              <thead>
+                <tr>
+                  <th style="width: 45px; text-align: center;">STT</th>
+                  <th style="width: 140px;">Phân Loại Sự Cố</th>
+                  <th style="width: 140px;">Số Hợp Đồng (SHD)</th>
+                  <th style="width: 180px;">Khách Hàng / Gói Cước</th>
+                  <th style="width: 140px;">TG Hoàn Tất / Phân Công</th>
+                  <th style="width: 110px;">RT / Lần Lặp</th>
+                  <th>Nguyên Nhân &amp; Ghi Chú Kỹ Thuật</th>
+                </tr>
+              </thead>
+              <tbody id="dossierTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Empty State -->
+          <div class="modal-empty-state" id="dossierEmptyState" style="display: none;">
+            <div class="empty-icon">🎉</div>
+            <div class="empty-title">Không có sự cố nào</div>
+            <div class="empty-desc">Nhân sự thực hiện rất tốt, không phát sinh ca lỗi nào trong danh mục đã chọn!</div>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer dossier-modal-footer">
+          <div class="modal-footer-stats" id="dossierFooterStats">
+            Đang hiển thị 0 ca sự cố
+          </div>
+          <div class="dossier-footer-actions">
+            <button class="btn btn-secondary btn-sm" id="btnDossierExportCsv">📥 Xuất CSV</button>
+            <button class="btn btn-primary btn-sm" id="btnDossierCloseFooter">Đóng cửa sổ</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- YESTERDAY ALERT DETAIL MODAL -->
+    <div class="modal-backdrop" id="yesterdayAlertModalBackdrop" style="display: none;">
+      <div class="modal-container modal-alert-container" id="yesterdayAlertModalContainer">
+        
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="modal-header-info">
+            <div class="modal-icon-badge" style="background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4);">🚨</div>
+            <div>
+              <div class="modal-title-row">
+                <h3 class="modal-title" id="alertModalTitle">Danh Sách Ca Sự Cố Hoàn Tất Trong Ngày</h3>
+                <span class="modal-badge-count" id="alertModalCaseCount">0 ca</span>
+              </div>
+              <div class="modal-subtitle">
+                <span>Ngày rà soát: <strong id="alertModalDateSub" style="color: #38bdf8;">--</strong></span>
+                <span class="sub-sep">•</span>
+                <span>Đội: <strong style="color: #fff;">Đỗ Văn Tiên</strong></span>
+                <span class="sub-sep">•</span>
+                <span id="alertModalEmpCountSub">-- / 16 KTV</span>
+              </div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btnCloseAlertModal" title="Đóng cửa sổ (Esc)">✕</button>
+        </div>
+
+        <!-- Modal Toolbar -->
+        <div class="modal-toolbar">
+          <div class="modal-search-box">
+            <span class="m-search-icon">🔍</span>
+            <input type="text" id="alertModalSearchInput" class="modal-search-input" placeholder="Lọc nhanh Số HĐ, KTV, Khách Hàng, Ghi chú...">
+            <button class="m-search-clear" id="alertModalSearchClear" style="display: none;">✕</button>
+          </div>
+
+          <!-- Type filter tabs -->
+          <div class="btn-group-toggle" id="alertTypeFilterGroup">
+            <button class="btn-pill active" data-type="ALL">Tất Cả</button>
+            <button class="btn-pill" data-type="CLL">🔁 CLL</button>
+            <button class="btn-pill" data-type="LATE">❌ Tổng Trễ</button>
+            <button class="btn-pill" data-type="LATE_TKM">❌ Trễ TKM</button>
+            <button class="btn-pill" data-type="LATE_BT">⚠️ Trễ BT</button>
+            <button class="btn-pill" data-type="HIGH_RT">⏱️ RT Cao</button>
+          </div>
+
+          <div class="modal-actions">
+            <button class="btn btn-secondary btn-sm" id="btnCopyAlertModalShd" title="Sao chép toàn bộ danh sách mã hợp đồng">
+              📋 Chép SHD
+            </button>
+            <button class="btn btn-primary btn-sm" id="btnCopyAlertZaloInsideModal" title="Sao chép toàn bộ tin nhắn cảnh báo gửi Zalo">
+              💬 Chép Tin Zalo
+            </button>
+            <button class="btn btn-secondary btn-sm" id="btnExportAlertModalCsv" title="Tải xuống file CSV">
+              📥 Xuất CSV
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Table Body -->
+        <div class="modal-body">
+          <div class="modal-table-responsive">
+            <table class="modal-table" id="alertModalTable">
+              <thead>
+                <tr>
+                  <th style="width: 50px;">STT</th>
+                  <th>KTV Phụ Trách</th>
+                  <th>Loại Sự Cố</th>
+                  <th>Số Hợp Đồng</th>
+                  <th>Khách Hàng</th>
+                  <th>TG Hoàn Tất</th>
+                  <th>RT (Giờ)</th>
+                  <th>Chi Tiết / Nguyên Nhân</th>
+                </tr>
+              </thead>
+              <tbody id="alertModalTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <div class="modal-footer-stats" id="alertModalFooterStats">
+            Đang hiển thị 0 ca
+          </div>
+          <button class="btn btn-secondary" id="btnCloseAlertModalFooter">Đóng cửa sổ</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SCREENSHOT PREVIEW MODAL -->
+    <div class="modal-backdrop" id="screenshotModalBackdrop" style="display: none;">
+      <div class="modal-container modal-screenshot-container" id="screenshotModalContainer">
+        
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="modal-header-info">
+            <div class="modal-title-row">
+              <span class="m-icon">📸</span>
+              <h2 class="modal-title" id="ssModalTitle">Ảnh Bảng Chi Tiết Hiệu Suất 16 Nhân Sự</h2>
+              <span class="badge-copied-hint" id="ssCopiedHint">📋 ĐÃ TỰ ĐỘNG COPY VÀO CLIPBOARD</span>
+            </div>
+            <div class="modal-subtitle">
+              <span>Bạn chỉ cần mở khung chat <strong>Zalo</strong> hoặc <strong>Telegram</strong> và ấn phím <strong>Ctrl + V</strong> để gửi ngay!</span>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btnSsModalClose" title="Đóng cửa sổ">✕</button>
+        </div>
+
+        <!-- Modal Toolbar -->
+        <div class="modal-toolbar ss-toolbar">
+          <div class="ss-info-text">
+            <span>🔍 Hình ảnh độ nét cao (2x Retina) - Đầy đủ 16 KTV và Dòng Tổng toàn đội</span>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-primary" id="btnSsCopyClipboard">
+              📋 Sao chép ảnh lại
+            </button>
+            <button class="btn btn-secondary" id="btnSsDownload">
+              💾 Tải file PNG
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Body: Image Preview -->
+        <div class="modal-body ss-modal-body">
+          <div class="ss-preview-wrapper" id="ssPreviewWrapper">
+            <img id="ssPreviewImg" src="" alt="Ảnh chụp Báo cáo KPI 16 Nhân Sự" class="ss-preview-image">
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <span class="modal-tip">💡 Mẹo: Bấm Ctrl + V trong Zalo là gửi được luôn mà không cần tải file về máy.</span>
+          <button class="btn btn-primary" id="btnSsCloseFooter">Đóng cửa sổ</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast-popup" id="toastPopup" style="display: none;">
+      <span class="toast-icon">✅</span>
+      <span class="toast-text" id="toastText">Đã sao chép!</span>
+    </div>
+
+  </div>
+
+  <!-- Data source: loads local JS object without CORS issues, with JSON fallback -->
+  <script src="data.js"></script>
+  <!-- Application Logic -->
+  <script src="dashboard.js"></script>
+
+  <!-- BOT FOXONE EMERGENCY CONTROL -->
+  <script>
+    const BOT_API = 'http://localhost:5000/api/foxone';
+
+    function _showBotToast(msg, isError) {
+      const t = document.getElementById('toastPopup');
+      const tx = document.getElementById('toastText');
+      const ic = t ? t.querySelector('.toast-icon') : null;
+      if (!t || !tx) { alert(msg); return; }
+      tx.textContent = msg;
+      if (ic) ic.textContent = isError ? '⚠️' : '✅';
+      t.style.display = 'flex';
+      clearTimeout(window._botToastTimer);
+      window._botToastTimer = setTimeout(() => { t.style.display = 'none'; }, 4000);
+    }
+
+    function _setBotUI(running) {
+      const stopBtn = document.getElementById('btnBotEmergencyStop');
+      const startBtn = document.getElementById('btnBotStart');
+      const dot = document.getElementById('botStatusDot');
+      if (!stopBtn || !startBtn || !dot) return;
+      if (running) {
+        stopBtn.style.display = 'flex';
+        startBtn.style.display = 'none';
+        dot.textContent = '🟢';
+        dot.title = 'Bot đang chạy';
+      } else {
+        stopBtn.style.display = 'none';
+        startBtn.style.display = 'flex';
+        dot.textContent = '🔴';
+        dot.title = 'Bot đang TẮT';
+      }
+    }
+
+    function checkBotStatus() {
+      fetch(BOT_API + '/status')
+        .then(r => r.json())
+        .then(d => _setBotUI(d.monitor_running && d.foxone_enabled))
+        .catch(() => {
+          const dot = document.getElementById('botStatusDot');
+          if (dot) { dot.textContent = '⚪'; dot.title = 'Không kết nối được bot'; }
+        });
+    }
+
+    function foxoneBotEmergencyStop() {
+      const btn = document.getElementById('btnBotEmergencyStop');
+      if (btn) { btn.textContent = '⏳ Đang ngắt...'; btn.disabled = true; }
+      fetch(BOT_API + '/emergency-stop', { method: 'POST' })
+        .then(r => r.json())
+        .then(d => {
+          _showBotToast(d.message || '🔴 Bot đã ngắt!', d.status === 'error');
+          _setBotUI(false);
+          if (btn) { btn.textContent = '🔴 NGẮT BOT'; btn.disabled = false; }
+        })
+        .catch(err => {
+          _showBotToast('❌ Không kết nối được đến bot! Dùng file NGAT_BOT_KHAN_CAP.bat', true);
+          if (btn) { btn.textContent = '🔴 NGẮT BOT'; btn.disabled = false; }
+        });
+    }
+
+    function foxoneBotStart() {
+      const btn = document.getElementById('btnBotStart');
+      if (btn) { btn.textContent = '⏳ Đang bật...'; btn.disabled = true; }
+      fetch(BOT_API + '/start', { method: 'POST' })
+        .then(r => r.json())
+        .then(d => {
+          _showBotToast(d.message || '🟢 Bot đã bật!', d.status === 'error');
+          _setBotUI(d.status !== 'error');
+          if (btn) { btn.textContent = '🟢 BẬT LẠI'; btn.disabled = false; }
+        })
+        .catch(err => {
+          _showBotToast('❌ Không kết nối được đến bot! Hãy chạy lại BAT_BOT_ZALO.bat', true);
+          if (btn) { btn.textContent = '🟢 BẬT LẠI'; btn.disabled = false; }
+        });
+    }
+
+    // Kiểm tra trạng thái bot ngay khi load và mỗi 10 giây
+    checkBotStatus();
+    setInterval(checkBotStatus, 10000);
+  </script>
+</body>
+</html>
