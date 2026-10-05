@@ -1266,7 +1266,9 @@
   </div>
 
   <!-- Data source: loads local JS object without CORS issues, with JSON fallback -->
-  <script src="data.js"></script>
+  <script>
+    document.write('<script src="data.js?v=' + Date.now() + '"><\/script>');
+  </script>
   <!-- Application Logic -->
   <script src="dashboard.js"></script>
 
