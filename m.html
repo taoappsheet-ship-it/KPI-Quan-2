@@ -1133,8 +1133,10 @@
     </div>
   </nav>
 
-  <!-- DATA SCRIPT -->
-  <script src="data.js"></script>
+  <!-- DATA SCRIPT (Chống lưu cache điện thoại để luôn cập nhật số liệu mới nhất tức thì) -->
+  <script>
+    document.write('<script src="data.js?v=' + Date.now() + '"><\/script>');
+  </script>
 
   <!-- MOBILE DASHBOARD LOGIC -->
   <script>
