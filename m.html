@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0f172a">
+  <title>KPI Đội Đỗ Văn Tiên (Bản Mobile)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: #151d30;
+      --bg-card-hover: #1c263f;
+      --border: #24324f;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --text-muted: #64748b;
+      --primary: #38bdf8;
+      --primary-dim: rgba(56, 189, 248, 0.15);
+      --success: #10b981;
+      --success-dim: rgba(16, 185, 129, 0.15);
+      --warning: #f59e0b;
+      --warning-dim: rgba(245, 158, 11, 0.15);
+      --danger: #ef4444;
+      --danger-dim: rgba(239, 68, 68, 0.18);
+      --purple: #8b5cf6;
+      --purple-dim: rgba(139, 92, 246, 0.15);
+      --safe-bottom: env(safe-area-inset-bottom, 16px);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.45;
+      padding-bottom: calc(75px + var(--safe-bottom));
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* APP HEADER */
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 15, 25, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .app-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+    }
+
+    .app-titles h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .live-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .app-subtitle {
+      font-size: 11px;
+      color: var(--text-sub);
+    }
+
+    .btn-desktop-switch {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #7dd3fc;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* TOP STATS BANNER */
+    .hero-stat-banner {
+      margin: 12px 14px 6px;
+      padding: 12px 14px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-stat-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    .hero-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    .val-pass { color: var(--success); }
+    .val-fail { color: var(--danger); }
+    .val-warn { color: var(--warning); }
+
+    .hero-status-pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      text-align: right;
+    }
+
+    /* SEGMENTED TAB NAV */
+    .tab-bar {
+      margin: 8px 14px;
+      background: #111827;
+      padding: 4px;
+      border-radius: 10px;
+      display: flex;
+      gap: 4px;
+      border: 1px solid #1f293d;
+    }
+
+    .tab-item {
+      flex: 1;
+      padding: 8px 4px;
+      text-align: center;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+    }
+
+    .tab-item.active {
+      background: #1e293b;
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .tab-badge {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 10px;
+      background: var(--danger);
+      color: #fff;
+    }
+
+    /* VIEW SECTIONS */
+    .view-container {
+      padding: 0 14px;
+      display: none;
+    }
+    .view-container.active {
+      display: block;
+    }
+
+    /* 4-KPI GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .kpi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 4px;
+    }
+    .kpi-card.pass::before { background: var(--success); }
+    .kpi-card.fail::before { background: var(--danger); }
+    .kpi-card.warn::before { background: var(--warning); }
+
+    .kpi-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .kpi-name {
+      font-size: 12px;
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .kpi-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .tag-pass { background: var(--success-dim); color: #34d399; }
+    .tag-fail { background: var(--danger-dim); color: #f87171; }
+    .tag-warn { background: var(--warning-dim); color: #fbbf24; }
+
+    .kpi-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .kpi-target {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* SECONDARY METRICS (ROW) */
+    .mini-metrics-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .mini-metric-pill {
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 8px 4px;
+      text-align: center;
+    }
+
+    .mini-metric-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .mini-metric-val {
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 2px;
+      color: #e2e8f0;
+    }
+
+    /* QUICK ACTION CALLOUT */
+    .action-callout {
+      margin-top: 14px;
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(245, 158, 11, 0.08));
+      border: 1px solid rgba(239, 68, 68, 0.28);
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .callout-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .callout-icon {
+      font-size: 24px;
+    }
+
+    .callout-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fca5a5;
+    }
+
+    .callout-sub {
+      font-size: 11px;
+      color: var(--text-sub);
+    }
+
+    .btn-callout {
+      background: var(--danger);
+      color: #fff;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    /* SECTION TITLE */
+    .section-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 16px 0 10px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-count {
+      font-size: 10.5px;
+      font-weight: 700;
+      background: var(--border);
+      color: var(--text-main);
+      padding: 1px 7px;
+      border-radius: 10px;
+    }
+
+    /* HOT ALERT CARDS */
+    .alert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 8px;
+      transition: background 0.15s ease;
+    }
+
+    .alert-card.type-late-tkm { border-left: 4px solid var(--danger); }
+    .alert-card.type-late-bt { border-left: 4px solid var(--warning); }
+    .alert-card.type-cll { border-left: 4px solid #f43f5e; }
+    .alert-card.type-7n { border-left: 4px solid #38bdf8; }
+
+    .alert-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .alert-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .alert-badge.late-tkm { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
+    .alert-badge.late-bt { background: rgba(245, 158, 11, 0.2); color: #fcd34d; }
+    .alert-badge.cll { background: rgba(244, 63, 94, 0.2); color: #fda4af; }
+    .alert-badge.seven-n { background: rgba(56, 189, 248, 0.2); color: #7dd3fc; }
+
+    .alert-emp-tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .alert-shd-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.25);
+      padding: 6px 10px;
+      border-radius: 6px;
+      margin: 6px 0;
+    }
+
+    .alert-shd-code {
+      font-family: monospace;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #f8fafc;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-copy-chip {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #7dd3fc;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .btn-copy-chip:active {
+      transform: scale(0.96);
+    }
+
+    .alert-details {
+      font-size: 11.5px;
+      color: var(--text-sub);
+      margin-top: 4px;
+    }
+
+    .alert-note {
+      font-size: 11px;
+      color: #94a3b8;
+      background: rgba(255,255,255,0.03);
+      padding: 4px 6px;
+      border-radius: 4px;
+      margin-top: 4px;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* SEARCH & FILTER BAR */
+    .filter-wrapper {
+      position: sticky;
+      top: 57px;
+      z-index: 90;
+      background: rgba(11, 15, 25, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 6px 0 10px;
+    }
+
+    .search-box {
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: #151d30;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 36px 10px 14px;
+      font-size: 13px;
+      color: #fff;
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+    }
+    .search-clear {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 14px;
+      display: none;
+    }
+
+    .chips-scroll {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: none;
+    }
+    .chips-scroll::-webkit-scrollbar { display: none; }
+
+    .chip-filter {
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 600;
+      background: #151d30;
+      color: var(--text-sub);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .chip-filter.active {
+      background: var(--primary);
+      color: #0b0f19;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* EMP MOBILE CARDS */
+    .emp-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      position: relative;
+      transition: all 0.15s ease;
+    }
+
+    .emp-card.has-danger { border-left: 4px solid var(--danger); }
+    .emp-card.has-warning { border-left: 4px solid var(--warning); }
+    .emp-card.is-clean { border-left: 4px solid var(--success); }
+
+    .emp-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .emp-info-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .emp-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #1e293b, #334155);
+      color: #38bdf8;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #475569;
+    }
+
+    .emp-name-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .emp-block-text {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .score-badge {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .score-good { background: var(--success-dim); color: #34d399; }
+    .score-warn { background: var(--warning-dim); color: #fbbf24; }
+    .score-fail { background: var(--danger-dim); color: #f87171; }
+
+    /* EMP 7-KPI GRID — 2 hàng: 4 ô trên + 3 ô dưới canh đều */
+    .emp-kpi7-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    /* Hàng 2: 3 ô (RT TK, RT BT, CSAT) — căn giữa bằng cách cho
+       ô đầu tiên hàng 2 bắt đầu từ cột 1 (auto), còn dùng
+       wrapper riêng để 3 ô chiếm 3/4 width và căn giữa */
+    .emp-kpi7-row2 {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+
+    .kpi7-cell {
+      background: rgba(0,0,0,0.22);
+      border-radius: 6px;
+      padding: 6px 4px;
+      text-align: center;
+      border: 1px solid transparent;
+      min-width: 0;
+    }
+    .kpi7-cell.pass { border-color: rgba(16,185,129,0.25); }
+    .kpi7-cell.fail { border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.06); }
+
+    .kpi7-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .kpi7-val {
+      font-size: 12.5px;
+      font-weight: 700;
+      margin-top: 2px;
+      display: block;
+    }
+    .kpi7-cell.pass .kpi7-val { color: #34d399; }
+    .kpi7-cell.fail .kpi7-val { color: #f87171; }
+
+    /* ISSUE PILLS ON CARD */
+    .emp-issue-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .issue-pill {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+    .issue-pill:active { transform: scale(0.95); opacity: 0.8; }
+    .issue-pill:not(.pill-clean)::after { content: ' ›'; font-size: 11px; opacity: 0.7; }
+    .pill-late-tkm { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
+    .pill-late-bt { background: rgba(245, 158, 11, 0.2); color: #fcd34d; }
+    .pill-cll { background: rgba(244, 63, 94, 0.2); color: #fda4af; }
+    .pill-7n { background: rgba(56, 189, 248, 0.2); color: #7dd3fc; }
+    .pill-rt { background: rgba(139, 92, 246, 0.2); color: #c4b5fd; }
+    .pill-clean { background: rgba(16, 185, 129, 0.15); color: #34d399; cursor: default; }
+
+    /* CARD ACTION BUTTONS */
+    .emp-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .btn-emp-action {
+      padding: 8px 4px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+    .btn-emp-action:active { transform: scale(0.97); }
+
+    .btn-action-view {
+      background: #1e293b;
+      color: #38bdf8;
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+    .btn-action-zalo {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #fff;
+    }
+
+    /* BOTTOM SHEET MODAL (MOBILE DOSSIER) */
+    .sheet-backdrop {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: flex-end;
+    }
+
+    .sheet-container {
+      width: 100%;
+      max-height: 88vh;
+      background: #111827;
+      border-radius: 20px 20px 0 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      animation: slideUp 0.25s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    .sheet-handle {
+      width: 38px;
+      height: 4px;
+      background: #475569;
+      border-radius: 2px;
+      margin: 10px auto 4px;
+    }
+
+    .sheet-header {
+      padding: 10px 16px 12px;
+      border-bottom: 1px solid #1f293d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sheet-emp-meta h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .sheet-emp-meta span {
+      font-size: 11.5px;
+      color: var(--text-sub);
+    }
+
+    .btn-sheet-close {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #94a3b8;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sheet-kpi-strip {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 10px 16px;
+      background: #0b0f19;
+      border-bottom: 1px solid #1f293d;
+      scrollbar-width: none;
+    }
+    .sheet-kpi-strip::-webkit-scrollbar { display: none; }
+
+    .sk-chip {
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      white-space: nowrap;
+      border: 1px solid #1e293b;
+    }
+    .sk-chip.pass { background: rgba(16, 185, 129, 0.1); color: #34d399; }
+    .sk-chip.fail { background: rgba(239, 68, 68, 0.1); color: #f87171; }
+
+    .sheet-body {
+      padding: 12px 16px;
+      overflow-y: auto;
+      flex: 1;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .sheet-footer {
+      padding: 10px 16px calc(10px + var(--safe-bottom));
+      border-top: 1px solid #1f293d;
+      background: #111827;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .btn-sheet-action {
+      padding: 10px 6px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-sheet-action:active { transform: scale(0.97); }
+
+    .btn-sheet-shd {
+      background: #1e293b;
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .btn-sheet-zalo {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #fff;
+    }
+
+    /* TOAST NOTIFICATION */
+    .mobile-toast {
+      position: fixed;
+      bottom: calc(75px + var(--safe-bottom));
+      left: 50%;
+      transform: translateX(-50%) translateY(30px);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid #38bdf8;
+      color: #f8fafc;
+      padding: 9px 16px;
+      border-radius: 24px;
+      font-size: 12px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mobile-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* BOTTOM NAV BAR */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(11, 15, 25, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border);
+      padding: 6px 14px var(--safe-bottom);
+      display: flex;
+      justify-content: space-around;
+      z-index: 95;
+    }
+
+    .bnav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 10.5px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 4px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      position: relative;
+    }
+    .bnav-item.active {
+      color: #38bdf8;
+    }
+    .bnav-icon {
+      font-size: 18px;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- APP HEADER -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="app-logo">⚡</div>
+      <div class="app-titles">
+        <h1>ĐỘI ĐỖ VĂN TIÊN <span class="live-dot" title="Dữ liệu trực tiếp"></span></h1>
+        <div class="app-subtitle" id="appSubtitle">Cập nhật: Đang tải...</div>
+      </div>
+    </div>
+    <a href="index.html" class="btn-desktop-switch" title="Chuyển sang giao diện bảng lớn cho máy tính">
+      🖥️ Desktop
+    </a>
+  </header>
+
+  <!-- HERO KPI STAT BANNER (TOP PERFORMANCE) -->
+  <section class="hero-stat-banner" id="heroBanner">
+    <div class="hero-stat-col">
+      <span class="hero-label">Đúng Hẹn Toàn Đội</span>
+      <span class="hero-value val-fail" id="heroOnTimeVal">--%</span>
+    </div>
+    <div class="hero-stat-col" style="align-items: flex-end;">
+      <span class="hero-status-pill tag-fail" id="heroOnTimeBadge">Chưa đạt &lt; 98%</span>
+      <span style="font-size: 11px; color: var(--text-sub); margin-top: 4px;" id="heroEmpCount">16 Nhân Viên</span>
+    </div>
+  </section>
+
+  <!-- SEGMENTED TABS -->
+  <nav class="tab-bar" id="mobileTabBar">
+    <div class="tab-item active" data-tab="tab-overview">
+      📊 Chỉ Số Đội
+    </div>
+    <div class="tab-item" data-tab="tab-alerts">
+      🚨 Cảnh Báo <span class="tab-badge" id="tabAlertCount">0</span>
+    </div>
+    <div class="tab-item" data-tab="tab-employees">
+      👥 16 KTV
+    </div>
+  </nav>
+
+  <!-- VIEW 1: TỔNG QUAN CHỈ SỐ ĐỘI -->
+  <main class="view-container active" id="tab-overview">
+    
+    <!-- 4 CORE KPIS GRID -->
+    <div class="kpi-grid">
+      <!-- 1. Đúng Hẹn -->
+      <div class="kpi-card fail" id="cardOnTime">
+        <div class="kpi-card-header">
+          <span class="kpi-name">Đúng Hẹn</span>
+          <span class="kpi-tag tag-fail" id="kpiTagOnTime">&lt; 98%</span>
+        </div>
+        <div class="kpi-num" id="kpiValOnTime">--%</div>
+        <div class="kpi-target">Chuẩn: ≥ 98.0%</div>
+      </div>
+
+      <!-- 2. CLL -->
+      <div class="kpi-card pass" id="cardCLL">
+        <div class="kpi-card-header">
+          <span class="kpi-name">Checklist Lặp</span>
+          <span class="kpi-tag tag-pass" id="kpiTagCLL">≤ 6%</span>
+        </div>
+        <div class="kpi-num" id="kpiValCLL">--%</div>
+        <div class="kpi-target">Chuẩn: ≤ 6.0%</div>
+      </div>
+
+      <!-- 3. CLL3 -->
+      <div class="kpi-card pass" id="cardCLL3">
+        <div class="kpi-card-header">
+          <span class="kpi-name">CLL 3 Lần</span>
+          <span class="kpi-tag tag-pass" id="kpiTagCLL3">≤ 0.5%</span>
+        </div>
+        <div class="kpi-num" id="kpiValCLL3">--%</div>
+        <div class="kpi-target">Chuẩn: ≤ 0.5%</div>
+      </div>
+
+      <!-- 4. 7N Total -->
+      <div class="kpi-card warn" id="card7N">
+        <div class="kpi-card-header">
+          <span class="kpi-name">7 Ngày Tổng</span>
+          <span class="kpi-tag tag-warn" id="kpiTag7N">≤ 2.5%</span>
+        </div>
+        <div class="kpi-num" id="kpiVal7N">--%</div>
+        <div class="kpi-target">Chuẩn: ≤ 2.5%</div>
+      </div>
+    </div>
+
+    <!-- 4 SECONDARY METRICS -->
+    <div class="mini-metrics-row">
+      <div class="mini-metric-pill">
+        <span class="mini-metric-label">RT TK</span>
+        <span class="mini-metric-val" id="valRtTk">--h</span>
+      </div>
+      <div class="mini-metric-pill">
+        <span class="mini-metric-label">RT BT</span>
+        <span class="mini-metric-val" id="valRtBt">--h</span>
+      </div>
+      <div class="mini-metric-pill">
+        <span class="mini-metric-label">Tồn TK &gt;72h</span>
+        <span class="mini-metric-val" id="valOverdue72">0</span>
+      </div>
+      <div class="mini-metric-pill">
+        <span class="mini-metric-label">Tồn BT &gt;24h</span>
+        <span class="mini-metric-val" id="valOverdue24">0</span>
+      </div>
+    </div>
+
+    <!-- ACTION CALLOUT -->
+    <div class="action-callout" id="actionCallout">
+      <div class="callout-left">
+        <div class="callout-icon">🚨</div>
+        <div>
+          <div class="callout-title" id="calloutTitle">8/16 KTV Có Ca Lỗi</div>
+          <div class="callout-sub" id="calloutSub">2 Trễ TKM • 3 Trễ BT • 5 CLL</div>
+        </div>
+      </div>
+      <button class="btn-callout" onclick="switchMobileTab('tab-employees', 'HAS_ISSUES')">
+        Xem Ngay 👉
+      </button>
+    </div>
+
+    <!-- QUICK HOT ISSUES SECTION IN OVERVIEW -->
+    <div class="section-title-row">
+      <span class="section-title">⚡ Ca Trễ Hẹn Cần Lưu Ý</span>
+      <span class="badge-count" id="badgeLateCount">5 ca</span>
+    </div>
+    <div id="overviewHotAlertsContainer">
+      <!-- Injected by JS -->
+    </div>
+  </main>
+
+  <!-- VIEW 2: CẢNH BÁO NÓNG (HOT ALERTS) -->
+  <main class="view-container" id="tab-alerts">
+    <div class="section-title-row" style="margin-top: 8px;">
+      <span class="section-title">🚨 Danh Sách Toàn Bộ Ca Sự Cố</span>
+      <span class="badge-count" id="badgeAllAlertsCount">0 ca</span>
+    </div>
+    <div id="fullAlertsContainer">
+      <!-- Injected by JS -->
+    </div>
+  </main>
+
+  <!-- VIEW 3: 16 ANH EM KTV -->
+  <main class="view-container" id="tab-employees">
+    
+    <!-- SEARCH & FILTER STICKY BAR -->
+    <div class="filter-wrapper">
+      <div class="search-box">
+        <input type="text" class="search-input" id="empSearchInput" placeholder="🔍 Tìm tên KTV, SHD, khối...">
+        <span class="search-clear" id="empSearchClear">✕</span>
+      </div>
+      <div class="chips-scroll" id="empFilterChips">
+        <div class="chip-filter active" data-filter="ALL">Tất Cả (16)</div>
+        <div class="chip-filter" data-filter="HAS_ISSUES">🚨 Có Lỗi (<span id="fcCountIssues">0</span>)</div>
+        <div class="chip-filter" data-filter="LATE">❌ Trễ Hẹn (<span id="fcCountLate">0</span>)</div>
+        <div class="chip-filter" data-filter="CLL">🔁 CLL (<span id="fcCountCll">0</span>)</div>
+        <div class="chip-filter" data-filter="CLEAN">🏆 Đạt Chuẩn (<span id="fcCountClean">0</span>)</div>
+      </div>
+    </div>
+
+    <!-- EMP CARDS LIST -->
+    <div id="empCardsContainer">
+      <!-- Injected by JS -->
+    </div>
+  </main>
+
+  <!-- BOTTOM SHEET MODAL (MOBILE DOSSIER) -->
+  <div class="sheet-backdrop" id="empSheetBackdrop">
+    <div class="sheet-container" id="empSheetContainer">
+      <div class="sheet-handle"></div>
+      
+      <div class="sheet-header">
+        <div class="sheet-emp-meta">
+          <h3 id="sheetEmpName">PNC01.KTV</h3>
+          <span id="sheetEmpBlock">Khối - Mã: --</span>
+        </div>
+        <button class="btn-sheet-close" id="btnSheetClose" title="Đóng">✕</button>
+      </div>
+
+      <div class="sheet-kpi-strip" id="sheetKpiStrip">
+        <!-- Injected 7-KPI mini chips -->
+      </div>
+
+      <div class="sheet-body" id="sheetBody">
+        <!-- Injected list of issues for this technician -->
+      </div>
+
+      <div class="sheet-footer">
+        <button class="btn-sheet-action btn-sheet-shd" id="btnSheetCopyShds">
+          📋 Copy Tất Cả SHD
+        </button>
+        <button class="btn-sheet-action btn-sheet-zalo" id="btnSheetCopyZalo">
+          💬 Gửi Tin Zalo
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="mobile-toast" id="mobileToast">
+    <span id="toastIcon">📋</span>
+    <span id="toastMsg">Đã sao chép!</span>
+  </div>
+
+  <!-- BOTTOM APP NAV BAR -->
+  <nav class="bottom-nav">
+    <div class="bnav-item active" data-target="tab-overview" onclick="switchMobileTab('tab-overview')">
+      <span class="bnav-icon">📊</span>
+      <span>Chỉ Số Đội</span>
+    </div>
+    <div class="bnav-item" data-target="tab-alerts" onclick="switchMobileTab('tab-alerts')">
+      <span class="bnav-icon">🚨</span>
+      <span>Cảnh Báo</span>
+    </div>
+    <div class="bnav-item" data-target="tab-employees" onclick="switchMobileTab('tab-employees')">
+      <span class="bnav-icon">👥</span>
+      <span>Kỹ Thuật Viên</span>
+    </div>
+  </nav>
+
+  <!-- DATA SCRIPT -->
+  <script src="data.js"></script>
+
+  <!-- MOBILE DASHBOARD LOGIC -->
+  <script>
+    let appData = null;
+    let currentEmpFilter = 'ALL';
+    let currentSearchTerm = '';
+    let selectedSheetEmp = null;
+    let selectedSheetCases = [];
+
+    // 1. Toast Notification
+    function showToast(msg, icon = '📋') {
+      const toast = document.getElementById('mobileToast');
+      const toastMsg = document.getElementById('toastMsg');
+      const toastIcon = document.getElementById('toastIcon');
+      if (!toast) return;
+
+      toastMsg.textContent = msg;
+      toastIcon.textContent = icon;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2200);
+    }
+
+    // 2. Global Clipboard Helper
+    window.copyText = function(text, successMsg = 'Đã sao chép vào bộ nhớ tạm!') {
+      if (!text) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(successMsg, '✅');
+        }).catch(() => fallbackCopy(text, successMsg));
+      } else {
+        fallbackCopy(text, successMsg);
+      }
+    };
+
+    function fallbackCopy(text, successMsg) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg, '✅');
+      } catch (err) {
+        showToast('Không thể sao chép tự động', '⚠️');
+      }
+      document.body.removeChild(ta);
+    }
+
+    // 3. Tab Switching
+    window.switchMobileTab = function(tabId, empFilterPreset = null) {
+      // Tab Bar buttons
+      document.querySelectorAll('#mobileTabBar .tab-item').forEach(el => {
+        el.classList.toggle('active', el.dataset.tab === tabId);
+      });
+      // Bottom Nav items
+      document.querySelectorAll('.bottom-nav .bnav-item').forEach(el => {
+        el.classList.toggle('active', el.dataset.target === tabId);
+      });
+      // Containers
+      document.querySelectorAll('.view-container').forEach(el => {
+        el.classList.toggle('active', el.id === tabId);
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (empFilterPreset && tabId === 'tab-employees') {
+        currentEmpFilter = empFilterPreset;
+        document.querySelectorAll('#empFilterChips .chip-filter').forEach(c => {
+          c.classList.toggle('active', c.dataset.filter === empFilterPreset);
+        });
+        renderEmpCards();
+      }
+    };
+
+    // 4. Data Extraction & Normalization
+    function getAllIssuesForEmployee(emp) {
+      const empShort = emp.name.toUpperCase().replace('PNC01.', '').trim();
+      const cases = [];
+      const seen = new Set();
+
+      function addCase(item) {
+        const shd = (item.shd || '').trim().toUpperCase();
+        const baseCat = item.category.startsWith('LATE') ? 'LATE' : item.category;
+        const key = `${shd}_${baseCat}`;
+        if (shd && shd !== '-' && seen.has(key)) {
+          const existing = cases.find(c => (c.shd || '').trim().toUpperCase() === shd && (c.category.startsWith('LATE') ? 'LATE' : c.category) === baseCat);
+          if (existing) {
+            if (!existing.note || existing.note === '-' || existing.note.includes('hoàn tất')) {
+              if (item.note && item.note !== '-') existing.note = item.note;
+            }
+            if (!existing.time || existing.time === '-') {
+              if (item.time && item.time !== '-') existing.time = item.time;
+            }
+            if (item.category === 'LATE_TKM' || item.category === 'LATE_BT') {
+              existing.category = item.category;
+              existing.badge = item.badge;
+            }
+          }
+          return;
+        }
+        if (shd && shd !== '-') seen.add(key);
+        cases.push(item);
+      }
+
+      // Yesterday Alerts
+      if (appData && appData.yesterday_alerts && appData.yesterday_alerts.cases_by_date) {
+        Object.keys(appData.yesterday_alerts.cases_by_date).forEach(d => {
+          (appData.yesterday_alerts.cases_by_date[d] || []).forEach(c => {
+            const cEmp = (c.emp || '').toUpperCase().replace('PNC01.', '').trim();
+            if (cEmp === empShort || (empShort && cEmp.includes(empShort))) {
+              let cat = 'OTHER';
+              let badge = '⚠️ Sự Cố';
+              if (c.issue_type === 'LATE' || c.issue_type === 'LATE_TKM' || c.issue_type === 'LATE_BT') {
+                const isTkm = (c.service === 'TKM' || (c.service && c.service.includes('TK')) || c.issue_type === 'LATE_TKM');
+                cat = isTkm ? 'LATE_TKM' : 'LATE_BT';
+                badge = isTkm ? '❌ Trễ Hẹn TKM' : '⚠️ Trễ Hẹn BT';
+              } else if (c.issue_type === 'CLL') {
+                cat = 'CLL';
+                badge = `🔁 CLL (L${c.so_lan_lap || 2})`;
+              } else if (c.issue_type === '7N') {
+                cat = 'SEVEN_N';
+                badge = `📦 7N ${c.service || ''}`;
+              } else if (c.issue_type === 'HIGH_RT') {
+                cat = 'HIGH_RT';
+                badge = `⏱️ RT Cao ${c.service || ''}`;
+              }
+              addCase({
+                category: cat,
+                badge,
+                service: c.service || 'BT',
+                shd: c.shd || '-',
+                kh: c.kh || '-',
+                time: c.hoantat || d,
+                rt: c.rt || null,
+                so_lan_lap: c.so_lan_lap || null,
+                note: c.note || c.issue_title || ''
+              });
+            }
+          });
+        });
+      }
+
+      // emp.details
+      if (emp.details) {
+        (emp.details.late_tkm || []).forEach(c => {
+          addCase({
+            category: 'LATE_TKM',
+            badge: '❌ Trễ Hẹn TKM',
+            service: 'TKM',
+            shd: c.shd || '-',
+            kh: c.kh || '-',
+            time: c.ngay_hoantat || c.thoigian || '-',
+            note: c.note || c.ghichu || 'Trễ hẹn Triển khai mới (TKM)'
+          });
+        });
+
+        (emp.details.late_bt || []).forEach(c => {
+          addCase({
+            category: 'LATE_BT',
+            badge: '⚠️ Trễ Hẹn BT',
+            service: 'BT',
+            shd: c.shd || '-',
+            kh: c.kh || '-',
+            time: c.ngay_hoantat || c.thoigian || '-',
+            note: c.note || c.ghichu || 'Trễ hẹn Bảo trì (BT)'
+          });
+        });
+
+        (emp.details.cll || []).forEach(c => {
+          addCase({
+            category: 'CLL',
+            badge: `🔁 CLL (L${c.solanlap || c.so_lan_lap || 2})`,
+            service: 'BT',
+            shd: c.shd || '-',
+            kh: c.kh || '-',
+            time: c.thoigian || c.ngay_hoantat || '-',
+            so_lan_lap: c.solanlap || c.so_lan_lap || 2,
+            note: c.ghichu || c.note || 'Checklist lặp lại nhiều lần'
+          });
+        });
+
+        const sList = emp.details.seven_n || emp.details.cl_7n_total || [];
+        sList.forEach(c => {
+          const srv = (c.loai_7n && c.loai_7n.includes('Triển Khai')) || (c.loai && c.loai.toUpperCase().includes('TK')) ? 'TK' : 'BT';
+          addCase({
+            category: 'SEVEN_N',
+            badge: `📦 7N (${srv})`,
+            service: srv,
+            shd: c.shd || '-',
+            kh: c.kh || '-',
+            time: c.thoigian || c.ngay_hoantat || '-',
+            note: c.ghichu || c.note || 'Phát sinh bảo trì trong 7 ngày'
+          });
+        });
+      }
+
+      const countLateTkm = cases.filter(c => c.category === 'LATE_TKM').length;
+      const countLateBt = cases.filter(c => c.category === 'LATE_BT').length;
+      const countLate = countLateTkm + countLateBt;
+      const countCll = cases.filter(c => c.category === 'CLL').length;
+      const count7n = cases.filter(c => c.category === 'SEVEN_N').length;
+      const countRt = cases.filter(c => c.category === 'HIGH_RT').length;
+
+      return {
+        emp,
+        cases,
+        counts: {
+          total: cases.length,
+          late: countLate,
+          late_tkm: countLateTkm,
+          late_bt: countLateBt,
+          cll: countCll,
+          seven_n: count7n,
+          high_rt: countRt
+        }
+      };
+    }
+
+    function getEmpScore(emp) {
+      const p = {
+        on_time: emp.on_time_rate >= 98.0,
+        cll: emp.cll_rate <= 6.0,
+        cll3: (emp.cll3_rate === null || emp.cll3_rate === undefined || emp.cll3_rate <= 0.5),
+        seven_n: emp.cl_7n_total_rate <= 2.5,
+        rt_tk: emp.repontime_tk <= 18.0,
+        rt_bt: emp.repontime_bt <= 9.0,
+        csat: emp.csat === 0
+      };
+      const score = Object.values(p).filter(Boolean).length;
+      let badgeClass = 'score-good';
+      let statusText = 'ĐẠT CHUẨN';
+      if (score < 5) {
+        badgeClass = 'score-fail';
+        statusText = 'CẢNH BÁO';
+      } else if (score < 7) {
+        badgeClass = 'score-warn';
+        statusText = 'KHÁ';
+      }
+      return { score, passes: p, badgeClass, statusText };
+    }
+
+    // 5. Render Core UI
+    function initMobileDashboard(data) {
+      appData = data;
+      if (!appData) return;
+
+      // Header Meta
+      const sub = document.getElementById('appSubtitle');
+      if (sub) sub.textContent = `Cập nhật: ${appData.updated_at || 'Mới nhất'} • 16 KTV`;
+
+      // Team Totals
+      const tot = appData.team_total;
+      if (tot) {
+        // Hero Banner
+        const heroVal = document.getElementById('heroOnTimeVal');
+        const heroBadge = document.getElementById('heroOnTimeBadge');
+        if (heroVal) {
+          heroVal.textContent = `${tot.on_time_rate.toFixed(2)}%`;
+          heroVal.className = `hero-value ${tot.on_time_rate >= 98.0 ? 'val-pass' : 'val-fail'}`;
+        }
+        if (heroBadge) {
+          if (tot.on_time_rate >= 98.0) {
+            heroBadge.textContent = 'Đạt Chuẩn ≥ 98%';
+            heroBadge.className = 'hero-status-pill tag-pass';
+          } else {
+            heroBadge.textContent = 'Chưa Đạt < 98%';
+            heroBadge.className = 'hero-status-pill tag-fail';
+          }
+        }
+
+        // 4 Core Cards
+        // 1. Đúng Hẹn
+        const valOnTime = document.getElementById('kpiValOnTime');
+        const tagOnTime = document.getElementById('kpiTagOnTime');
+        const cardOnTime = document.getElementById('cardOnTime');
+        if (valOnTime) valOnTime.textContent = `${tot.on_time_rate.toFixed(2)}%`;
+        if (tagOnTime && cardOnTime) {
+          const pass = tot.on_time_rate >= 98.0;
+          cardOnTime.className = `kpi-card ${pass ? 'pass' : 'fail'}`;
+          tagOnTime.className = `kpi-tag ${pass ? 'tag-pass' : 'tag-fail'}`;
+          tagOnTime.textContent = pass ? 'Đạt ≥ 98%' : 'Lỗi < 98%';
+        }
+
+        // 2. CLL
+        const valCLL = document.getElementById('kpiValCLL');
+        const tagCLL = document.getElementById('kpiTagCLL');
+        const cardCLL = document.getElementById('cardCLL');
+        if (valCLL) valCLL.textContent = `${tot.cll_rate.toFixed(2)}%`;
+        if (tagCLL && cardCLL) {
+          const pass = tot.cll_rate <= 6.0;
+          cardCLL.className = `kpi-card ${pass ? 'pass' : 'fail'}`;
+          tagCLL.className = `kpi-tag ${pass ? 'tag-pass' : 'tag-fail'}`;
+          tagCLL.textContent = pass ? 'Đạt ≤ 6%' : 'Vượt > 6%';
+        }
+
+        // 3. CLL3
+        const valCLL3 = document.getElementById('kpiValCLL3');
+        const tagCLL3 = document.getElementById('kpiTagCLL3');
+        const cardCLL3 = document.getElementById('cardCLL3');
+        const cll3Val = (tot.cll3_rate !== null && tot.cll3_rate !== undefined) ? tot.cll3_rate : 0.0;
+        if (valCLL3) valCLL3.textContent = `${cll3Val.toFixed(2)}%`;
+        if (tagCLL3 && cardCLL3) {
+          const pass = cll3Val <= 0.5;
+          cardCLL3.className = `kpi-card ${pass ? 'pass' : 'fail'}`;
+          tagCLL3.className = `kpi-tag ${pass ? 'tag-pass' : 'tag-fail'}`;
+          tagCLL3.textContent = pass ? 'Đạt ≤ 0.5%' : 'Vượt > 0.5%';
+        }
+
+        // 4. 7N
+        const val7N = document.getElementById('kpiVal7N');
+        const tag7N = document.getElementById('kpiTag7N');
+        const card7N = document.getElementById('card7N');
+        if (val7N) val7N.textContent = `${tot.cl_7n_total_rate.toFixed(2)}%`;
+        if (tag7N && card7N) {
+          const pass = tot.cl_7n_total_rate <= 2.5;
+          card7N.className = `kpi-card ${pass ? 'pass' : 'warn'}`;
+          tag7N.className = `kpi-tag ${pass ? 'tag-pass' : 'tag-warn'}`;
+          tag7N.textContent = pass ? 'Đạt ≤ 2.5%' : 'Vượt > 2.5%';
+        }
+
+        // Mini Metrics
+        const rtTkEl = document.getElementById('valRtTk'); if (rtTkEl) rtTkEl.textContent = `${tot.repontime_tk}h`;
+        const rtBtEl = document.getElementById('valRtBt'); if (rtBtEl) rtBtEl.textContent = `${tot.repontime_bt}h`;
+        const od72 = (tot.details && tot.details.overdue_72h) ? tot.details.overdue_72h.length : 0;
+        const od24 = (tot.details && tot.details.overdue_24h) ? tot.details.overdue_24h.length : 0;
+        const v72 = document.getElementById('valOverdue72'); if (v72) v72.textContent = od72;
+        const v24 = document.getElementById('valOverdue24'); if (v24) v24.textContent = od24;
+      }
+
+      // Calculate Total Issues & Render Lists
+      renderAlertsList();
+      renderEmpCards();
+    }
+
+    // 6. Render Hot Alerts
+    function renderAlertsList() {
+      if (!appData) return;
+
+      const allAlerts = [];
+      const seenShd = new Set();
+
+      function addAlert(item) {
+        const shd = (item.shd || '').trim().toUpperCase();
+        const baseKey = `${shd}_${item.type}`;
+        if (shd && shd !== '-' && seenShd.has(baseKey)) return;
+        if (shd && shd !== '-') seenShd.add(baseKey);
+        allAlerts.push(item);
+      }
+
+      // Yesterday alerts
+      if (appData.yesterday_alerts && appData.yesterday_alerts.cases_by_date) {
+        Object.keys(appData.yesterday_alerts.cases_by_date).forEach(d => {
+          (appData.yesterday_alerts.cases_by_date[d] || []).forEach(c => {
+            const isTkm = (c.service === 'TKM' || (c.service && c.service.includes('TK')) || c.issue_type === 'LATE_TKM');
+            let type = 'OTHER';
+            let badge = '⚠️ Sự Cố';
+            let badgeClass = 'late-bt';
+            let cardClass = 'type-late-bt';
+
+            if (c.issue_type === 'LATE' || c.issue_type === 'LATE_TKM' || c.issue_type === 'LATE_BT') {
+              type = isTkm ? 'LATE_TKM' : 'LATE_BT';
+              badge = isTkm ? '❌ Trễ Hẹn TKM' : '⚠️ Trễ Hẹn BT';
+              badgeClass = isTkm ? 'late-tkm' : 'late-bt';
+              cardClass = isTkm ? 'type-late-tkm' : 'type-late-bt';
+            } else if (c.issue_type === 'CLL') {
+              type = 'CLL';
+              badge = `🔁 CLL (L${c.so_lan_lap || 2})`;
+              badgeClass = 'cll';
+              cardClass = 'type-cll';
+            } else if (c.issue_type === '7N') {
+              type = 'SEVEN_N';
+              badge = `📦 7N ${c.service || ''}`;
+              badgeClass = 'seven-n';
+              cardClass = 'type-7n';
+            }
+
+            addAlert({
+              type,
+              badge,
+              badgeClass,
+              cardClass,
+              emp: c.emp || 'KTV',
+              shd: c.shd || '-',
+              kh: c.kh || '-',
+              time: c.hoantat || d,
+              note: c.note || c.issue_title || ''
+            });
+          });
+        });
+      }
+
+      // Cross check late_tkm & late_bt from team_total details
+      if (appData.team_total && appData.team_total.details) {
+        (appData.team_total.details.late_tkm || []).forEach(c => {
+          addAlert({
+            type: 'LATE_TKM',
+            badge: '❌ Trễ Hẹn TKM',
+            badgeClass: 'late-tkm',
+            cardClass: 'type-late-tkm',
+            emp: c.emp_name || 'KTV',
+            shd: c.shd || '-',
+            kh: c.kh || '-',
+            time: c.ngay_hoantat || c.thoigian || '-',
+            note: c.note || c.ghichu || 'Trễ hẹn Triển khai mới (TKM)'
+          });
+        });
+
+        (appData.team_total.details.late_bt || []).forEach(c => {
+          addAlert({
+            type: 'LATE_BT',
+            badge: '⚠️ Trễ Hẹn BT',
+            badgeClass: 'late-bt',
+            cardClass: 'type-late-bt',
+            emp: c.emp_name || 'KTV',
+            shd: c.shd || '-',
+            kh: c.kh || '-',
+            time: c.ngay_hoantat || c.thoigian || '-',
+            note: c.note || c.ghichu || 'Trễ hẹn Bảo trì (BT)'
+          });
+        });
+      }
+
+      // Update badge counts
+      const tabCount = document.getElementById('tabAlertCount');
+      if (tabCount) tabCount.textContent = allAlerts.length;
+      const bAll = document.getElementById('badgeAllAlertsCount');
+      if (bAll) bAll.textContent = `${allAlerts.length} ca`;
+
+      const lateList = allAlerts.filter(a => a.type === 'LATE_TKM' || a.type === 'LATE_BT');
+      const bLate = document.getElementById('badgeLateCount');
+      if (bLate) bLate.textContent = `${lateList.length} ca`;
+
+      // Render Alert HTML
+      const renderAlertHtml = (item) => `
+        <div class="alert-card ${item.cardClass}">
+          <div class="alert-top">
+            <span class="alert-badge ${item.badgeClass}">${item.badge}</span>
+            <span class="alert-emp-tag">${item.emp.replace('PNC01.', '')}</span>
+          </div>
+          <div class="alert-shd-row">
+            <span class="alert-shd-code">${item.shd}</span>
+            <button class="btn-copy-chip" onclick="copyText('${item.shd}', 'Đã copy SHD: ${item.shd}')">
+              📋 Copy
+            </button>
+          </div>
+          <div class="alert-details">
+            👤 <strong>${item.kh}</strong> • ⏱️ ${item.time}
+          </div>
+          ${item.note && item.note !== '-' ? `<div class="alert-note">${item.note}</div>` : ''}
+        </div>
+      `;
+
+      // 1. Overview Hot Alerts (Chỉ hiển thị các ca trễ hẹn)
+      const ovContainer = document.getElementById('overviewHotAlertsContainer');
+      if (ovContainer) {
+        if (lateList.length === 0) {
+          ovContainer.innerHTML = `<div style="color: #34d399; font-size: 12.5px; padding: 12px; background: rgba(16,185,129,0.1); border-radius: 10px; text-align: center;">🎉 Tuyệt vời! Không có ca trễ hẹn nào trong kỳ đánh giá!</div>`;
+        } else {
+          ovContainer.innerHTML = lateList.map(renderAlertHtml).join('');
+        }
+      }
+
+      // 2. Full Alerts Tab
+      const fullContainer = document.getElementById('fullAlertsContainer');
+      if (fullContainer) {
+        if (allAlerts.length === 0) {
+          fullContainer.innerHTML = `<div style="color: #34d399; font-size: 13px; padding: 20px; text-align: center;">🎉 Không phát sinh ca sự cố nào!</div>`;
+        } else {
+          fullContainer.innerHTML = allAlerts.map(renderAlertHtml).join('');
+        }
+      }
+    }
+
+    // 7. Render Employee Cards
+    function renderEmpCards() {
+      if (!appData || !appData.employees) return;
+
+      const container = document.getElementById('empCardsContainer');
+      if (!container) return;
+
+      let empsWithData = appData.employees.map(e => {
+        const iss = getAllIssuesForEmployee(e);
+        const score = getEmpScore(e);
+        return { emp: e, iss, score };
+      });
+
+      // Filter counters
+      const totalEmps = empsWithData.length;
+      const countWithIssues = empsWithData.filter(d => d.iss.counts.total > 0).length;
+      const countLate = empsWithData.filter(d => d.iss.counts.late > 0).length;
+      const countCll = empsWithData.filter(d => d.iss.counts.cll > 0).length;
+      const countClean = empsWithData.filter(d => d.iss.counts.total === 0).length;
+
+      const cIssEl = document.getElementById('fcCountIssues'); if (cIssEl) cIssEl.textContent = countWithIssues;
+      const cLateEl = document.getElementById('fcCountLate'); if (cLateEl) cLateEl.textContent = countLate;
+      const cCllEl = document.getElementById('fcCountCll'); if (cCllEl) cCllEl.textContent = countCll;
+      const cCleanEl = document.getElementById('fcCountClean'); if (cCleanEl) cCleanEl.textContent = countClean;
+
+      // Update Callout on Tab 1
+      const calloutTitle = document.getElementById('calloutTitle');
+      const calloutSub = document.getElementById('calloutSub');
+      if (calloutTitle) calloutTitle.textContent = `${countWithIssues}/${totalEmps} KTV Cần Rà Soát`;
+      if (calloutSub) {
+        const totTkm = empsWithData.reduce((acc, cur) => acc + cur.iss.counts.late_tkm, 0);
+        const totBt = empsWithData.reduce((acc, cur) => acc + cur.iss.counts.late_bt, 0);
+        const totCll = empsWithData.reduce((acc, cur) => acc + cur.iss.counts.cll, 0);
+        calloutSub.textContent = `${totTkm} Trễ TKM • ${totBt} Trễ BT • ${totCll} CLL`;
+      }
+
+      // Apply Filter
+      let list = [...empsWithData];
+      if (currentEmpFilter === 'HAS_ISSUES') {
+        list = list.filter(d => d.iss.counts.total > 0);
+      } else if (currentEmpFilter === 'LATE') {
+        list = list.filter(d => d.iss.counts.late > 0);
+      } else if (currentEmpFilter === 'CLL') {
+        list = list.filter(d => d.iss.counts.cll > 0);
+      } else if (currentEmpFilter === 'CLEAN') {
+        list = list.filter(d => d.iss.counts.total === 0);
+      }
+
+      // Apply Search
+      const term = (currentSearchTerm || '').trim().toLowerCase();
+      if (term) {
+        list = list.filter(d => {
+          const name = d.emp.name.toLowerCase();
+          const block = (d.emp.block || '').toLowerCase();
+          const shdMatch = d.iss.cases.some(c => (c.shd || '').toLowerCase().includes(term));
+          return name.includes(term) || block.includes(term) || shdMatch;
+        });
+      }
+
+      // Sort: Most issues on top
+      list.sort((a, b) => {
+        if (b.iss.counts.total !== a.iss.counts.total) {
+          return b.iss.counts.total - a.iss.counts.total;
+        }
+        return a.score.score - b.score.score;
+      });
+
+      if (list.length === 0) {
+        container.innerHTML = `<div style="text-align: center; color: var(--text-muted); font-size: 13px; padding: 40px 0;">Không tìm thấy nhân sự phù hợp với bộ lọc.</div>`;
+        return;
+      }
+
+      container.innerHTML = list.map(d => {
+        const e = d.emp;
+        const iss = d.iss;
+        const sc = d.score;
+        const shortName = e.name.replace('PNC01.', '');
+        const initials = shortName.slice(0, 2).toUpperCase();
+
+        let cardClass = 'is-clean';
+        if (iss.counts.late_tkm > 0 || iss.counts.cll > 0) cardClass = 'has-danger';
+        else if (iss.counts.total > 0) cardClass = 'has-warning';
+
+        // Badges for specific errors — clickable to open sheet filtered by category
+        const pills = [];
+        if (iss.counts.late_tkm > 0) pills.push(`<span class="issue-pill pill-late-tkm" onclick="openEmpSheet('${e.id}','LATE_TKM')">❌ ${iss.counts.late_tkm} Trễ TKM</span>`);
+        if (iss.counts.late_bt > 0) pills.push(`<span class="issue-pill pill-late-bt" onclick="openEmpSheet('${e.id}','LATE_BT')">⚠️ ${iss.counts.late_bt} Trễ BT</span>`);
+        if (iss.counts.cll > 0) pills.push(`<span class="issue-pill pill-cll" onclick="openEmpSheet('${e.id}','CLL')">🔁 ${iss.counts.cll} CLL</span>`);
+        if (iss.counts.seven_n > 0) pills.push(`<span class="issue-pill pill-7n" onclick="openEmpSheet('${e.id}','SEVEN_N')">📦 ${iss.counts.seven_n} 7N</span>`);
+        if (iss.counts.high_rt > 0) pills.push(`<span class="issue-pill pill-rt" onclick="openEmpSheet('${e.id}','HIGH_RT')">⏱️ ${iss.counts.high_rt} RT Cao</span>`);
+        if (pills.length === 0) pills.push(`<span class="issue-pill pill-clean">✨ Không ca lỗi</span>`);
+
+        return `
+          <div class="emp-card ${cardClass}">
+            <div class="emp-card-header">
+              <div class="emp-info-wrap">
+                <div class="emp-avatar">${initials}</div>
+                <div>
+                  <div class="emp-name-text">${shortName}</div>
+                  <div class="emp-block-text">${e.block || 'Khối -'} • Mã: ${e.id}</div>
+                </div>
+              </div>
+              <div>
+                <span class="score-badge ${sc.badgeClass}">${sc.score}/7 Đạt</span>
+              </div>
+            </div>
+
+            <div class="emp-kpi7-grid">
+              <!-- Hàng 1: 4 chỉ số chính -->
+              <div class="kpi7-cell ${sc.passes.on_time ? 'pass' : 'fail'}">
+                <span class="kpi7-label">Đúng hẹn</span>
+                <span class="kpi7-val">${e.on_time_rate.toFixed(1)}%</span>
+              </div>
+              <div class="kpi7-cell ${sc.passes.cll ? 'pass' : 'fail'}">
+                <span class="kpi7-label">CLL</span>
+                <span class="kpi7-val">${e.cll_rate.toFixed(1)}%</span>
+              </div>
+              <div class="kpi7-cell ${sc.passes.cll3 ? 'pass' : 'fail'}">
+                <span class="kpi7-label">CLL3</span>
+                <span class="kpi7-val">${((e.cll3_rate !== null && e.cll3_rate !== undefined) ? e.cll3_rate : 0).toFixed(1)}%</span>
+              </div>
+              <div class="kpi7-cell ${sc.passes.seven_n ? 'pass' : 'fail'}">
+                <span class="kpi7-label">7N Tổng</span>
+                <span class="kpi7-val">${e.cl_7n_total_rate.toFixed(1)}%</span>
+              </div>
+              <!-- Hàng 2: 3 chỉ số RT + CSAT — wrapper riêng để canh đều 3 cột -->
+              <div class="emp-kpi7-row2">
+                <div class="kpi7-cell ${sc.passes.rt_tk ? 'pass' : 'fail'}">
+                  <span class="kpi7-label">RT TK</span>
+                  <span class="kpi7-val">${e.repontime_tk}h</span>
+                </div>
+                <div class="kpi7-cell ${sc.passes.rt_bt ? 'pass' : 'fail'}">
+                  <span class="kpi7-label">RT BT</span>
+                  <span class="kpi7-val">${e.repontime_bt}h</span>
+                </div>
+                <div class="kpi7-cell ${sc.passes.csat ? 'pass' : 'fail'}">
+                  <span class="kpi7-label">CSAT</span>
+                  <span class="kpi7-val">${e.csat}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="emp-issue-pills">
+              ${pills.join('')}
+            </div>
+
+            <div class="emp-actions">
+              <button class="btn-emp-action btn-action-view" onclick="openEmpSheet('${e.id}')">
+                🔍 Xem Lỗi (${iss.counts.total})
+              </button>
+              <button class="btn-emp-action btn-action-zalo" onclick="copyZaloForEmp('${e.id}')">
+                💬 Gửi Zalo
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // 8. Bottom Sheet (Mobile Dossier) Modal
+    // filterCat: optional category string to pre-filter ('LATE_TKM', 'LATE_BT', 'CLL', 'SEVEN_N', 'HIGH_RT')
+    window.openEmpSheet = function(empId, filterCat) {
+      if (!appData || !appData.employees) return;
+      const emp = appData.employees.find(e => String(e.id) === String(empId));
+      if (!emp) return;
+
+      selectedSheetEmp = emp;
+      const issData = getAllIssuesForEmployee(emp);
+      selectedSheetCases = issData.cases;
+      const sc = getEmpScore(emp);
+
+      const nameEl = document.getElementById('sheetEmpName');
+      const blockEl = document.getElementById('sheetEmpBlock');
+      if (nameEl) nameEl.textContent = emp.name;
+      if (blockEl) blockEl.textContent = `${emp.block || '-'} • Mã: ${emp.id} • ${sc.score}/7 Điểm (${sc.statusText})`;
+
+      // 7-KPI mini chips — clickable to filter cases
+      const stripEl = document.getElementById('sheetKpiStrip');
+      const catToKpi = { LATE_TKM: 0, LATE_BT: 1, CLL: 2, SEVEN_N: 3, HIGH_RT: 4 };
+      if (stripEl) {
+        const cll3Val = (emp.cll3_rate !== null && emp.cll3_rate !== undefined) ? emp.cll3_rate : 0.0;
+        const kpis = [
+          { l: 'Đúng hẹn', v: `${emp.on_time_rate.toFixed(1)}%`, p: sc.passes.on_time },
+          { l: 'CLL', v: `${emp.cll_rate.toFixed(1)}%`, p: sc.passes.cll },
+          { l: 'CLL3', v: `${cll3Val.toFixed(1)}%`, p: sc.passes.cll3 },
+          { l: '7N Tổng', v: `${emp.cl_7n_total_rate.toFixed(1)}%`, p: sc.passes.seven_n },
+          { l: 'RT TK', v: `${emp.repontime_tk}h`, p: sc.passes.rt_tk },
+          { l: 'RT BT', v: `${emp.repontime_bt}h`, p: sc.passes.rt_bt },
+          { l: 'CSAT', v: `${emp.csat}`, p: sc.passes.csat }
+        ];
+        stripEl.innerHTML = kpis.map(k => `
+          <div class="sk-chip ${k.p ? 'pass' : 'fail'}">
+            ${k.l}: <strong>${k.v}</strong> ${k.p ? '✓' : '✗'}
+          </div>
+        `).join('');
+      }
+
+      // Determine which cases to show (filtered by category if pill was clicked)
+      const catFilterLabel = {
+        LATE_TKM: '❌ Trễ Hẹn TKM',
+        LATE_BT: '⚠️ Trễ Hẹn BT',
+        CLL: '🔁 Checklist Lặp (CLL)',
+        SEVEN_N: '📦 7 Ngày',
+        HIGH_RT: '⏱️ RT Cao'
+      };
+      const casesToShow = filterCat
+        ? selectedSheetCases.filter(c => c.category === filterCat)
+        : selectedSheetCases;
+
+      // Cases List
+      const bodyEl = document.getElementById('sheetBody');
+      if (bodyEl) {
+        let headerHtml = '';
+        if (filterCat && catFilterLabel[filterCat]) {
+          // Filter tabs at top of sheet body
+          const allCount = selectedSheetCases.length;
+          headerHtml = `
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid #1e293b;">
+              <span style="font-size:12px; font-weight:700; color:#f8fafc;">${catFilterLabel[filterCat]}</span>
+              <button onclick="openEmpSheet('${empId}')" style="font-size:11px; color:#94a3b8; background:none; border:1px solid #334155; padding:3px 8px; border-radius:5px; cursor:pointer;">Xem tất cả (${allCount})</button>
+            </div>
+          `;
+        }
+
+        if (casesToShow.length === 0 && !filterCat) {
+          bodyEl.innerHTML = `
+            <div style="text-align: center; padding: 30px 10px; color: #34d399;">
+              <div style="font-size: 32px; margin-bottom: 8px;">🎉</div>
+              <div style="font-weight: 700; font-size: 14px;">KTV Không Phát Sinh Ca Lỗi Nào!</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Duy trì phong độ và quy trình thực hiện rất tốt!</div>
+            </div>
+          `;
+        } else if (casesToShow.length === 0) {
+          bodyEl.innerHTML = headerHtml + `<div style="text-align:center; color:#34d399; font-size:13px; padding:20px 0;">✅ Không có ca lỗi nào thuộc loại này.</div>`;
+        } else {
+          const renderCaseRow = (c, i) => {
+            const catClass = c.category === 'LATE_TKM' ? 'late-tkm'
+              : c.category === 'LATE_BT' ? 'late-bt'
+              : c.category === 'CLL' ? 'cll' : 'seven-n';
+            const shdEsc = (c.shd || '-').replace(/'/g, "\\'");
+            return `
+              <div class="alert-card" style="margin-bottom:8px; background:#162032; border-color:#263654;">
+                <div class="alert-top">
+                  <span class="alert-badge ${catClass}">${c.badge}</span>
+                  <span style="font-size:11px; color:var(--text-muted);">#${i + 1}</span>
+                </div>
+                <div class="alert-shd-row">
+                  <span class="alert-shd-code">${c.shd}</span>
+                  <button class="btn-copy-chip" onclick="copyText('${shdEsc}','Đã copy SHD: ${shdEsc}')">
+                    📋 Copy
+                  </button>
+                </div>
+                <div class="alert-details" style="margin-top:4px;">
+                  👤 <strong>${c.kh}</strong> &nbsp;•&nbsp; ⏱️ ${c.time}
+                </div>
+                ${c.note && c.note !== '-' ? `<div class="alert-note">${c.note}</div>` : ''}
+              </div>
+            `;
+          };
+          bodyEl.innerHTML = headerHtml + casesToShow.map(renderCaseRow).join('');
+        }
+      }
+
+      const backdrop = document.getElementById('empSheetBackdrop');
+      if (backdrop) backdrop.style.display = 'flex';
+    };
+
+    function closeEmpSheet() {
+      const backdrop = document.getElementById('empSheetBackdrop');
+      if (backdrop) backdrop.style.display = 'none';
+      selectedSheetEmp = null;
+      selectedSheetCases = [];
+    }
+
+    // 9. Copy Zalo Text for Employee
+    window.copyZaloForEmp = function(empId) {
+      if (!appData || !appData.employees) return;
+      const emp = appData.employees.find(e => String(e.id) === String(empId));
+      if (!emp) return;
+
+      const issData = getAllIssuesForEmployee(emp);
+      const sc = getEmpScore(emp);
+      const shortName = emp.name.replace('PNC01.', '');
+
+      const lines = [];
+      lines.push(`🔔 [FPT INSIDE REPORT - CẢNH BÁO KPI KTV]`);
+      lines.push(`👤 KTV: ${emp.name} (Khối: ${emp.block || '-'})`);
+      lines.push(`📊 Điểm đánh giá: ${sc.score}/7 Tiêu chí Đạt [${sc.statusText}]`);
+      lines.push(`----------------------------------------`);
+      lines.push(`📌 CÁC CHỈ SỐ CỐT LÕI:`);
+      lines.push(`• Đúng hẹn: ${emp.on_time_rate.toFixed(2)}% (Chuẩn ≥ 98.0%) -> ${sc.passes.on_time ? '✅ ĐẠT' : '❌ CHƯA ĐẠT'}`);
+      lines.push(`• Checklist Lặp (CLL): ${emp.cll_rate.toFixed(2)}% (Chuẩn ≤ 6.0%) -> ${sc.passes.cll ? '✅ ĐẠT' : '❌ CHƯA ĐẠT'}`);
+      lines.push(`• Checklist 7N Tổng: ${emp.cl_7n_total_rate.toFixed(2)}% (Chuẩn ≤ 2.5%) -> ${sc.passes.seven_n ? '✅ ĐẠT' : '❌ CHƯA ĐẠT'}`);
+      lines.push(`• RT Bảo trì: ${emp.repontime_bt}h (Chuẩn ≤ 9.0h) -> ${sc.passes.rt_bt ? '✅ ĐẠT' : '❌ CHƯA ĐẠT'}`);
+      lines.push(`----------------------------------------`);
+
+      if (issData.cases.length > 0) {
+        lines.push(`🚨 DANH SÁCH CA SỰ CỐ CẦN RÀ SOÁT (${issData.cases.length} ca):`);
+        issData.cases.slice(0, 10).forEach((c, idx) => {
+          lines.push(`${idx + 1}. [${c.badge}] SHD: ${c.shd} - KH: ${c.kh} (${c.time})`);
+          if (c.note && c.note !== '-') lines.push(`   -> Ghi chú: ${c.note}`);
+        });
+        if (issData.cases.length > 10) {
+          lines.push(`... Và ${issData.cases.length - 10} ca sự cố khác.`);
+        }
+      } else {
+        lines.push(`🎉 KTV không phát sinh ca lỗi nào! Tiếp tục duy trì phong độ xuất sắc!`);
+      }
+
+      lines.push(`----------------------------------------`);
+      lines.push(`💡 Nhờ đồng chí ${shortName} rà soát kỹ các ca trên và tuân thủ quy trình để đạt trọn vẹn 7/7 chỉ tiêu!`);
+
+      copyText(lines.join("\n"), `Đã copy tin nhắn Zalo gửi ${shortName}! Mở Zalo dán (Ctrl+V) để gửi.`);
+    };
+
+    // 10. Sheet Action Buttons
+    document.addEventListener('DOMContentLoaded', () => {
+      // Close Sheet
+      const btnClose = document.getElementById('btnSheetClose');
+      if (btnClose) btnClose.addEventListener('click', closeEmpSheet);
+      const backdrop = document.getElementById('empSheetBackdrop');
+      if (backdrop) {
+        backdrop.addEventListener('click', (e) => {
+          if (e.target === backdrop) closeEmpSheet();
+        });
+      }
+
+      // Copy All SHDs in Sheet
+      const btnShd = document.getElementById('btnSheetCopyShds');
+      if (btnShd) {
+        btnShd.addEventListener('click', () => {
+          if (!selectedSheetCases || selectedSheetCases.length === 0) {
+            showToast('Không có mã SHD nào', 'ℹ️');
+            return;
+          }
+          const shds = [...new Set(selectedSheetCases.map(c => c.shd).filter(s => s && s !== '-'))];
+          copyText(shds.join("\n"), `Đã sao chép ${shds.length} mã SHD!`);
+        });
+      }
+
+      // Copy Zalo in Sheet
+      const btnZalo = document.getElementById('btnSheetCopyZalo');
+      if (btnZalo) {
+        btnZalo.addEventListener('click', () => {
+          if (selectedSheetEmp) copyZaloForEmp(selectedSheetEmp.id);
+        });
+      }
+
+      // Tab Bar listeners
+      document.querySelectorAll('#mobileTabBar .tab-item').forEach(el => {
+        el.addEventListener('click', () => {
+          switchMobileTab(el.dataset.tab);
+        });
+      });
+
+      // Filter chips in KTV view
+      document.querySelectorAll('#empFilterChips .chip-filter').forEach(chip => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('#empFilterChips .chip-filter').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          currentEmpFilter = chip.dataset.filter || 'ALL';
+          renderEmpCards();
+        });
+      });
+
+      // Search input
+      const searchInput = document.getElementById('empSearchInput');
+      const searchClear = document.getElementById('empSearchClear');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentSearchTerm = e.target.value;
+          if (searchClear) searchClear.style.display = currentSearchTerm ? 'block' : 'none';
+          renderEmpCards();
+        });
+      }
+      if (searchClear) {
+        searchClear.addEventListener('click', () => {
+          if (searchInput) searchInput.value = '';
+          currentSearchTerm = '';
+          searchClear.style.display = 'none';
+          renderEmpCards();
+        });
+      }
+
+      // Load Data
+      if (window.INITIAL_DASHBOARD_DATA) {
+        initMobileDashboard(window.INITIAL_DASHBOARD_DATA);
+      } else {
+        // Fallback fetch
+        fetch('data.json')
+          .then(res => res.json())
+          .then(data => initMobileDashboard(data))
+          .catch(err => {
+            console.error('Không thể nạp data.json:', err);
+            showToast('Lỗi nạp dữ liệu dashboard', '❌');
+          });
+      }
+    });
+  </script>
+</body>
+</html>
