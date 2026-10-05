@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tra Cứu Tập Điểm & Phân Công Nhân Sự - FPT Telecom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --bg-card: #131b2e;
+      --bg-card-hover: #19243d;
+      --border: #222f4c;
+      --border-focus: #00f2fe;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --text-muted: #64748b;
+      --primary: #00f2fe;
+      --primary-dim: rgba(0, 242, 254, 0.12);
+      --accent-purple: #a855f7;
+      --accent-purple-dim: rgba(168, 85, 247, 0.15);
+      --accent-amber: #f59e0b;
+      --accent-amber-dim: rgba(245, 158, 11, 0.15);
+      --accent-emerald: #10b981;
+      --accent-emerald-dim: rgba(16, 185, 129, 0.15);
+      --accent-rose: #f43f5e;
+      --accent-rose-dim: rgba(244, 63, 94, 0.15);
+      --safe-bottom: env(safe-area-inset-bottom, 16px);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 60px;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    .header {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 12px 20px;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #00f2fe, #4facfe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 4px 14px rgba(0, 242, 254, 0.35);
+    }
+    .logo-text h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo-text p {
+      font-size: 11px;
+      color: var(--text-sub);
+    }
+
+    .header-badges {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .stat-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .stat-chip strong {
+      color: var(--primary);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 16px;
+    }
+
+    /* NAV TABS */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 6px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      flex: 1;
+      min-width: 150px;
+      padding: 10px 14px;
+      border: none;
+      background: transparent;
+      color: var(--text-sub);
+      font-weight: 600;
+      font-size: 13px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .tab-btn.active {
+      background: var(--primary);
+      color: #0b0f19;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(0, 242, 254, 0.3);
+    }
+
+    /* TAB CONTENT */
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.25s ease;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SEARCH SECTION */
+    .search-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    .search-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .search-box-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      font-size: 18px;
+      color: var(--primary);
+      pointer-events: none;
+    }
+    .search-input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1.5px solid var(--border);
+      color: #fff;
+      font-size: 16px;
+      padding: 14px 44px 14px 48px;
+      border-radius: 12px;
+      font-weight: 500;
+      outline: none;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px var(--primary-dim);
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .search-clear {
+      position: absolute;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: var(--text-sub);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+    .search-clear:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .filter-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text-sub);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .chip:hover {
+      border-color: var(--primary);
+      color: #fff;
+    }
+    .chip.active {
+      background: var(--primary-dim);
+      border-color: var(--primary);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* RESULT STATS HEADER */
+    .result-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+    .result-info strong {
+      color: #fff;
+    }
+
+    /* TAP DIEM RESULT CARD */
+    .td-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 16px;
+    }
+    @media (max-width: 640px) {
+      .td-grid { grid-template-columns: 1fr; }
+    }
+
+    .td-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .td-card:hover {
+      border-color: rgba(0, 242, 254, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .td-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 10px;
+    }
+    .td-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .td-counts {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge-count {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .badge-au {
+      background: var(--accent-emerald-dim);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .badge-total {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-sub);
+    }
+
+    /* PERSON ROWS */
+    .person-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 12px;
+    }
+    .person-label {
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+    .person-val {
+      font-weight: 700;
+      text-align: right;
+    }
+    .person-db1 {
+      color: #c084fc;
+      background: var(--accent-purple-dim);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+    .person-dvkh {
+      color: #fbbf24;
+      background: var(--accent-amber-dim);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .person-ktv {
+      color: #38bdf8;
+      background: var(--primary-dim);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .location-info {
+      font-size: 11px;
+      color: var(--text-sub);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+    .location-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contracts-preview {
+      font-size: 11px;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .btn-detail {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--primary);
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-detail:hover {
+      background: var(--primary);
+      color: #0b0f19;
+      font-weight: 700;
+    }
+
+    /* STATS TABLES */
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .card-title-lg {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+    th {
+      background: rgba(0, 0, 0, 0.4);
+      color: var(--text-sub);
+      font-weight: 600;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .progress-bar-wrap {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+    .progress-bar {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    /* MODAL */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-backdrop.active {
+      display: flex;
+    }
+    .modal-box {
+      background: #111827;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      animation: modalZoom 0.2s ease;
+    }
+    @keyframes modalZoom {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .modal-body {
+      padding: 20px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .modal-footer {
+      padding: 14px 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+    }
+    .btn-close {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn-close:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1e293b;
+      color: #fff;
+      border: 1px solid var(--primary);
+      padding: 10px 18px;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo-area">
+        <div class="logo-icon">📡</div>
+        <div class="logo-text">
+          <h1>TRA CỨU TẬP ĐIỂM & ĐỊA BÀN</h1>
+          <p>Đội Kỹ Thuật Đỗ Văn Tiên • FPT Telecom</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <div class="stat-chip">📍 Tập Điểm: <strong id="chipTotalTd">2,451</strong></div>
+        <div class="stat-chip">📑 Hợp Đồng: <strong id="chipTotalHd">16,993</strong></div>
+        <div class="stat-chip">🟢 AU: <strong id="chipTotalAu">16,939</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- NAVIGATION TABS -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('tab-search')">
+        <span>🔍</span> Tra Cứu Tập Điểm
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-db1')">
+        <span>👤</span> NS Địa Bàn 1
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-dvkh')">
+        <span>🎧</span> Ma Trận DVKH ↔ KTV
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-ktv')">
+        <span>🛠️</span> 15 KTV Chính
+      </button>
+    </div>
+
+    <!-- TAB 1: TRA CỨU TẬP ĐIỂM -->
+    <div id="tab-search" class="tab-pane active">
+      <div class="search-card">
+        <div class="search-title">
+          <span>🔎 NHẬP TÊN TẬP ĐIỂM / SỐ HỢP ĐỒNG / TUYẾN ĐƯỜNG:</span>
+        </div>
+        <div class="search-box-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Ví dụ: HCMP201.0130, 0130, SGD016788, Xuan Thuy..." autocomplete="off">
+          <button id="searchClear" class="search-clear" onclick="clearSearch()">&times;</button>
+        </div>
+        <div class="filter-chips" id="filterChips">
+          <span class="chip active" onclick="filterByDb1('ALL')">Tất cả (2,451)</span>
+          <!-- Dynamic DB1 chips -->
+        </div>
+      </div>
+
+      <div class="result-info">
+        <span>Kết quả: <strong id="matchCount">0</strong> tập điểm phù hợp</span>
+        <span style="font-size: 11px; color: var(--text-muted);">💡 Gõ đến đâu ra kết quả tức thì đến đó</span>
+      </div>
+
+      <div class="td-grid" id="tdGrid">
+        <!-- Dynamic Tap Diem Cards -->
+      </div>
+    </div>
+
+    <!-- TAB 2: THỐNG KÊ NS ĐỊA BÀN 1 -->
+    <div id="tab-db1" class="tab-pane">
+      <div class="stat-card">
+        <div class="card-title-lg">
+          <span>👤 THỐNG KÊ KHỐI LƯỢNG HỢP ĐỒNG & AU CỦA NHÂN SỰ ĐỊA BÀN 1</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Mã Nhân Sự</th>
+                <th>Họ Tên Đầy Đủ</th>
+                <th style="text-align: right;">Tổng Hàng (HĐ)</th>
+                <th style="text-align: right;">Số AU (Active)</th>
+                <th style="text-align: center;">Tỷ Lệ AU</th>
+                <th style="text-align: right;">Số Tập Điểm</th>
+                <th style="text-align: right;">Số Block</th>
+                <th style="text-align: center;">Thao Tác</th>
+              </tr>
+            </thead>
+            <tbody id="db1TableBody">
+              <!-- Injected by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Detail Card Cards -->
+      <div id="db1CardsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+
+    <!-- TAB 3: MA TRẬN NS DVKH ↔ KTV -->
+    <div id="tab-dvkh" class="tab-pane">
+      <div class="stat-card">
+        <div class="card-title-lg">
+          <span>🎧 PHÂN BỔ NHÂN SỰ DVKH LÀM VIỆC VỚI CÁC KỸ THUẬT VIÊN</span>
+        </div>
+        <p style="font-size: 13px; color: var(--text-sub); margin-bottom: 16px;">
+          Bảng thống kê chi tiết mỗi nhân sự DVKH đang quản lý bao nhiêu hợp đồng, và phối hợp xử lý cùng các KTV Chính nào trong đội:
+        </p>
+        <div id="dvkhCardsContainer" style="display: flex; flex-direction: column; gap: 16px;">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: THỐNG KÊ KTV CHÍNH -->
+    <div id="tab-ktv" class="tab-pane">
+      <div class="stat-card">
+        <div class="card-title-lg">
+          <span>🛠️ THỐNG KÊ 15 KỸ THUẬT VIÊN CHÍNH PHỤ TRÁCH ĐỊA BÀN</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Mã KTV</th>
+                <th>Họ Tên</th>
+                <th style="text-align: right;">Số Tập Điểm</th>
+                <th style="text-align: right;">Tổng HĐ</th>
+                <th style="text-align: right;">Số AU (Active)</th>
+                <th>NS DVKH Phối Hợp</th>
+                <th>NS Địa Bàn 1</th>
+                <th style="text-align: center;">Hành Động</th>
+              </tr>
+            </thead>
+            <tbody id="ktvTableBody">
+              <!-- Injected by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CHI TIẾT TẬP ĐIỂM -->
+  <div class="modal-backdrop" id="tdModal" onclick="closeModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div>
+          <h3 id="modalTdTitle" style="font-family: 'JetBrains Mono', monospace; color: var(--primary); font-size: 16px;">Chi Tiết</h3>
+          <p id="modalTdSub" style="font-size: 12px; color: var(--text-sub);"></p>
+        </div>
+        <button class="btn-close" onclick="closeModalDirect()">&times;</button>
+      </div>
+      <div class="modal-body" id="modalTdBody">
+        <!-- Content -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn-close" onclick="closeModalDirect()">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">📋 Đã sao chép!</div>
+
+  <!-- Nạp dữ liệu tập điểm với cache buster -->
+  <script>
+    document.write('<script src="tapdiem_data.js?v=' + Date.now() + '"><\/script>');
+  </script>
+
+  <script>
+    let rawData = null;
+    let currentFilterDb1 = 'ALL';
+    let debounceTimer = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (activeBtn) activeBtn.classList.add('active');
+      const targetPane = document.getElementById(tabId);
+      if (targetPane) targetPane.classList.add('active');
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.style.display = 'flex';
+      setTimeout(() => { t.style.display = 'none'; }, 2500);
+    }
+
+    function copyText(str, hint = 'Đã sao chép!') {
+      navigator.clipboard.writeText(str).then(() => {
+        showToast(hint);
+      }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = str;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast(hint);
+      });
+    }
+
+    function init() {
+      if (!window.TAP_DIEM_DATA) {
+        alert("Chưa nạp được tapdiem_data.js. Vui lòng kiểm tra lại file!");
+        return;
+      }
+      rawData = window.TAP_DIEM_DATA;
+
+      // Update header badges
+      document.getElementById('chipTotalTd').innerText = rawData.total_tap_diem.toLocaleString();
+      document.getElementById('chipTotalHd').innerText = rawData.total_records.toLocaleString();
+      document.getElementById('chipTotalAu').innerText = rawData.total_au.toLocaleString();
+
+      // Render DB1 Filter chips
+      const chipsContainer = document.getElementById('filterChips');
+      chipsContainer.innerHTML = `<span class="chip active" onclick="filterByDb1('ALL')">Tất cả (${rawData.total_tap_diem.toLocaleString()})</span>`;
+      rawData.db1_stats.forEach(st => {
+        chipsContainer.innerHTML += `<span class="chip" onclick="filterByDb1('${st.code}')">${st.name} (${st.tap_diem_count})</span>`;
+      });
+
+      // Render Tab 1 initial
+      renderTapDiem(rawData.tap_diem_list.slice(0, 60));
+      document.getElementById('matchCount').innerText = rawData.tap_diem_list.length.toLocaleString();
+
+      // Render Tab 2: DB1
+      renderDb1Tab();
+
+      // Render Tab 3: DVKH
+      renderDvkhTab();
+
+      // Render Tab 4: KTV
+      renderKtvTab();
+
+      // Setup Search Listener
+      const inp = document.getElementById('searchInput');
+      const clr = document.getElementById('searchClear');
+      inp.addEventListener('input', (e) => {
+        const val = e.target.value.trim();
+        clr.style.display = val ? 'flex' : 'none';
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          doSearch(val);
+        }, 150);
+      });
+    }
+
+    function clearSearch() {
+      const inp = document.getElementById('searchInput');
+      inp.value = '';
+      document.getElementById('searchClear').style.display = 'none';
+      doSearch('');
+      inp.focus();
+    }
+
+    function filterByDb1(code) {
+      currentFilterDb1 = code;
+      document.querySelectorAll('#filterChips .chip').forEach(c => {
+        if (code === 'ALL' && c.innerText.startsWith('Tất cả')) c.classList.add('active');
+        else if (c.innerText.includes(code)) c.classList.add('active');
+        else c.classList.remove('active');
+      });
+      doSearch(document.getElementById('searchInput').value.trim());
+    }
+
+    function doSearch(keyword) {
+      const kw = keyword.toLowerCase().trim();
+      let list = rawData.tap_diem_list;
+
+      if (currentFilterDb1 !== 'ALL') {
+        list = list.filter(td => td.db1 === currentFilterDb1);
+      }
+
+      if (kw) {
+        list = list.filter(item => {
+          if (item.td.toLowerCase().includes(kw)) return true;
+          if (item.db1.toLowerCase().includes(kw) || item.db1_name.toLowerCase().includes(kw)) return true;
+          if (item.dvkh.toLowerCase().includes(kw)) return true;
+          if (item.ktv.toLowerCase().includes(kw) || item.ktv_name.toLowerCase().includes(kw)) return true;
+          if (item.street && item.street.toLowerCase().includes(kw)) return true;
+          if (item.block && item.block.toLowerCase().includes(kw)) return true;
+          if (item.lo && item.lo.toLowerCase().includes(kw)) return true;
+          // Search in sample contracts
+          if (item.hds.some(h => h.shd.toLowerCase().includes(kw))) return true;
+          return false;
+        });
+      }
+
+      document.getElementById('matchCount').innerText = list.length.toLocaleString();
+      renderTapDiem(list.slice(0, 100)); // Limit 100 for super high performance
+    }
+
+    function renderTapDiem(items) {
+      const grid = document.getElementById('tdGrid');
+      if (items.length === 0) {
+        grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 40px;">❌ Không tìm thấy tập điểm hoặc hợp đồng nào phù hợp.</div>`;
+        return;
+      }
+
+      let html = '';
+      items.forEach(td => {
+        const tdJson = JSON.stringify(td).replace(/'/g, "&#39;");
+        html += `
+          <div class="td-card">
+            <div class="td-card-header">
+              <div class="td-name">
+                <span>📍</span>
+                <span title="${td.td}">${td.td}</span>
+              </div>
+              <div class="td-counts">
+                <span class="badge-count badge-au" title="Số lượng AU hoạt động">${td.au} AU</span>
+                <span class="badge-count badge-total" title="Tổng hợp đồng">${td.total_hd} HĐ</span>
+              </div>
+            </div>
+
+            <!-- Nhân sự Địa bàn 1 -->
+            <div class="person-row">
+              <span class="person-label">👤 NS Địa Bàn 1:</span>
+              <span class="person-val person-db1">${td.db1_name} (${td.db1})</span>
+            </div>
+
+            <!-- Nhân sự DVKH -->
+            <div class="person-row">
+              <span class="person-label">🎧 NS DVKH:</span>
+              <span class="person-val person-dvkh">${td.dvkh}</span>
+            </div>
+
+            <!-- KTV Chính -->
+            <div class="person-row">
+              <span class="person-label">🛠️ KTV Chính:</span>
+              <span class="person-val person-ktv">${td.ktv_name} (${td.ktv})</span>
+            </div>
+
+            <!-- Tuyến đường / Block -->
+            <div class="location-info">
+              <div class="location-line">
+                <span>🏢 Block / Lô:</span>
+                <strong style="color: #fff;">${td.block || '-'}</strong>
+                <span style="color: var(--text-muted); font-size: 10px;">[${td.lo || '-'}]</span>
+              </div>
+              <div class="location-line">
+                <span>🛣️ Tuyến đường:</span>
+                <span style="color: #fff;">${td.street || '-'}, ${td.ward || ''}</span>
+              </div>
+            </div>
+
+            <div class="contracts-preview">
+              <span>Mẫu HĐ: ${td.hds.slice(0, 3).map(h => `<code style="color: var(--primary);">${h.shd}</code>`).join(', ')}...</span>
+              <button class="btn-detail" onclick='viewTdDetail(${tdJson})'>Xem HĐ (${td.total_hd})</button>
+            </div>
+          </div>
+        `;
+      });
+      grid.innerHTML = html;
+    }
+
+    function viewTdDetail(td) {
+      document.getElementById('modalTdTitle').innerText = `TẬP ĐIỂM: ${td.td}`;
+      document.getElementById('modalTdSub').innerText = `${td.street}, ${td.ward} • ${td.block}`;
+
+      let rowsHtml = '';
+      td.hds.forEach((h, idx) => {
+        const isAct = h.status.toLowerCase() === 'active';
+        rowsHtml += `
+          <tr>
+            <td style="color: var(--text-muted); width: 30px;">${idx + 1}</td>
+            <td><strong style="color: var(--primary); font-family: 'JetBrains Mono', monospace; cursor: pointer;" onclick="copyText('${h.shd}')" title="Click copy">${h.shd} 📋</strong></td>
+            <td><span style="font-size: 11px; padding: 2px 6px; border-radius: 4px; ${isAct ? 'background: var(--accent-emerald-dim); color: var(--accent-emerald);' : 'background: rgba(255,255,255,0.06); color: var(--text-muted);'}">${h.status}</span></td>
+            <td>${h.svc || '-'}</td>
+            <td>${h.street || '-'}</td>
+          </tr>
+        `;
+      });
+
+      const bodyHtml = `
+        <div style="background: rgba(0,0,0,0.3); border-radius: 10px; padding: 14px; margin-bottom: 16px; border: 1px solid var(--border); font-size: 13px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div>👤 <strong>NS Địa Bàn 1:</strong> <span style="color: #c084fc;">${td.db1_name} (${td.db1})</span></div>
+            <div>🎧 <strong>NS DVKH:</strong> <span style="color: #fbbf24;">${td.dvkh}</span></div>
+            <div>🛠️ <strong>KTV Chính:</strong> <span style="color: #38bdf8;">${td.ktv_name} (${td.ktv})</span></div>
+            <div>📊 <strong>Tổng số HĐ / AU:</strong> <strong>${td.total_hd} HĐ</strong> (<span style="color: var(--accent-emerald);">${td.au} AU</span>)</div>
+          </div>
+        </div>
+
+        <h4 style="font-size: 13px; color: var(--text-sub); margin-bottom: 10px;">Danh sách hợp đồng thuộc tập điểm:</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Số HĐ</th>
+                <th>Trạng Thái</th>
+                <th>Dịch Vụ</th>
+                <th>Địa Chỉ Đường</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rowsHtml}
+            </tbody>
+          </table>
+        </div>
+      `;
+
+      document.getElementById('modalTdBody').innerHTML = bodyHtml;
+      document.getElementById('tdModal').classList.add('active');
+    }
+
+    function closeModal(e) {
+      if (e.target.id === 'tdModal') closeModalDirect();
+    }
+    function closeModalDirect() {
+      document.getElementById('tdModal').classList.remove('active');
+    }
+
+    // TAB 2: DB1
+    function renderDb1Tab() {
+      const tbody = document.getElementById('db1TableBody');
+      const cardsGrid = document.getElementById('db1CardsGrid');
+      let tHtml = '';
+      let cHtml = '';
+
+      rawData.db1_stats.forEach(st => {
+        tHtml += `
+          <tr>
+            <td><strong style="font-family: 'JetBrains Mono', monospace; color: var(--primary);">${st.code}</strong></td>
+            <td><strong style="color: #fff; font-size: 14px;">${st.name}</strong></td>
+            <td style="text-align: right; font-weight: 700; color: #fff; font-size: 14px;">${st.total_rows.toLocaleString()}</td>
+            <td style="text-align: right; font-weight: 700; color: var(--accent-emerald); font-size: 14px;">${st.au.toLocaleString()}</td>
+            <td style="text-align: center;">
+              <span class="badge-count badge-au">${st.au_rate}%</span>
+            </td>
+            <td style="text-align: right; font-weight: 600;">${st.tap_diem_count.toLocaleString()}</td>
+            <td style="text-align: right; font-weight: 600;">${st.blocks_count} Block</td>
+            <td style="text-align: center;">
+              <button class="btn-detail" onclick="filterByDb1AndJump('${st.code}')">Xem ${st.tap_diem_count} Tập Điểm</button>
+            </td>
+          </tr>
+        `;
+
+        cHtml += `
+          <div class="stat-card" style="margin-bottom: 0;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+              <h3 style="color: #c084fc; font-size: 15px;">👤 ${st.name}</h3>
+              <span style="font-size: 11px; background: rgba(168,85,247,0.15); color: #c084fc; padding: 2px 8px; border-radius: 4px; font-family: 'JetBrains Mono', monospace;">${st.code}</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; margin-bottom: 12px;">
+              <div>Tổng HĐ: <strong style="color: #fff; font-size: 14px;">${st.total_rows.toLocaleString()}</strong></div>
+              <div>Số AU: <strong style="color: var(--accent-emerald); font-size: 14px;">${st.au.toLocaleString()}</strong></div>
+              <div>Tập điểm: <strong>${st.tap_diem_count.toLocaleString()}</strong></div>
+              <div>Số Block: <strong>${st.blocks_count}</strong></div>
+            </div>
+            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;">
+              KTV phụ trách: ${st.ktvs.slice(0, 4).join(', ')}...
+            </div>
+            <button class="btn-detail" style="width: 100%; text-align: center;" onclick="filterByDb1AndJump('${st.code}')">🔍 Xem tất cả Tập Điểm</button>
+          </div>
+        `;
+      });
+      tbody.innerHTML = tHtml;
+      cardsGrid.innerHTML = cHtml;
+    }
+
+    function filterByDb1AndJump(code) {
+      filterByDb1(code);
+      switchTab('tab-search');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // TAB 3: DVKH
+    function renderDvkhTab() {
+      const container = document.getElementById('dvkhCardsContainer');
+      let html = '';
+
+      rawData.dvkh_stats.forEach(d => {
+        let ktvRows = '';
+        d.ktv_list.forEach(k => {
+          ktvRows += `
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-weight: 700; color: #38bdf8; font-size: 13px;">🛠️ ${k.name} (${k.code})</span>
+                <span style="font-weight: 700; color: #fff; font-size: 13px;">${k.count.toLocaleString()} HĐ (${k.rate}%)</span>
+              </div>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" style="width: ${k.rate}%;"></div>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 20px;">🎧</span>
+                <div>
+                  <h3 style="font-size: 16px; color: #fbbf24; font-family: 'JetBrains Mono', monospace;">NS DVKH: ${d.code}</h3>
+                  <p style="font-size: 11px; color: var(--text-muted);">Quản lý ${d.tap_diem_count.toLocaleString()} Tập điểm • ${d.total_rows.toLocaleString()} Hợp đồng</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 6px;">
+                <span class="badge-count badge-au">${d.au.toLocaleString()} AU (${d.au_rate}%)</span>
+                <span class="badge-count badge-total">${d.total_rows.toLocaleString()} HĐ</span>
+              </div>
+            </div>
+
+            <h4 style="font-size: 12px; color: var(--text-sub); margin-bottom: 8px;">Các Kỹ Thuật Viên Chính cùng làm việc & phân bổ hợp đồng:</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px;">
+              ${ktvRows}
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+
+    // TAB 4: KTV
+    function renderKtvTab() {
+      const tbody = document.getElementById('ktvTableBody');
+      let html = '';
+
+      rawData.ktv_stats.forEach((k, idx) => {
+        html += `
+          <tr>
+            <td style="color: var(--text-muted); width: 40px;">${idx + 1}</td>
+            <td><strong style="font-family: 'JetBrains Mono', monospace; color: var(--primary);">${k.code}</strong></td>
+            <td><strong style="color: #fff; font-size: 13px;">${k.name}</strong></td>
+            <td style="text-align: right; font-weight: 700;">${k.tap_diem_count.toLocaleString()}</td>
+            <td style="text-align: right; font-weight: 700; color: #fff;">${k.total_rows.toLocaleString()}</td>
+            <td style="text-align: right; font-weight: 700; color: var(--accent-emerald);">${k.au.toLocaleString()}</td>
+            <td>
+              ${k.dvkhs.map(d => `<span class="person-val person-dvkh" style="font-size: 11px; margin-right: 4px;">${d}</span>`).join('')}
+            </td>
+            <td>
+              <span style="color: #c084fc; font-size: 12px;">${k.db1s.join(', ')}</span>
+            </td>
+            <td style="text-align: center;">
+              <button class="btn-detail" onclick="searchKtvAndJump('${k.code}')">Xem Tập Điểm</button>
+            </td>
+          </tr>
+        `;
+      });
+      tbody.innerHTML = html;
+    }
+
+    function searchKtvAndJump(code) {
+      currentFilterDb1 = 'ALL';
+      document.querySelectorAll('#filterChips .chip').forEach(c => {
+        if (c.innerText.startsWith('Tất cả')) c.classList.add('active');
+        else c.classList.remove('active');
+      });
+      const inp = document.getElementById('searchInput');
+      inp.value = code;
+      document.getElementById('searchClear').style.display = 'flex';
+      doSearch(code);
+      switchTab('tab-search');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Run init
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
