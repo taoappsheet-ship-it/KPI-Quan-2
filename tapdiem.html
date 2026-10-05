@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Tra Cứu Tập Điểm & Phân Công Nhân Sự - FPT Telecom</title>
+  <title>Tra Cứu Tập Điểm & Phân Công KTV Chính - FPT Telecom</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
@@ -248,11 +248,20 @@
       color: #fff;
     }
 
+    .filter-chips-header {
+      margin-top: 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
     .filter-chips {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-top: 14px;
+      margin-top: 8px;
     }
     .chip {
       background: rgba(255, 255, 255, 0.04);
@@ -284,6 +293,8 @@
       margin-bottom: 14px;
       font-size: 13px;
       color: var(--text-sub);
+      flex-wrap: wrap;
+      gap: 8px;
     }
     .result-info strong {
       color: #fff;
@@ -365,6 +376,10 @@
       border: 1px solid rgba(255, 255, 255, 0.04);
       font-size: 12px;
     }
+    .person-row.featured {
+      background: linear-gradient(90deg, rgba(0, 242, 254, 0.08), rgba(0, 242, 254, 0.02));
+      border: 1px solid rgba(0, 242, 254, 0.25);
+    }
     .person-label {
       color: var(--text-sub);
       display: flex;
@@ -376,12 +391,13 @@
       font-weight: 700;
       text-align: right;
     }
-    .person-db1 {
-      color: #c084fc;
-      background: var(--accent-purple-dim);
+    .person-ktv {
+      color: #38bdf8;
+      background: var(--primary-dim);
       padding: 2px 8px;
       border-radius: 4px;
-      border: 1px solid rgba(168, 85, 247, 0.3);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      font-size: 13px;
     }
     .person-dvkh {
       color: #fbbf24;
@@ -391,12 +407,12 @@
       border: 1px solid rgba(245, 158, 11, 0.3);
       font-family: 'JetBrains Mono', monospace;
     }
-    .person-ktv {
-      color: #38bdf8;
-      background: var(--primary-dim);
+    .person-db1 {
+      color: #c084fc;
+      background: var(--accent-purple-dim);
       padding: 2px 8px;
       border-radius: 4px;
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      border: 1px solid rgba(168, 85, 247, 0.3);
     }
 
     .location-info {
@@ -429,10 +445,11 @@
       border: 1px solid var(--border);
       color: var(--primary);
       font-size: 11px;
-      padding: 4px 8px;
+      padding: 4px 10px;
       border-radius: 6px;
       cursor: pointer;
       transition: all 0.2s;
+      font-weight: 600;
     }
     .btn-detail:hover {
       background: var(--primary);
@@ -592,7 +609,7 @@
       <div class="logo-area">
         <div class="logo-icon">📡</div>
         <div class="logo-text">
-          <h1>TRA CỨU TẬP ĐIỂM & ĐỊA BÀN</h1>
+          <h1>TRA CỨU TẬP ĐIỂM & KTV CHÍNH</h1>
           <p>Đội Kỹ Thuật Đỗ Văn Tiên • FPT Telecom</p>
         </div>
       </div>
@@ -600,6 +617,7 @@
         <div class="stat-chip">📍 Tập Điểm: <strong id="chipTotalTd">2,451</strong></div>
         <div class="stat-chip">📑 Hợp Đồng: <strong id="chipTotalHd">16,993</strong></div>
         <div class="stat-chip">🟢 AU: <strong id="chipTotalAu">16,939</strong></div>
+        <div class="stat-chip">🛠️ KTV: <strong>15</strong></div>
       </div>
     </div>
   </header>
@@ -610,14 +628,14 @@
       <button class="tab-btn active" onclick="switchTab('tab-search')">
         <span>🔍</span> Tra Cứu Tập Điểm
       </button>
-      <button class="tab-btn" onclick="switchTab('tab-db1')">
-        <span>👤</span> NS Địa Bàn 1
+      <button class="tab-btn" onclick="switchTab('tab-ktv')">
+        <span>🛠️</span> Thống Kê 15 KTV Chính
       </button>
       <button class="tab-btn" onclick="switchTab('tab-dvkh')">
         <span>🎧</span> Ma Trận DVKH ↔ KTV
       </button>
-      <button class="tab-btn" onclick="switchTab('tab-ktv')">
-        <span>🛠️</span> 15 KTV Chính
+      <button class="tab-btn" onclick="switchTab('tab-db1')">
+        <span>👤</span> NS Địa Bàn 1
       </button>
     </div>
 
@@ -629,18 +647,21 @@
         </div>
         <div class="search-box-wrap">
           <span class="search-icon">🔍</span>
-          <input type="text" id="searchInput" class="search-input" placeholder="Ví dụ: HCMP201.0130, 0130, SGD016788, Xuan Thuy..." autocomplete="off">
+          <input type="text" id="searchInput" class="search-input" placeholder="Ví dụ: HCMP201.0130, 0130, SGD016788, Xuan Thuy, DONGPD, TUYENPTB2..." autocomplete="off">
           <button id="searchClear" class="search-clear" onclick="clearSearch()">&times;</button>
         </div>
+        <div class="filter-chips-header">
+          <span>⚡ Lọc nhanh theo KTV Chính:</span>
+        </div>
         <div class="filter-chips" id="filterChips">
-          <span class="chip active" onclick="filterByDb1('ALL')">Tất cả (2,451)</span>
-          <!-- Dynamic DB1 chips -->
+          <span class="chip active" onclick="filterByKtv('ALL')">Tất cả (2,451)</span>
+          <!-- Dynamic KTV chips -->
         </div>
       </div>
 
       <div class="result-info">
         <span>Kết quả: <strong id="matchCount">0</strong> tập điểm phù hợp</span>
-        <span style="font-size: 11px; color: var(--text-muted);">💡 Gõ đến đâu ra kết quả tức thì đến đó</span>
+        <span style="font-size: 11px; color: var(--text-muted);">💡 Gõ đến đâu ra kết quả tức thì đến đó • Bấm mã HĐ để copy</span>
       </div>
 
       <div class="td-grid" id="tdGrid">
@@ -648,35 +669,40 @@
       </div>
     </div>
 
-    <!-- TAB 2: THỐNG KÊ NS ĐỊA BÀN 1 -->
-    <div id="tab-db1" class="tab-pane">
+    <!-- TAB 2: THỐNG KÊ 15 KTV CHÍNH -->
+    <div id="tab-ktv" class="tab-pane">
       <div class="stat-card">
         <div class="card-title-lg">
-          <span>👤 THỐNG KÊ KHỐI LƯỢNG HỢP ĐỒNG & AU CỦA NHÂN SỰ ĐỊA BÀN 1</span>
+          <span>🛠️ THỐNG KÊ KHỐI LƯỢNG HỢP ĐỒNG & AU CỦA 15 KỸ THUẬT VIÊN CHÍNH</span>
         </div>
+        <p style="font-size: 13px; color: var(--text-sub); margin-bottom: 16px;">
+          Bảng xếp hạng khối lượng hàng (số hợp đồng), số lượng AU đang hoạt động và số tập điểm do từng KTV Chính phụ trách:
+        </p>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Mã Nhân Sự</th>
+                <th style="width: 40px; text-align: center;">STT</th>
+                <th>Mã KTV</th>
                 <th>Họ Tên Đầy Đủ</th>
                 <th style="text-align: right;">Tổng Hàng (HĐ)</th>
                 <th style="text-align: right;">Số AU (Active)</th>
                 <th style="text-align: center;">Tỷ Lệ AU</th>
                 <th style="text-align: right;">Số Tập Điểm</th>
                 <th style="text-align: right;">Số Block</th>
+                <th>NS DVKH Phối Hợp</th>
                 <th style="text-align: center;">Thao Tác</th>
               </tr>
             </thead>
-            <tbody id="db1TableBody">
+            <tbody id="ktvTableBody">
               <!-- Injected by JS -->
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- Detail Card Cards -->
-      <div id="db1CardsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+      <!-- Detail KTV Cards Grid -->
+      <div id="ktvCardsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
         <!-- Injected by JS -->
       </div>
     </div>
@@ -688,7 +714,7 @@
           <span>🎧 PHÂN BỔ NHÂN SỰ DVKH LÀM VIỆC VỚI CÁC KỸ THUẬT VIÊN</span>
         </div>
         <p style="font-size: 13px; color: var(--text-sub); margin-bottom: 16px;">
-          Bảng thống kê chi tiết mỗi nhân sự DVKH đang quản lý bao nhiêu hợp đồng, và phối hợp xử lý cùng các KTV Chính nào trong đội:
+          Bảng thống kê chi tiết mỗi nhân sự DVKH đang quản lý bao nhiêu hợp đồng và phối hợp xử lý cùng các KTV Chính nào trong đội:
         </p>
         <div id="dvkhCardsContainer" style="display: flex; flex-direction: column; gap: 16px;">
           <!-- Injected by JS -->
@@ -696,28 +722,26 @@
       </div>
     </div>
 
-    <!-- TAB 4: THỐNG KÊ KTV CHÍNH -->
-    <div id="tab-ktv" class="tab-pane">
+    <!-- TAB 4: THỐNG KÊ NS ĐỊA BÀN 1 -->
+    <div id="tab-db1" class="tab-pane">
       <div class="stat-card">
         <div class="card-title-lg">
-          <span>🛠️ THỐNG KÊ 15 KỸ THUẬT VIÊN CHÍNH PHỤ TRÁCH ĐỊA BÀN</span>
+          <span>👤 THỐNG KÊ PHỤ: NHÂN SỰ ĐỊA BÀN 1</span>
         </div>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>STT</th>
-                <th>Mã KTV</th>
-                <th>Họ Tên</th>
-                <th style="text-align: right;">Số Tập Điểm</th>
-                <th style="text-align: right;">Tổng HĐ</th>
+                <th>Mã Nhân Sự</th>
+                <th>Họ Tên Đầy Đủ</th>
+                <th style="text-align: right;">Tổng Hàng (HĐ)</th>
                 <th style="text-align: right;">Số AU (Active)</th>
-                <th>NS DVKH Phối Hợp</th>
-                <th>NS Địa Bàn 1</th>
-                <th style="text-align: center;">Hành Động</th>
+                <th style="text-align: center;">Tỷ Lệ AU</th>
+                <th style="text-align: right;">Số Tập Điểm</th>
+                <th style="text-align: center;">Thao Tác</th>
               </tr>
             </thead>
-            <tbody id="ktvTableBody">
+            <tbody id="db1TableBody">
               <!-- Injected by JS -->
             </tbody>
           </table>
@@ -755,7 +779,7 @@
 
   <script>
     let rawData = null;
-    let currentFilterDb1 = 'ALL';
+    let currentFilterKtv = 'ALL';
     let debounceTimer = null;
 
     function switchTab(tabId) {
@@ -800,25 +824,26 @@
       document.getElementById('chipTotalHd').innerText = rawData.total_records.toLocaleString();
       document.getElementById('chipTotalAu').innerText = rawData.total_au.toLocaleString();
 
-      // Render DB1 Filter chips
+      // Render KTV Filter chips
       const chipsContainer = document.getElementById('filterChips');
-      chipsContainer.innerHTML = `<span class="chip active" onclick="filterByDb1('ALL')">Tất cả (${rawData.total_tap_diem.toLocaleString()})</span>`;
-      rawData.db1_stats.forEach(st => {
-        chipsContainer.innerHTML += `<span class="chip" onclick="filterByDb1('${st.code}')">${st.name} (${st.tap_diem_count})</span>`;
+      chipsContainer.innerHTML = `<span class="chip active" onclick="filterByKtv('ALL')">Tất cả (${rawData.total_tap_diem.toLocaleString()})</span>`;
+      rawData.ktv_stats.forEach(st => {
+        const shortName = st.name.split(' ').slice(-1)[0] || st.code;
+        chipsContainer.innerHTML += `<span class="chip" onclick="filterByKtv('${st.code}')">${shortName} (${st.tap_diem_count} TĐ)</span>`;
       });
 
       // Render Tab 1 initial
       renderTapDiem(rawData.tap_diem_list.slice(0, 60));
       document.getElementById('matchCount').innerText = rawData.tap_diem_list.length.toLocaleString();
 
-      // Render Tab 2: DB1
-      renderDb1Tab();
+      // Render Tab 2: KTV
+      renderKtvTab();
 
       // Render Tab 3: DVKH
       renderDvkhTab();
 
-      // Render Tab 4: KTV
-      renderKtvTab();
+      // Render Tab 4: DB1
+      renderDb1Tab();
 
       // Setup Search Listener
       const inp = document.getElementById('searchInput');
@@ -841,11 +866,11 @@
       inp.focus();
     }
 
-    function filterByDb1(code) {
-      currentFilterDb1 = code;
+    function filterByKtv(code) {
+      currentFilterKtv = code;
       document.querySelectorAll('#filterChips .chip').forEach(c => {
         if (code === 'ALL' && c.innerText.startsWith('Tất cả')) c.classList.add('active');
-        else if (c.innerText.includes(code)) c.classList.add('active');
+        else if (c.getAttribute('onclick') && c.getAttribute('onclick').includes(`'${code}'`)) c.classList.add('active');
         else c.classList.remove('active');
       });
       doSearch(document.getElementById('searchInput').value.trim());
@@ -855,16 +880,16 @@
       const kw = keyword.toLowerCase().trim();
       let list = rawData.tap_diem_list;
 
-      if (currentFilterDb1 !== 'ALL') {
-        list = list.filter(td => td.db1 === currentFilterDb1);
+      if (currentFilterKtv !== 'ALL') {
+        list = list.filter(td => td.ktv === currentFilterKtv);
       }
 
       if (kw) {
         list = list.filter(item => {
           if (item.td.toLowerCase().includes(kw)) return true;
-          if (item.db1.toLowerCase().includes(kw) || item.db1_name.toLowerCase().includes(kw)) return true;
-          if (item.dvkh.toLowerCase().includes(kw)) return true;
           if (item.ktv.toLowerCase().includes(kw) || item.ktv_name.toLowerCase().includes(kw)) return true;
+          if (item.dvkh.toLowerCase().includes(kw)) return true;
+          if (item.db1 && (item.db1.toLowerCase().includes(kw) || item.db1_name.toLowerCase().includes(kw))) return true;
           if (item.street && item.street.toLowerCase().includes(kw)) return true;
           if (item.block && item.block.toLowerCase().includes(kw)) return true;
           if (item.lo && item.lo.toLowerCase().includes(kw)) return true;
@@ -875,7 +900,7 @@
       }
 
       document.getElementById('matchCount').innerText = list.length.toLocaleString();
-      renderTapDiem(list.slice(0, 100)); // Limit 100 for super high performance
+      renderTapDiem(list.slice(0, 100)); // Limit 100 for high performance
     }
 
     function renderTapDiem(items) {
@@ -901,10 +926,10 @@
               </div>
             </div>
 
-            <!-- Nhân sự Địa bàn 1 -->
-            <div class="person-row">
-              <span class="person-label">👤 NS Địa Bàn 1:</span>
-              <span class="person-val person-db1">${td.db1_name} (${td.db1})</span>
+            <!-- KTV Chính (Trọng tâm cốt lõi) -->
+            <div class="person-row featured">
+              <span class="person-label">🛠️ <strong>KTV Chính:</strong></span>
+              <span class="person-val person-ktv">${td.ktv_name} (${td.ktv})</span>
             </div>
 
             <!-- Nhân sự DVKH -->
@@ -913,10 +938,10 @@
               <span class="person-val person-dvkh">${td.dvkh}</span>
             </div>
 
-            <!-- KTV Chính -->
+            <!-- Nhân sự Địa bàn 1 (Phụ) -->
             <div class="person-row">
-              <span class="person-label">🛠️ KTV Chính:</span>
-              <span class="person-val person-ktv">${td.ktv_name} (${td.ktv})</span>
+              <span class="person-label">👤 NS Địa Bàn 1:</span>
+              <span class="person-val person-db1">${td.db1_name} (${td.db1})</span>
             </div>
 
             <!-- Tuyến đường / Block -->
@@ -963,10 +988,10 @@
       const bodyHtml = `
         <div style="background: rgba(0,0,0,0.3); border-radius: 10px; padding: 14px; margin-bottom: 16px; border: 1px solid var(--border); font-size: 13px;">
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div>🛠️ <strong>KTV Chính:</strong> <span style="color: #38bdf8; font-weight: 700;">${td.ktv_name} (${td.ktv})</span></div>
+            <div>🎧 <strong>NS DVKH:</strong> <span style="color: #fbbf24; font-weight: 700;">${td.dvkh}</span></div>
             <div>👤 <strong>NS Địa Bàn 1:</strong> <span style="color: #c084fc;">${td.db1_name} (${td.db1})</span></div>
-            <div>🎧 <strong>NS DVKH:</strong> <span style="color: #fbbf24;">${td.dvkh}</span></div>
-            <div>🛠️ <strong>KTV Chính:</strong> <span style="color: #38bdf8;">${td.ktv_name} (${td.ktv})</span></div>
-            <div>📊 <strong>Tổng số HĐ / AU:</strong> <strong>${td.total_hd} HĐ</strong> (<span style="color: var(--accent-emerald);">${td.au} AU</span>)</div>
+            <div>📊 <strong>Tổng số HĐ / AU:</strong> <strong>${td.total_hd} HĐ</strong> (<span style="color: var(--accent-emerald); font-weight: 700;">${td.au} AU</span>)</div>
           </div>
         </div>
 
@@ -1000,27 +1025,31 @@
       document.getElementById('tdModal').classList.remove('active');
     }
 
-    // TAB 2: DB1
-    function renderDb1Tab() {
-      const tbody = document.getElementById('db1TableBody');
-      const cardsGrid = document.getElementById('db1CardsGrid');
+    // TAB 2: KTV CHÍNH (TRỌNG TÂM CỐT LÕI)
+    function renderKtvTab() {
+      const tbody = document.getElementById('ktvTableBody');
+      const cardsGrid = document.getElementById('ktvCardsGrid');
       let tHtml = '';
       let cHtml = '';
 
-      rawData.db1_stats.forEach(st => {
+      rawData.ktv_stats.forEach((k, idx) => {
         tHtml += `
           <tr>
-            <td><strong style="font-family: 'JetBrains Mono', monospace; color: var(--primary);">${st.code}</strong></td>
-            <td><strong style="color: #fff; font-size: 14px;">${st.name}</strong></td>
-            <td style="text-align: right; font-weight: 700; color: #fff; font-size: 14px;">${st.total_rows.toLocaleString()}</td>
-            <td style="text-align: right; font-weight: 700; color: var(--accent-emerald); font-size: 14px;">${st.au.toLocaleString()}</td>
+            <td style="color: var(--text-muted); text-align: center;">${idx + 1}</td>
+            <td><strong style="font-family: 'JetBrains Mono', monospace; color: var(--primary);">${k.code}</strong></td>
+            <td><strong style="color: #fff; font-size: 14px;">${k.name}</strong></td>
+            <td style="text-align: right; font-weight: 700; color: #fff; font-size: 14px;">${k.total_rows.toLocaleString()}</td>
+            <td style="text-align: right; font-weight: 700; color: var(--accent-emerald); font-size: 14px;">${k.au.toLocaleString()}</td>
             <td style="text-align: center;">
-              <span class="badge-count badge-au">${st.au_rate}%</span>
+              <span class="badge-count badge-au">${k.au_rate}%</span>
             </td>
-            <td style="text-align: right; font-weight: 600;">${st.tap_diem_count.toLocaleString()}</td>
-            <td style="text-align: right; font-weight: 600;">${st.blocks_count} Block</td>
+            <td style="text-align: right; font-weight: 700; color: #38bdf8;">${k.tap_diem_count.toLocaleString()}</td>
+            <td style="text-align: right; font-weight: 600;">${k.blocks_count} Block</td>
+            <td>
+              <span class="person-val person-dvkh">${k.dvkh}</span>
+            </td>
             <td style="text-align: center;">
-              <button class="btn-detail" onclick="filterByDb1AndJump('${st.code}')">Xem ${st.tap_diem_count} Tập Điểm</button>
+              <button class="btn-detail" onclick="filterByKtvAndJump('${k.code}')">Xem ${k.tap_diem_count} TĐ</button>
             </td>
           </tr>
         `;
@@ -1028,19 +1057,20 @@
         cHtml += `
           <div class="stat-card" style="margin-bottom: 0;">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-              <h3 style="color: #c084fc; font-size: 15px;">👤 ${st.name}</h3>
-              <span style="font-size: 11px; background: rgba(168,85,247,0.15); color: #c084fc; padding: 2px 8px; border-radius: 4px; font-family: 'JetBrains Mono', monospace;">${st.code}</span>
+              <h3 style="color: #38bdf8; font-size: 15px;">🛠️ ${k.name}</h3>
+              <span style="font-size: 11px; background: var(--primary-dim); color: var(--primary); padding: 2px 8px; border-radius: 4px; font-family: 'JetBrains Mono', monospace;">${k.code}</span>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; margin-bottom: 12px;">
-              <div>Tổng HĐ: <strong style="color: #fff; font-size: 14px;">${st.total_rows.toLocaleString()}</strong></div>
-              <div>Số AU: <strong style="color: var(--accent-emerald); font-size: 14px;">${st.au.toLocaleString()}</strong></div>
-              <div>Tập điểm: <strong>${st.tap_diem_count.toLocaleString()}</strong></div>
-              <div>Số Block: <strong>${st.blocks_count}</strong></div>
+              <div>Tổng Hàng: <strong style="color: #fff; font-size: 14px;">${k.total_rows.toLocaleString()}</strong></div>
+              <div>Số AU: <strong style="color: var(--accent-emerald); font-size: 14px;">${k.au.toLocaleString()}</strong></div>
+              <div>Tập điểm: <strong style="color: #38bdf8;">${k.tap_diem_count.toLocaleString()}</strong></div>
+              <div>Số Block: <strong>${k.blocks_count}</strong></div>
             </div>
-            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;">
-              KTV phụ trách: ${st.ktvs.slice(0, 4).join(', ')}...
+            <div style="font-size: 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+              <span style="color: var(--text-muted);">NS DVKH:</span>
+              <span class="person-val person-dvkh">${k.dvkh}</span>
             </div>
-            <button class="btn-detail" style="width: 100%; text-align: center;" onclick="filterByDb1AndJump('${st.code}')">🔍 Xem tất cả Tập Điểm</button>
+            <button class="btn-detail" style="width: 100%; text-align: center; padding: 6px;" onclick="filterByKtvAndJump('${k.code}')">🔍 Xem tất cả ${k.tap_diem_count} Tập Điểm</button>
           </div>
         `;
       });
@@ -1048,13 +1078,13 @@
       cardsGrid.innerHTML = cHtml;
     }
 
-    function filterByDb1AndJump(code) {
-      filterByDb1(code);
+    function filterByKtvAndJump(code) {
+      filterByKtv(code);
       switchTab('tab-search');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // TAB 3: DVKH
+    // TAB 3: MA TRẬN DVKH ↔ KTV
     function renderDvkhTab() {
       const container = document.getElementById('dvkhCardsContainer');
       let html = '';
@@ -1063,7 +1093,7 @@
         let ktvRows = '';
         d.ktv_list.forEach(k => {
           ktvRows += `
-            <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px;">
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; cursor: pointer;" onclick="filterByKtvAndJump('${k.code}')" title="Click xem tập điểm của KTV này">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
                 <span style="font-weight: 700; color: #38bdf8; font-size: 13px;">🛠️ ${k.name} (${k.code})</span>
                 <span style="font-weight: 700; color: #fff; font-size: 13px;">${k.count.toLocaleString()} HĐ (${k.rate}%)</span>
@@ -1101,37 +1131,33 @@
       container.innerHTML = html;
     }
 
-    // TAB 4: KTV
-    function renderKtvTab() {
-      const tbody = document.getElementById('ktvTableBody');
-      let html = '';
+    // TAB 4: NS ĐỊA BÀN 1
+    function renderDb1Tab() {
+      const tbody = document.getElementById('db1TableBody');
+      let tHtml = '';
 
-      rawData.ktv_stats.forEach((k, idx) => {
-        html += `
+      rawData.db1_stats.forEach(st => {
+        tHtml += `
           <tr>
-            <td style="color: var(--text-muted); width: 40px;">${idx + 1}</td>
-            <td><strong style="font-family: 'JetBrains Mono', monospace; color: var(--primary);">${k.code}</strong></td>
-            <td><strong style="color: #fff; font-size: 13px;">${k.name}</strong></td>
-            <td style="text-align: right; font-weight: 700;">${k.tap_diem_count.toLocaleString()}</td>
-            <td style="text-align: right; font-weight: 700; color: #fff;">${k.total_rows.toLocaleString()}</td>
-            <td style="text-align: right; font-weight: 700; color: var(--accent-emerald);">${k.au.toLocaleString()}</td>
-            <td>
-              ${k.dvkhs.map(d => `<span class="person-val person-dvkh" style="font-size: 11px; margin-right: 4px;">${d}</span>`).join('')}
-            </td>
-            <td>
-              <span style="color: #c084fc; font-size: 12px;">${k.db1s.join(', ')}</span>
-            </td>
+            <td><strong style="font-family: 'JetBrains Mono', monospace; color: var(--primary);">${st.code}</strong></td>
+            <td><strong style="color: #fff; font-size: 14px;">${st.name}</strong></td>
+            <td style="text-align: right; font-weight: 700; color: #fff; font-size: 14px;">${st.total_rows.toLocaleString()}</td>
+            <td style="text-align: right; font-weight: 700; color: var(--accent-emerald); font-size: 14px;">${st.au.toLocaleString()}</td>
             <td style="text-align: center;">
-              <button class="btn-detail" onclick="searchKtvAndJump('${k.code}')">Xem Tập Điểm</button>
+              <span class="badge-count badge-au">${st.au_rate}%</span>
+            </td>
+            <td style="text-align: right; font-weight: 600;">${st.tap_diem_count.toLocaleString()}</td>
+            <td style="text-align: center;">
+              <button class="btn-detail" onclick="searchKtvAndJump('${st.code}')">Xem Tập Điểm</button>
             </td>
           </tr>
         `;
       });
-      tbody.innerHTML = html;
+      tbody.innerHTML = tHtml;
     }
 
     function searchKtvAndJump(code) {
-      currentFilterDb1 = 'ALL';
+      currentFilterKtv = 'ALL';
       document.querySelectorAll('#filterChips .chip').forEach(c => {
         if (c.innerText.startsWith('Tất cả')) c.classList.add('active');
         else c.classList.remove('active');
