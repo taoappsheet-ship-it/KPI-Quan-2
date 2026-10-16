@@ -1,7 +1,7 @@
 {
   "title": "BÁO CÁO TỔNG HỢP KPI ĐỘI ĐỖ VĂN TIÊN",
   "source_file": "Đúng hẹn.xlsx",
-  "updated_at": "15/10/2026 07:10:59",
+  "updated_at": "16/10/2026 07:10:20",
   "kpi_targets": {
     "on_time_target": 98.0,
     "cll_target": 6.0,
@@ -16,31 +16,31 @@
     "team": "Tiên",
     "employee_count": 16,
     "au": 18191,
-    "on_time_rate": 98.14,
-    "cll_rate": 7.07,
+    "on_time_rate": 98.62,
+    "cll_rate": 6.93,
     "cll3_rate": 0.0,
-    "cl_7n_tk_rate": 3.72,
-    "cl_7n_bt_rate": 4.52,
-    "cl_7n_total_rate": 4.26,
+    "cl_7n_tk_rate": 23.91,
+    "cl_7n_bt_rate": 4.31,
+    "cl_7n_total_rate": 5.86,
     "csat": 0,
-    "tk_over_72h": 17,
-    "bt_over_24h": 131,
-    "repontime_tk": 22.1,
+    "tk_over_72h": 0,
+    "bt_over_24h": 135,
+    "repontime_tk": 0.0,
     "repontime_bt": 20.8,
-    "cl_7n_tk_count": 9,
+    "cl_7n_tk_count": 11,
     "cl_7n_bt_count": 23,
     "kpi_flags": {
       "on_time": true,
       "cll": false,
       "cl_7n": false,
       "cll3": true,
-      "rt_tk": false,
+      "rt_tk": true,
       "rt_bt": false,
       "csat": true
     },
-    "kpi_score": 3,
-    "kpi_status": "CHƯA ĐẠT",
-    "kpi_grade": "danger",
+    "kpi_score": 4,
+    "kpi_status": "CẢNH BÁO",
+    "kpi_grade": "warning",
     "status_on_time": true,
     "status_cll": false,
     "status_all_kpi": false,
@@ -169,6 +169,20 @@
           "checklist": "SO",
           "dich_vu": "Internet",
           "note": "0943590179 Kh báo qua Hifpt: Lỗi internet , ktra  Activate/Down/initialization k  ipwan, tạo cl tick xanh gần nhất, nhờ kt htro giúp, Chat OB >> trungpc 09/10/2026 07:08:32: [MỸ BẢO 09/10 07:06]  THÔNG SỐ BÌNH THƯỜNG CS thu:chưa đo được ·  Rớt KN:0➤ KTV:đo quang trực tiếp tại ONU (Mỹ Bảo chưa có số CS thu hợp lệ), gọi KH khai thác thêm lỗi (thiết bị nào, giờ nào bị), kiểm tra wifi/thiết bị đầu cuối tại nhà KH.>> PNC01.DONGTD 09/10/2026 11:14:26: 1. Số Cls trong năm:2. Liên hệ KH: số 09435901793. Mô hình nhà: dãy trọ4. Mô hình thiết bị:1 tbi 3000cv25. Tổng thiết bị SD: 16. Nguyên nhân lỗi (KTV khai thác, nhận diện lỗi thực tế tại nhà): chập chờn7. Phương án xử lý là gì: thay fc8. TOOL Mỹ bảo: \"có dùng”9. KH có cần trang bị MD/AP không (theo nhận định của KTV): ko10. KH có đồng ý mua thêm MD/AP: ko11. KTV chủ động lắp AP SE cho KH: ko",
+          "emp_name": "PNC01.THAINV12",
+          "block": "Phuong An Khanh-016"
+        },
+        {
+          "shd": "SGH944819",
+          "kh": "LE VAN DIEN",
+          "nv": "PNC01.THAINV12",
+          "ngay_phancong": "01/10/2026 08:52:44",
+          "ngay_tao": "01/10/2026 08:52:42",
+          "ngay_hoantat": "02/10/2026 21:52:29",
+          "so_lan_lap": "3",
+          "checklist": "SO",
+          "dich_vu": "Internet",
+          "note": ">> trungpc 12/10/2026 09:51:00: [MỸ BẢO 12/10 09:49]  THÔNG SỐ BÌNH THƯỜNG CS thu:chưa đo được ·  Rớt KN:0➤ KTV:đo quang trực tiếp tại ONU (Mỹ Bảo chưa có số CS thu hợp lệ), gọi KH khai thác thêm lỗi (thiết bị nào, giờ nào bị), kiểm tra wifi/thiết bị đầu cuối tại nhà KH.>> trungpc 12/10/2026 10:20:53: [MỸ BẢO 12/10 10:20]  CẦN XỬ LÝ trong ca CS thu:chưa đo được ·  Rớt KN:3• Lỗi:Rớt KN 3 lần➤ KTV cần làm:1. Kiểm tra FC, cáp, nguồn thiết bị2. Mỹ Bảo chưa đo được CS thu:đo quang trực tiếp tại ONUBáo kết quả xử lý lên phiếu sau khi hoàn tất.>> PNC01.THAINV12 12/10/2026 14:36:42: 1. Số CLs trong năm: 12. Liên hệ KHG: 09086004933. Mô hình : nguyên căn4. Mô hình thiết bị: 3000gzv35. Tổng thiết bị SD: 5 bao gồm cả camera của kh6. Nguyên nhân lỗi:  đứt cap7. Phương án xử lý : ktv đã thay cap8. TOOL Mỹ bảo: đã dùng mỹ bảo chuẩn đoán và đo kiểm nghiệm thu ok9. KH có cần trang bị MD/AP không: không cần vì không gian nhỏ10. KH có đồng ý mua thêm MD/AP:  kh ko có nhu cầu11. KTV chủ động lắp AP SE cho KH: ktv sẽ lắp nếu kh có nhu cầu>> PNC01.THAINV12 13/10/2026 17:38:29: đnag theo dõi thêm>> PNC01.THAINV12 13/10/2026 18:38:09: ktv đã kéo lại cap kh vẫn rớt do, cupler bộ chia 1x16 bị gập ktv đã xử lý>> viettq3 15/10/2026 12:23:17: đã kiểm tra xử lý lại tuyến cáp>> phuongnam.tiendv1 15/10/2026 12:23:58: đã kiểm tra xử lý lại phần tuyến cáp",
           "emp_name": "PNC01.THAINV12",
           "block": "Phuong An Khanh-016"
         },
@@ -553,6 +567,18 @@
       ],
       "cl_7n_tk": [
         {
+          "shd": "SGAFC2979",
+          "kh": "NGUYEN VAN TIEN",
+          "acc": "Sgfdl-260310-2979",
+          "goi": "Giga",
+          "ngay": "14/10/2026 14:37:56",
+          "nv": "PNC01.DONGPD",
+          "loi": "Hỏng FC (không có tín hiệu)",
+          "note": "\n>> trungpc 15/10/2026 09:35:17: [MỸ BẢO 15/10 09:34] 🟠 CẦN XỬ LÝ trong ca\n📶 CS thu:chưa đo được · 🔁 Rớt KN:3\n• Lỗi:Rớt KN 3 lần\n➤ KTV cần làm:\n1. Kiểm tra FC, cáp, nguồn thiết bị\n2. Mỹ Bảo chưa đo được CS thu:đo quang trực tiếp tại ONU\nBáo kết quả xử lý lên phiếu sau khi hoàn tất.\n>> PNC01.KHANGHHG 15/10/2026 09:50:24: fc bị gãy do mth tập điểm đã bấm lại cho khách hàng",
+          "emp_name": "PNC01.DONGPD",
+          "block": "Phuong An Khanh-009"
+        },
+        {
           "shd": "SGAEU7587",
           "kh": "CONG TY TNHH OLAGRAN",
           "acc": "Sgfdl-251215-7587",
@@ -574,6 +600,18 @@
           "loi": "Hiển thị theo thời gian thay thế camera gần nhất",
           "note": "Cần hỗ trợ lắp lại camera, LHKH KH báo là đã có liên hệ KT và hẹn tí nữa bạn qua, KH CDD, ktra chưa có thông tin PTC hay bảo trì gì hết nhờ KT check lại giúp em ạ. \n>> PNC01.HAIVV 12/10/2026 17:15:43: 1. Số CLs trong năm: 1\n2. Liên hệ KHG: chinh chu\n3. Mô hình : cc 1 pk 3 pn\n4. Mô hình thiết bị: ont+routex+aruba\n5. Tổng thiết bị SD: 30\n6. Nguyên nhân lỗi:  kh cdd, lắp cam lại cho kh\n7. Phương án xử lý : kt den kt có mạng bt\n8. TOOL Mỹ bảo: ok\n9. KH có cần trang bị MD/AP không: k\n10. KH có đồng ý mua thêm phíMD/AP: k\n11. KTV chủ động lắp AP SE cho KH:k",
           "emp_name": "PNC01.KIETDV",
+          "block": "Phuong An Khanh-009"
+        },
+        {
+          "shd": "SGAEN3496",
+          "kh": "CONG TY CO PHAN MAISON FRAVIA SAI GON",
+          "acc": "Sgfdl-250923-3496",
+          "goi": "Meta",
+          "ngay": "14/10/2026 10:58:14",
+          "nv": "PNC01.KHANGHHG",
+          "loi": "Hỏng FC (không có tín hiệu)",
+          "note": "SGAEN3496 - 0702391980 - CÔNG TY CỔ PHẦN MAISON FRAVIA SÀI GÒN:kh báo mất kết nối, dis/off, ko ipwan, đèn đỏ, đã tắt bật thiết bị  nok, chuyển kt qua hỗ trợ lh 0903699399\n>> trungpc 14/10/2026 14:06:10: [MỸ BẢO 14/10 14:05] ✅ THÔNG SỐ BÌNH THƯỜNG\n📶 CS thu:chưa đo được · 🔁 Rớt KN:1\n➤ KTV:đo quang trực tiếp tại ONU (Mỹ Bảo chưa có số CS thu hợp lệ), gọi KH khai thác thêm lỗi (thiết bị nào, giờ nào bị), kiểm tra wifi/thiết bị đầu cuối tại nhà KH.\n>> PNC01.KHANGHHG 14/10/2026 14:22:41: fc bị gãy đã thay thế fc mới cho khách hàng mạng sử dụng ok suy hao ok\n>> PNC01.KHANGHHG 14/10/2026 14:23:27: FC của nhà khách bị gãy đã thay thế FC mới máy sử dụng ok suy hao ổn định",
+          "emp_name": "PNC01.KHANGHHG",
           "block": "Phuong An Khanh-009"
         },
         {
@@ -941,6 +979,19 @@
       ],
       "cl_7n_total": [
         {
+          "shd": "SGAFC2979",
+          "kh": "NGUYEN VAN TIEN",
+          "acc": "Sgfdl-260310-2979",
+          "goi": "Giga",
+          "ngay": "14/10/2026 14:37:56",
+          "nv": "PNC01.DONGPD",
+          "loi": "Hỏng FC (không có tín hiệu)",
+          "note": "\n>> trungpc 15/10/2026 09:35:17: [MỸ BẢO 15/10 09:34] 🟠 CẦN XỬ LÝ trong ca\n📶 CS thu:chưa đo được · 🔁 Rớt KN:3\n• Lỗi:Rớt KN 3 lần\n➤ KTV cần làm:\n1. Kiểm tra FC, cáp, nguồn thiết bị\n2. Mỹ Bảo chưa đo được CS thu:đo quang trực tiếp tại ONU\nBáo kết quả xử lý lên phiếu sau khi hoàn tất.\n>> PNC01.KHANGHHG 15/10/2026 09:50:24: fc bị gãy do mth tập điểm đã bấm lại cho khách hàng",
+          "loai_7n": "7N Sau Triển Khai",
+          "emp_name": "PNC01.DONGPD",
+          "block": "Phuong An Khanh-009"
+        },
+        {
           "shd": "SGAEU7587",
           "kh": "CONG TY TNHH OLAGRAN",
           "acc": "Sgfdl-251215-7587",
@@ -964,6 +1015,19 @@
           "note": "Cần hỗ trợ lắp lại camera, LHKH KH báo là đã có liên hệ KT và hẹn tí nữa bạn qua, KH CDD, ktra chưa có thông tin PTC hay bảo trì gì hết nhờ KT check lại giúp em ạ. \n>> PNC01.HAIVV 12/10/2026 17:15:43: 1. Số CLs trong năm: 1\n2. Liên hệ KHG: chinh chu\n3. Mô hình : cc 1 pk 3 pn\n4. Mô hình thiết bị: ont+routex+aruba\n5. Tổng thiết bị SD: 30\n6. Nguyên nhân lỗi:  kh cdd, lắp cam lại cho kh\n7. Phương án xử lý : kt den kt có mạng bt\n8. TOOL Mỹ bảo: ok\n9. KH có cần trang bị MD/AP không: k\n10. KH có đồng ý mua thêm phíMD/AP: k\n11. KTV chủ động lắp AP SE cho KH:k",
           "loai_7n": "7N Sau Triển Khai",
           "emp_name": "PNC01.KIETDV",
+          "block": "Phuong An Khanh-009"
+        },
+        {
+          "shd": "SGAEN3496",
+          "kh": "CONG TY CO PHAN MAISON FRAVIA SAI GON",
+          "acc": "Sgfdl-250923-3496",
+          "goi": "Meta",
+          "ngay": "14/10/2026 10:58:14",
+          "nv": "PNC01.KHANGHHG",
+          "loi": "Hỏng FC (không có tín hiệu)",
+          "note": "SGAEN3496 - 0702391980 - CÔNG TY CỔ PHẦN MAISON FRAVIA SÀI GÒN:kh báo mất kết nối, dis/off, ko ipwan, đèn đỏ, đã tắt bật thiết bị  nok, chuyển kt qua hỗ trợ lh 0903699399\n>> trungpc 14/10/2026 14:06:10: [MỸ BẢO 14/10 14:05] ✅ THÔNG SỐ BÌNH THƯỜNG\n📶 CS thu:chưa đo được · 🔁 Rớt KN:1\n➤ KTV:đo quang trực tiếp tại ONU (Mỹ Bảo chưa có số CS thu hợp lệ), gọi KH khai thác thêm lỗi (thiết bị nào, giờ nào bị), kiểm tra wifi/thiết bị đầu cuối tại nhà KH.\n>> PNC01.KHANGHHG 14/10/2026 14:22:41: fc bị gãy đã thay thế fc mới cho khách hàng mạng sử dụng ok suy hao ok\n>> PNC01.KHANGHHG 14/10/2026 14:23:27: FC của nhà khách bị gãy đã thay thế FC mới máy sử dụng ok suy hao ổn định",
+          "loai_7n": "7N Sau Triển Khai",
+          "emp_name": "PNC01.KHANGHHG",
           "block": "Phuong An Khanh-009"
         },
         {
@@ -1357,170 +1421,7 @@
           "block": "Phuong An Khanh-016"
         }
       ],
-      "tk_over_72h": [
-        {
-          "shd": "SGH747801",
-          "kh": "TRAN THI THOA",
-          "goi": "Sky",
-          "nv": "PNC01.TUONGNQ",
-          "tgxl": 191.9,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.TUONGNQ"
-        },
-        {
-          "shd": "SGAFV2638",
-          "kh": "Tong Viet Quang",
-          "goi": "Sky",
-          "nv": "PNC01.HUNGLQ2",
-          "tgxl": 138.2,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.hunglq2"
-        },
-        {
-          "shd": "SGH715857",
-          "kh": "TRAN LE THE ANH",
-          "goi": "Meta",
-          "nv": "PNC01.HUNGLQ2",
-          "tgxl": 79.1,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.hunglq2"
-        },
-        {
-          "shd": "SGAFV1030",
-          "kh": "CONG TY TNHH SK QUOC TE",
-          "goi": "LUX - 500",
-          "nv": "PNC01.HUNGLQ2",
-          "tgxl": 95.1,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.hunglq2"
-        },
-        {
-          "shd": "SGAEF4937",
-          "kh": "CONG TY TNHH KINGKONG PQ",
-          "goi": "Super300 Biz",
-          "nv": "PNC01.HUNGLQ2",
-          "tgxl": 121.9,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.hunglq2"
-        },
-        {
-          "shd": "SGAFU3112",
-          "kh": "Le Trung Man",
-          "goi": "Sky",
-          "nv": "PNC01.DATQT",
-          "tgxl": 114.8,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.DATQT"
-        },
-        {
-          "shd": "SGAFU6585",
-          "kh": "CONG TY TNHH KINH DOANH NHA AQUA",
-          "goi": "Super300 Biz",
-          "nv": "PNC01.DATQT",
-          "tgxl": 139.9,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.DATQT"
-        },
-        {
-          "shd": "SGH214992",
-          "kh": "HO VAN VU BAO",
-          "goi": "Sky",
-          "nv": "PNC01.DATQT",
-          "tgxl": 127.9,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.DATQT"
-        },
-        {
-          "shd": "SGAAZ5319",
-          "kh": "NGUYEN TRUNG KIEN",
-          "goi": "Sky",
-          "nv": "PNC01.DATQT",
-          "tgxl": 95.5,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.DATQT"
-        },
-        {
-          "shd": "SGAEA5321",
-          "kh": "LE QUANG HOAI",
-          "goi": "Sky F1",
-          "nv": "PNC01.LINHHNH",
-          "tgxl": 90.3,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.LINHHNH"
-        },
-        {
-          "shd": "SGACR5730",
-          "kh": "CONG TY TNHH THUONG MAI VA DICH VU CODE CRUSH",
-          "goi": "Meta",
-          "nv": "PNC01.QUANPM5",
-          "tgxl": 130.0,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.QUANPM5"
-        },
-        {
-          "shd": "SGAFU2094",
-          "kh": "CONG TY CO PHAN BAT DONG SAN HD HOMES",
-          "goi": "Meta F2",
-          "nv": "PNC01.QUANPM5",
-          "tgxl": 173.9,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.QUANPM5"
-        },
-        {
-          "shd": "SGAFU7155",
-          "kh": "Do Anh Khoa",
-          "goi": "Sky",
-          "nv": "PNC01.QUANPM5",
-          "tgxl": 89.1,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.QUANPM5"
-        },
-        {
-          "shd": "SGAFU5749",
-          "kh": "Le Van Thuyet",
-          "goi": "Giga",
-          "nv": "PNC01.TRUNGNT26",
-          "tgxl": 101.3,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.TRUNGNT26"
-        },
-        {
-          "shd": "SGH905661",
-          "kh": "PHAM VAN THAI",
-          "goi": "Meta",
-          "nv": "PNC01.TRUNGNT26",
-          "tgxl": 196.5,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.TRUNGNT26"
-        },
-        {
-          "shd": "SGAEH6318",
-          "kh": "CONG TY CO PHAN SMARTCONS",
-          "goi": "FTTH - Super250",
-          "nv": "PNC01.TRUNGNT26",
-          "tgxl": 117.8,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.TRUNGNT26"
-        },
-        {
-          "shd": "SGAFU7760",
-          "kh": "Truong Minh Giau",
-          "goi": "Sky",
-          "nv": "PNC01.DONGTD",
-          "tgxl": 92.8,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.DONGTD"
-        },
-        {
-          "shd": "SGAFV3399",
-          "kh": "Nguyen Thi Anh Thu",
-          "goi": "Sky",
-          "nv": "PNC01.DONGTD",
-          "tgxl": 120.5,
-          "block": "Phuong An Khanh-016",
-          "emp_name": "PNC01.DONGTD"
-        }
-      ],
+      "tk_over_72h": [],
       "bt_over_24h": [
         {
           "shd": "SGAEW6605",
@@ -1595,6 +1496,14 @@
           "emp_name": "PNC01.KIETDV"
         },
         {
+          "shd": "SGAEH5057",
+          "kh": "CONG TY TNHH CMP ADVISORY",
+          "nv": "PNC01.KHANGHHG",
+          "tgxl": 36.6,
+          "block": "Phuong An Khanh-009",
+          "emp_name": "PNC01.KHANGHHG"
+        },
+        {
           "shd": "SGAEN3210",
           "kh": "Le Thanh Ly",
           "nv": "PNC01.DUCNH5",
@@ -1623,6 +1532,14 @@
           "kh": "Huynh Van Dong",
           "nv": "PNC01.TUONGNQ",
           "tgxl": 53.2,
+          "block": "Phuong An Khanh-016",
+          "emp_name": "PNC01.TUONGNQ"
+        },
+        {
+          "shd": "SGACA1526",
+          "kh": "PHAM THI THU LIEU",
+          "nv": "PNC01.TUONGNQ",
+          "tgxl": 53.6,
           "block": "Phuong An Khanh-016",
           "emp_name": "PNC01.TUONGNQ"
         },
@@ -1711,6 +1628,14 @@
           "kh": "NGUYEN TRAN QUAN",
           "nv": "PNC01.THAINV12",
           "tgxl": 50.0,
+          "block": "Phuong An Khanh-016",
+          "emp_name": "PNC01.THAINV12"
+        },
+        {
+          "shd": "SGH944819",
+          "kh": "LE VAN DIEN",
+          "nv": "PNC01.THAINV12",
+          "tgxl": 74.7,
           "block": "Phuong An Khanh-016",
           "emp_name": "PNC01.THAINV12"
         },
@@ -2187,6 +2112,14 @@
           "emp_name": "PNC01.QUANPM5"
         },
         {
+          "shd": "SGABH6236",
+          "kh": "NGUYEN TRAM HOANG VI",
+          "nv": "PNC01.QUANPM5",
+          "tgxl": 69.2,
+          "block": "Phuong An Khanh-016",
+          "emp_name": "PNC01.QUANPM5"
+        },
+        {
           "shd": "SGAEF5437",
           "kh": "CONG TY TNHH 3B MAISON",
           "nv": "PNC01.QUANPM5",
@@ -2563,85 +2496,7 @@
           "emp_name": "PNC01.DONGTD"
         }
       ],
-      "late_tkm": [
-        {
-          "shd": "SGAFV2638",
-          "kh": "Tong Viet Quang",
-          "goi": "Sky",
-          "nv": "PNC01.HUNGLQ2",
-          "hoantat": "12/10/2026 11:33:56",
-          "loai_gd": "Triển khai mới",
-          "block": "Phuong An Khanh-016",
-          "note": "Trễ hẹn Triển khai mới",
-          "emp_name": "PNC01.hunglq2"
-        },
-        {
-          "shd": "SGH715857",
-          "kh": "TRAN LE THE ANH",
-          "goi": "Meta",
-          "nv": "PNC01.HUNGLQ2",
-          "hoantat": "02/10/2026 17:28:46",
-          "loai_gd": "KH nâng cấp dịch vụ gia tăng",
-          "block": "Phuong An Khanh-016",
-          "note": "Trễ hẹn KH nâng cấp dịch vụ gia tăng",
-          "emp_name": "PNC01.hunglq2"
-        },
-        {
-          "shd": "SGH214992",
-          "kh": "HO VAN VU BAO",
-          "goi": "Sky",
-          "nv": "PNC01.DATQT",
-          "hoantat": "02/10/2026 15:39:49",
-          "loai_gd": "Chuyển địa điểm",
-          "block": "Phuong An Khanh-016",
-          "note": "Trễ hẹn Chuyển địa điểm",
-          "emp_name": "PNC01.DATQT"
-        },
-        {
-          "shd": "SGAAZ5319",
-          "kh": "NGUYEN TRUNG KIEN",
-          "goi": "Sky",
-          "nv": "PNC01.DATQT",
-          "hoantat": "06/10/2026 15:35:25",
-          "loai_gd": "Khách hàng mua/đổi thiết bị",
-          "block": "Phuong An Khanh-016",
-          "note": "Trễ hẹn Khách hàng mua/đổi thiết bị",
-          "emp_name": "PNC01.DATQT"
-        },
-        {
-          "shd": "SGH601440",
-          "kh": "LE QUANG TAN",
-          "goi": "Sky F1",
-          "nv": "PNC01.LINHHNH",
-          "hoantat": "04/10/2026 21:24:30",
-          "loai_gd": "Thay đổi hạ tầng",
-          "block": "Phuong An Khanh-016",
-          "note": "Trễ hẹn Thay đổi hạ tầng",
-          "emp_name": "PNC01.LINHHNH"
-        },
-        {
-          "shd": "SGAFV7607",
-          "kh": "Nguyen Thi My Xuyen",
-          "goi": "Sky",
-          "nv": "PNC01.TRUNGNT26",
-          "hoantat": "14/10/2026 17:54:20",
-          "loai_gd": "Triển khai mới",
-          "block": "Phuong An Khanh-016",
-          "note": "Trễ hẹn Triển khai mới",
-          "emp_name": "PNC01.TRUNGNT26"
-        },
-        {
-          "shd": "SGH905661",
-          "kh": "PHAM VAN THAI",
-          "goi": "Meta",
-          "nv": "PNC01.TRUNGNT26",
-          "hoantat": "08/10/2026 16:32:34",
-          "loai_gd": "Swap WIFI 6",
-          "block": "Phuong An Khanh-016",
-          "note": "Trễ hẹn Swap WIFI 6",
-          "emp_name": "PNC01.TRUNGNT26"
-        }
-      ],
+      "late_tkm": [],
       "late_bt": [
         {
           "shd": "SGH749283",
@@ -2730,29 +2585,29 @@
       "au": 0,
       "workdays": 24.0,
       "productivity": 0.0,
-      "on_time_rate": 97.83,
-      "cll_rate": 3.57,
+      "on_time_rate": 97.06,
+      "cll_rate": 3.45,
       "cll3_rate": 0.0,
-      "cl_7n_tk_rate": 0.0,
+      "cl_7n_tk_rate": 20.0,
       "cl_7n_bt_rate": 0.0,
-      "cl_7n_total_rate": 0.0,
+      "cl_7n_total_rate": 2.94,
       "csat": 0,
       "tk_over_72h": 0,
       "bt_over_24h": 8,
-      "repontime_tk": 11.9,
-      "repontime_bt": 20.5,
-      "cl_7n_tk_count": 0,
+      "repontime_tk": 0.0,
+      "repontime_bt": 19.8,
+      "cl_7n_tk_count": 1,
       "cl_7n_bt_count": 0,
       "kpi_flags": {
         "on_time": true,
         "cll": true,
-        "cl_7n": true,
+        "cl_7n": false,
         "cll3": true,
         "rt_tk": true,
         "rt_bt": false,
         "csat": true
       },
-      "kpi_score": 6,
+      "kpi_score": 5,
       "kpi_status": "ĐẠT",
       "kpi_grade": "pass",
       "status_on_time": true,
@@ -2773,9 +2628,32 @@
             "note": "onu= -21.67 KH báo lỗi mạng ĐTV liên hệ số phản ánh kh KNM nhờ kt qua nhà ktra thêm>> trungpc 02/10/2026 11:13:16: [MỸ BẢO 02/10 07:31]  THÔNG SỐ BÌNH THƯỜNG CS thu:-21.67 dBm (đạt, chuẩn ≥ -24) ·  Rớt KN:0 ·  Online:3d 6h48m➤ KTV:gọi KH khai thác thêm lỗi (thiết bị nào, giờ nào bị), kiểm tra wifi/thiết bị đầu cuối tại nhà KH.>> PNC01.DONGPD 03/10/2026 10:00:29: LH ko nghe máy>> PNC01.DONGPD 04/10/2026 10:51:15: kh chưa có thời gian cụ thể để qua bt>> PNC01.DONGPD 04/10/2026 15:29:46: kh sử dụng PS 5 chậm test trên PS 5 download 900m , upload có 40m đã báo kh đó server của ps5 nên bên nhà mạng khắc phục đc"
           }
         ],
-        "cl_7n_tk": [],
+        "cl_7n_tk": [
+          {
+            "shd": "SGAFC2979",
+            "kh": "NGUYEN VAN TIEN",
+            "acc": "Sgfdl-260310-2979",
+            "goi": "Giga",
+            "ngay": "14/10/2026 14:37:56",
+            "nv": "PNC01.DONGPD",
+            "loi": "Hỏng FC (không có tín hiệu)",
+            "note": "\n>> trungpc 15/10/2026 09:35:17: [MỸ BẢO 15/10 09:34] 🟠 CẦN XỬ LÝ trong ca\n📶 CS thu:chưa đo được · 🔁 Rớt KN:3\n• Lỗi:Rớt KN 3 lần\n➤ KTV cần làm:\n1. Kiểm tra FC, cáp, nguồn thiết bị\n2. Mỹ Bảo chưa đo được CS thu:đo quang trực tiếp tại ONU\nBáo kết quả xử lý lên phiếu sau khi hoàn tất.\n>> PNC01.KHANGHHG 15/10/2026 09:50:24: fc bị gãy do mth tập điểm đã bấm lại cho khách hàng"
+          }
+        ],
         "cl_7n_bt": [],
-        "cl_7n_total": [],
+        "cl_7n_total": [
+          {
+            "shd": "SGAFC2979",
+            "kh": "NGUYEN VAN TIEN",
+            "acc": "Sgfdl-260310-2979",
+            "goi": "Giga",
+            "ngay": "14/10/2026 14:37:56",
+            "nv": "PNC01.DONGPD",
+            "loi": "Hỏng FC (không có tín hiệu)",
+            "note": "\n>> trungpc 15/10/2026 09:35:17: [MỸ BẢO 15/10 09:34] 🟠 CẦN XỬ LÝ trong ca\n📶 CS thu:chưa đo được · 🔁 Rớt KN:3\n• Lỗi:Rớt KN 3 lần\n➤ KTV cần làm:\n1. Kiểm tra FC, cáp, nguồn thiết bị\n2. Mỹ Bảo chưa đo được CS thu:đo quang trực tiếp tại ONU\nBáo kết quả xử lý lên phiếu sau khi hoàn tất.\n>> PNC01.KHANGHHG 15/10/2026 09:50:24: fc bị gãy do mth tập điểm đã bấm lại cho khách hàng",
+            "loai_7n": "7N Sau Triển Khai"
+          }
+        ],
         "tk_over_72h": [],
         "bt_over_24h": [
           {
@@ -2925,13 +2803,13 @@
       "on_time_rate": 100.0,
       "cll_rate": 0.0,
       "cll3_rate": 0.0,
-      "cl_7n_tk_rate": 10.53,
+      "cl_7n_tk_rate": 50.0,
       "cl_7n_bt_rate": 0.0,
-      "cl_7n_total_rate": 3.85,
+      "cl_7n_total_rate": 5.41,
       "csat": 0,
       "tk_over_72h": 0,
       "bt_over_24h": 1,
-      "repontime_tk": 7.7,
+      "repontime_tk": 0.0,
       "repontime_bt": 7.4,
       "cl_7n_tk_count": 2,
       "cl_7n_bt_count": 0,
@@ -3025,17 +2903,17 @@
       "workdays": 24.0,
       "productivity": 0.0,
       "on_time_rate": 100.0,
-      "cll_rate": 9.38,
+      "cll_rate": 8.57,
       "cll3_rate": 0.0,
       "cl_7n_tk_rate": 0.0,
-      "cl_7n_bt_rate": 3.12,
-      "cl_7n_total_rate": 2.7,
+      "cl_7n_bt_rate": 2.86,
+      "cl_7n_total_rate": 5.71,
       "csat": 0,
       "tk_over_72h": 0,
-      "bt_over_24h": 0,
-      "repontime_tk": 14.0,
-      "repontime_bt": 8.2,
-      "cl_7n_tk_count": 0,
+      "bt_over_24h": 1,
+      "repontime_tk": 0.0,
+      "repontime_bt": 9.5,
+      "cl_7n_tk_count": 1,
       "cl_7n_bt_count": 1,
       "kpi_flags": {
         "on_time": true,
@@ -3043,15 +2921,15 @@
         "cl_7n": false,
         "cll3": true,
         "rt_tk": true,
-        "rt_bt": true,
+        "rt_bt": false,
         "csat": true
       },
-      "kpi_score": 5,
-      "kpi_status": "ĐẠT",
-      "kpi_grade": "pass",
+      "kpi_score": 4,
+      "kpi_status": "CẢNH BÁO",
+      "kpi_grade": "warning",
       "status_on_time": true,
       "status_cll": false,
-      "status_all_kpi": true,
+      "status_all_kpi": false,
       "details": {
         "cll": [
           {
@@ -3091,7 +2969,18 @@
             "note": "SGH000261 - 0913344409 - Trần Thị Thanh: kh báo ko kết nối dc mạng,ko ipw,Activate/ Down/ initialization ,hd kh tắt bật thiết bị modem nok,nhờ kt hỗ trợ giúp em.    lh 0913344409>> trungpc 09/10/2026 07:08:44: [MỸ BẢO 09/10 07:07]  THÔNG SỐ BÌNH THƯỜNG CS thu:chưa đo được ·  Rớt KN:0➤ KTV:đo quang trực tiếp tại ONU (Mỹ Bảo chưa có số CS thu hợp lệ), gọi KH khai thác thêm lỗi (thiết bị nào, giờ nào bị), kiểm tra wifi/thiết bị đầu cuối tại nhà KH.>> PNC01.KHANGHHG 09/10/2026 12:41:25: kỹ thuật đã qua kiểm tra thấy dây bị nhà kế bên thi công làm đứt đã kéo lại cho khách hàng"
           }
         ],
-        "cl_7n_tk": [],
+        "cl_7n_tk": [
+          {
+            "shd": "SGAEN3496",
+            "kh": "CONG TY CO PHAN MAISON FRAVIA SAI GON",
+            "acc": "Sgfdl-250923-3496",
+            "goi": "Meta",
+            "ngay": "14/10/2026 10:58:14",
+            "nv": "PNC01.KHANGHHG",
+            "loi": "Hỏng FC (không có tín hiệu)",
+            "note": "SGAEN3496 - 0702391980 - CÔNG TY CỔ PHẦN MAISON FRAVIA SÀI GÒN:kh báo mất kết nối, dis/off, ko ipwan, đèn đỏ, đã tắt bật thiết bị  nok, chuyển kt qua hỗ trợ lh 0903699399\n>> trungpc 14/10/2026 14:06:10: [MỸ BẢO 14/10 14:05] ✅ THÔNG SỐ BÌNH THƯỜNG\n📶 CS thu:chưa đo được · 🔁 Rớt KN:1\n➤ KTV:đo quang trực tiếp tại ONU (Mỹ Bảo chưa có số CS thu hợp lệ), gọi KH khai thác thêm lỗi (thiết bị nào, giờ nào bị), kiểm tra wifi/thiết bị đầu cuối tại nhà KH.\n>> PNC01.KHANGHHG 14/10/2026 14:22:41: fc bị gãy đã thay thế fc mới cho khách hàng mạng sử dụng ok suy hao ok\n>> PNC01.KHANGHHG 14/10/2026 14:23:27: FC của nhà khách bị gãy đã thay thế FC mới máy sử dụng ok suy hao ổn định"
+          }
+        ],
         "cl_7n_bt": [
           {
             "shd": "SGH050029",
@@ -3106,6 +2995,17 @@
         ],
         "cl_7n_total": [
           {
+            "shd": "SGAEN3496",
+            "kh": "CONG TY CO PHAN MAISON FRAVIA SAI GON",
+            "acc": "Sgfdl-250923-3496",
+            "goi": "Meta",
+            "ngay": "14/10/2026 10:58:14",
+            "nv": "PNC01.KHANGHHG",
+            "loi": "Hỏng FC (không có tín hiệu)",
+            "note": "SGAEN3496 - 0702391980 - CÔNG TY CỔ PHẦN MAISON FRAVIA SÀI GÒN:kh báo mất kết nối, dis/off, ko ipwan, đèn đỏ, đã tắt bật thiết bị  nok, chuyển kt qua hỗ trợ lh 0903699399\n>> trungpc 14/10/2026 14:06:10: [MỸ BẢO 14/10 14:05] ✅ THÔNG SỐ BÌNH THƯỜNG\n📶 CS thu:chưa đo được · 🔁 Rớt KN:1\n➤ KTV:đo quang trực tiếp tại ONU (Mỹ Bảo chưa có số CS thu hợp lệ), gọi KH khai thác thêm lỗi (thiết bị nào, giờ nào bị), kiểm tra wifi/thiết bị đầu cuối tại nhà KH.\n>> PNC01.KHANGHHG 14/10/2026 14:22:41: fc bị gãy đã thay thế fc mới cho khách hàng mạng sử dụng ok suy hao ok\n>> PNC01.KHANGHHG 14/10/2026 14:23:27: FC của nhà khách bị gãy đã thay thế FC mới máy sử dụng ok suy hao ổn định",
+            "loai_7n": "7N Sau Triển Khai"
+          },
+          {
             "shd": "SGH050029",
             "kh": "Le Thi Viet Nhi",
             "acc": "Sgfdl-150922-029",
@@ -3118,7 +3018,15 @@
           }
         ],
         "tk_over_72h": [],
-        "bt_over_24h": [],
+        "bt_over_24h": [
+          {
+            "shd": "SGAEH5057",
+            "kh": "CONG TY TNHH CMP ADVISORY",
+            "nv": "PNC01.KHANGHHG",
+            "tgxl": 36.6,
+            "block": "Phuong An Khanh-009"
+          }
+        ],
         "late_tkm": [],
         "late_bt": []
       }
@@ -3143,8 +3051,8 @@
       "csat": 0,
       "tk_over_72h": 0,
       "bt_over_24h": 1,
-      "repontime_tk": 7.9,
-      "repontime_bt": 8.2,
+      "repontime_tk": 0.0,
+      "repontime_bt": 7.9,
       "cl_7n_tk_count": 0,
       "cl_7n_bt_count": 0,
       "kpi_flags": {
@@ -3192,32 +3100,32 @@
       "au": 0,
       "workdays": 24.0,
       "productivity": 0.0,
-      "on_time_rate": 97.22,
-      "cll_rate": 4.76,
+      "on_time_rate": 96.43,
+      "cll_rate": 4.35,
       "cll3_rate": 0.0,
       "cl_7n_tk_rate": 0.0,
       "cl_7n_bt_rate": 0.0,
       "cl_7n_total_rate": 0.0,
       "csat": 0,
-      "tk_over_72h": 1,
-      "bt_over_24h": 3,
-      "repontime_tk": 32.7,
-      "repontime_bt": 16.0,
+      "tk_over_72h": 0,
+      "bt_over_24h": 4,
+      "repontime_tk": 0.0,
+      "repontime_bt": 17.3,
       "cl_7n_tk_count": 0,
       "cl_7n_bt_count": 0,
       "kpi_flags": {
-        "on_time": true,
+        "on_time": false,
         "cll": true,
         "cl_7n": true,
         "cll3": true,
-        "rt_tk": false,
+        "rt_tk": true,
         "rt_bt": false,
         "csat": true
       },
       "kpi_score": 5,
       "kpi_status": "ĐẠT",
       "kpi_grade": "pass",
-      "status_on_time": true,
+      "status_on_time": false,
       "status_cll": true,
       "status_all_kpi": true,
       "details": {
@@ -3238,16 +3146,7 @@
         "cl_7n_tk": [],
         "cl_7n_bt": [],
         "cl_7n_total": [],
-        "tk_over_72h": [
-          {
-            "shd": "SGH747801",
-            "kh": "TRAN THI THOA",
-            "goi": "Sky",
-            "nv": "PNC01.TUONGNQ",
-            "tgxl": 191.9,
-            "block": "Phuong An Khanh-016"
-          }
-        ],
+        "tk_over_72h": [],
         "bt_over_24h": [
           {
             "shd": "SGAEJ9418",
@@ -3268,6 +3167,13 @@
             "kh": "Huynh Van Dong",
             "nv": "PNC01.TUONGNQ",
             "tgxl": 53.2,
+            "block": "Phuong An Khanh-016"
+          },
+          {
+            "shd": "SGACA1526",
+            "kh": "PHAM THI THU LIEU",
+            "nv": "PNC01.TUONGNQ",
+            "tgxl": 53.6,
             "block": "Phuong An Khanh-016"
           }
         ],
@@ -3295,17 +3201,17 @@
       "au": 0,
       "workdays": 24.0,
       "productivity": 0.0,
-      "on_time_rate": 97.67,
-      "cll_rate": 13.33,
+      "on_time_rate": 97.3,
+      "cll_rate": 14.29,
       "cll3_rate": 0.0,
       "cl_7n_tk_rate": 0.0,
-      "cl_7n_bt_rate": 6.67,
-      "cl_7n_total_rate": 4.65,
+      "cl_7n_bt_rate": 5.71,
+      "cl_7n_total_rate": 5.41,
       "csat": 0,
       "tk_over_72h": 0,
-      "bt_over_24h": 11,
-      "repontime_tk": 17.9,
-      "repontime_bt": 25.4,
+      "bt_over_24h": 12,
+      "repontime_tk": 0.0,
+      "repontime_bt": 26.2,
       "cl_7n_tk_count": 0,
       "cl_7n_bt_count": 2,
       "kpi_flags": {
@@ -3360,6 +3266,18 @@
             "checklist": "SO",
             "dich_vu": "Internet",
             "note": "0943590179 Kh báo qua Hifpt: Lỗi internet , ktra  Activate/Down/initialization k  ipwan, tạo cl tick xanh gần nhất, nhờ kt htro giúp, Chat OB >> trungpc 09/10/2026 07:08:32: [MỸ BẢO 09/10 07:06]  THÔNG SỐ BÌNH THƯỜNG CS thu:chưa đo được ·  Rớt KN:0➤ KTV:đo quang trực tiếp tại ONU (Mỹ Bảo chưa có số CS thu hợp lệ), gọi KH khai thác thêm lỗi (thiết bị nào, giờ nào bị), kiểm tra wifi/thiết bị đầu cuối tại nhà KH.>> PNC01.DONGTD 09/10/2026 11:14:26: 1. Số Cls trong năm:2. Liên hệ KH: số 09435901793. Mô hình nhà: dãy trọ4. Mô hình thiết bị:1 tbi 3000cv25. Tổng thiết bị SD: 16. Nguyên nhân lỗi (KTV khai thác, nhận diện lỗi thực tế tại nhà): chập chờn7. Phương án xử lý là gì: thay fc8. TOOL Mỹ bảo: \"có dùng”9. KH có cần trang bị MD/AP không (theo nhận định của KTV): ko10. KH có đồng ý mua thêm MD/AP: ko11. KTV chủ động lắp AP SE cho KH: ko"
+          },
+          {
+            "shd": "SGH944819",
+            "kh": "LE VAN DIEN",
+            "nv": "PNC01.THAINV12",
+            "ngay_phancong": "01/10/2026 08:52:44",
+            "ngay_tao": "01/10/2026 08:52:42",
+            "ngay_hoantat": "02/10/2026 21:52:29",
+            "so_lan_lap": "3",
+            "checklist": "SO",
+            "dich_vu": "Internet",
+            "note": ">> trungpc 12/10/2026 09:51:00: [MỸ BẢO 12/10 09:49]  THÔNG SỐ BÌNH THƯỜNG CS thu:chưa đo được ·  Rớt KN:0➤ KTV:đo quang trực tiếp tại ONU (Mỹ Bảo chưa có số CS thu hợp lệ), gọi KH khai thác thêm lỗi (thiết bị nào, giờ nào bị), kiểm tra wifi/thiết bị đầu cuối tại nhà KH.>> trungpc 12/10/2026 10:20:53: [MỸ BẢO 12/10 10:20]  CẦN XỬ LÝ trong ca CS thu:chưa đo được ·  Rớt KN:3• Lỗi:Rớt KN 3 lần➤ KTV cần làm:1. Kiểm tra FC, cáp, nguồn thiết bị2. Mỹ Bảo chưa đo được CS thu:đo quang trực tiếp tại ONUBáo kết quả xử lý lên phiếu sau khi hoàn tất.>> PNC01.THAINV12 12/10/2026 14:36:42: 1. Số CLs trong năm: 12. Liên hệ KHG: 09086004933. Mô hình : nguyên căn4. Mô hình thiết bị: 3000gzv35. Tổng thiết bị SD: 5 bao gồm cả camera của kh6. Nguyên nhân lỗi:  đứt cap7. Phương án xử lý : ktv đã thay cap8. TOOL Mỹ bảo: đã dùng mỹ bảo chuẩn đoán và đo kiểm nghiệm thu ok9. KH có cần trang bị MD/AP không: không cần vì không gian nhỏ10. KH có đồng ý mua thêm MD/AP:  kh ko có nhu cầu11. KTV chủ động lắp AP SE cho KH: ktv sẽ lắp nếu kh có nhu cầu>> PNC01.THAINV12 13/10/2026 17:38:29: đnag theo dõi thêm>> PNC01.THAINV12 13/10/2026 18:38:09: ktv đã kéo lại cap kh vẫn rớt do, cupler bộ chia 1x16 bị gập ktv đã xử lý>> viettq3 15/10/2026 12:23:17: đã kiểm tra xử lý lại tuyến cáp>> phuongnam.tiendv1 15/10/2026 12:23:58: đã kiểm tra xử lý lại phần tuyến cáp"
           },
           {
             "shd": "SGJ099202",
@@ -3499,6 +3417,13 @@
             "nv": "PNC01.THAINV12",
             "tgxl": 50.0,
             "block": "Phuong An Khanh-016"
+          },
+          {
+            "shd": "SGH944819",
+            "kh": "LE VAN DIEN",
+            "nv": "PNC01.THAINV12",
+            "tgxl": 74.7,
+            "block": "Phuong An Khanh-016"
           }
         ],
         "late_tkm": [],
@@ -3525,16 +3450,16 @@
       "au": 0,
       "workdays": 24.0,
       "productivity": 0.0,
-      "on_time_rate": 98.46,
+      "on_time_rate": 98.21,
       "cll_rate": 3.85,
       "cll3_rate": 0.0,
       "cl_7n_tk_rate": 0.0,
       "cl_7n_bt_rate": 3.85,
-      "cl_7n_total_rate": 3.08,
+      "cl_7n_total_rate": 3.57,
       "csat": 0,
       "tk_over_72h": 0,
       "bt_over_24h": 9,
-      "repontime_tk": 16.8,
+      "repontime_tk": 0.0,
       "repontime_bt": 18.8,
       "cl_7n_tk_count": 0,
       "cl_7n_bt_count": 2,
@@ -3717,17 +3642,17 @@
       "au": 0,
       "workdays": 24.0,
       "productivity": 0.0,
-      "on_time_rate": 97.56,
-      "cll_rate": 11.11,
+      "on_time_rate": 100.0,
+      "cll_rate": 10.34,
       "cll3_rate": 0.0,
-      "cl_7n_tk_rate": 7.14,
-      "cl_7n_bt_rate": 5.56,
-      "cl_7n_total_rate": 6.1,
+      "cl_7n_tk_rate": 50.0,
+      "cl_7n_bt_rate": 5.17,
+      "cl_7n_total_rate": 8.06,
       "csat": 0,
-      "tk_over_72h": 4,
+      "tk_over_72h": 0,
       "bt_over_24h": 18,
-      "repontime_tk": 24.3,
-      "repontime_bt": 20.4,
+      "repontime_tk": 0.0,
+      "repontime_bt": 20.0,
       "cl_7n_tk_count": 2,
       "cl_7n_bt_count": 3,
       "kpi_flags": {
@@ -3735,13 +3660,13 @@
         "cll": false,
         "cl_7n": false,
         "cll3": true,
-        "rt_tk": false,
+        "rt_tk": true,
         "rt_bt": false,
         "csat": true
       },
-      "kpi_score": 3,
-      "kpi_status": "CHƯA ĐẠT",
-      "kpi_grade": "danger",
+      "kpi_score": 4,
+      "kpi_status": "CẢNH BÁO",
+      "kpi_grade": "warning",
       "status_on_time": true,
       "status_cll": false,
       "status_all_kpi": false,
@@ -3931,40 +3856,7 @@
             "loai_7n": "7N Sau Bảo Trì"
           }
         ],
-        "tk_over_72h": [
-          {
-            "shd": "SGAFV2638",
-            "kh": "Tong Viet Quang",
-            "goi": "Sky",
-            "nv": "PNC01.HUNGLQ2",
-            "tgxl": 138.2,
-            "block": "Phuong An Khanh-016"
-          },
-          {
-            "shd": "SGH715857",
-            "kh": "TRAN LE THE ANH",
-            "goi": "Meta",
-            "nv": "PNC01.HUNGLQ2",
-            "tgxl": 79.1,
-            "block": "Phuong An Khanh-016"
-          },
-          {
-            "shd": "SGAFV1030",
-            "kh": "CONG TY TNHH SK QUOC TE",
-            "goi": "LUX - 500",
-            "nv": "PNC01.HUNGLQ2",
-            "tgxl": 95.1,
-            "block": "Phuong An Khanh-016"
-          },
-          {
-            "shd": "SGAEF4937",
-            "kh": "CONG TY TNHH KINGKONG PQ",
-            "goi": "Super300 Biz",
-            "nv": "PNC01.HUNGLQ2",
-            "tgxl": 121.9,
-            "block": "Phuong An Khanh-016"
-          }
-        ],
+        "tk_over_72h": [],
         "bt_over_24h": [
           {
             "shd": "SGAEV8123",
@@ -4093,28 +3985,7 @@
             "block": "Phuong An Khanh-016"
           }
         ],
-        "late_tkm": [
-          {
-            "shd": "SGAFV2638",
-            "kh": "Tong Viet Quang",
-            "goi": "Sky",
-            "nv": "PNC01.HUNGLQ2",
-            "hoantat": "12/10/2026 11:33:56",
-            "loai_gd": "Triển khai mới",
-            "block": "Phuong Nam-01",
-            "note": "Trễ hẹn Triển khai mới"
-          },
-          {
-            "shd": "SGH715857",
-            "kh": "TRAN LE THE ANH",
-            "goi": "Meta",
-            "nv": "PNC01.HUNGLQ2",
-            "hoantat": "02/10/2026 17:28:46",
-            "loai_gd": "KH nâng cấp dịch vụ gia tăng",
-            "block": "Phuong Nam-01",
-            "note": "Trễ hẹn KH nâng cấp dịch vụ gia tăng"
-          }
-        ],
+        "late_tkm": [],
         "late_bt": []
       }
     },
@@ -4129,17 +4000,17 @@
       "au": 0,
       "workdays": 24.0,
       "productivity": 0.0,
-      "on_time_rate": 92.86,
+      "on_time_rate": 95.45,
       "cll_rate": 0.0,
       "cll3_rate": 0.0,
       "cl_7n_tk_rate": 0.0,
       "cl_7n_bt_rate": 0.0,
       "cl_7n_total_rate": 0.0,
       "csat": 0,
-      "tk_over_72h": 4,
+      "tk_over_72h": 0,
       "bt_over_24h": 12,
-      "repontime_tk": 46.1,
-      "repontime_bt": 26.6,
+      "repontime_tk": 0.0,
+      "repontime_bt": 25.3,
       "cl_7n_tk_count": 0,
       "cl_7n_bt_count": 0,
       "kpi_flags": {
@@ -4147,55 +4018,22 @@
         "cll": true,
         "cl_7n": true,
         "cll3": true,
-        "rt_tk": false,
+        "rt_tk": true,
         "rt_bt": false,
         "csat": true
       },
-      "kpi_score": 4,
-      "kpi_status": "CẢNH BÁO",
-      "kpi_grade": "warning",
+      "kpi_score": 5,
+      "kpi_status": "ĐẠT",
+      "kpi_grade": "pass",
       "status_on_time": false,
       "status_cll": true,
-      "status_all_kpi": false,
+      "status_all_kpi": true,
       "details": {
         "cll": [],
         "cl_7n_tk": [],
         "cl_7n_bt": [],
         "cl_7n_total": [],
-        "tk_over_72h": [
-          {
-            "shd": "SGAFU3112",
-            "kh": "Le Trung Man",
-            "goi": "Sky",
-            "nv": "PNC01.DATQT",
-            "tgxl": 114.8,
-            "block": "Phuong Binh Trung-017"
-          },
-          {
-            "shd": "SGAFU6585",
-            "kh": "CONG TY TNHH KINH DOANH NHA AQUA",
-            "goi": "Super300 Biz",
-            "nv": "PNC01.DATQT",
-            "tgxl": 139.9,
-            "block": "Phuong Binh Trung-017"
-          },
-          {
-            "shd": "SGH214992",
-            "kh": "HO VAN VU BAO",
-            "goi": "Sky",
-            "nv": "PNC01.DATQT",
-            "tgxl": 127.9,
-            "block": "Phuong Binh Trung-017"
-          },
-          {
-            "shd": "SGAAZ5319",
-            "kh": "NGUYEN TRUNG KIEN",
-            "goi": "Sky",
-            "nv": "PNC01.DATQT",
-            "tgxl": 95.5,
-            "block": "Phuong Binh Trung-017"
-          }
-        ],
+        "tk_over_72h": [],
         "bt_over_24h": [
           {
             "shd": "SGH923781",
@@ -4282,28 +4120,7 @@
             "block": "Phuong Binh Trung-017"
           }
         ],
-        "late_tkm": [
-          {
-            "shd": "SGH214992",
-            "kh": "HO VAN VU BAO",
-            "goi": "Sky",
-            "nv": "PNC01.DATQT",
-            "hoantat": "02/10/2026 15:39:49",
-            "loai_gd": "Chuyển địa điểm",
-            "block": "Phuong Nam-01",
-            "note": "Trễ hẹn Chuyển địa điểm"
-          },
-          {
-            "shd": "SGAAZ5319",
-            "kh": "NGUYEN TRUNG KIEN",
-            "goi": "Sky",
-            "nv": "PNC01.DATQT",
-            "hoantat": "06/10/2026 15:35:25",
-            "loai_gd": "Khách hàng mua/đổi thiết bị",
-            "block": "Phuong Nam-01",
-            "note": "Trễ hẹn Khách hàng mua/đổi thiết bị"
-          }
-        ],
+        "late_tkm": [],
         "late_bt": [
           {
             "shd": "SGJ076237",
@@ -4335,25 +4152,25 @@
       "au": 0,
       "workdays": 24.0,
       "productivity": 0.0,
-      "on_time_rate": 97.78,
-      "cll_rate": 5.26,
+      "on_time_rate": 100.0,
+      "cll_rate": 5.0,
       "cll3_rate": 0.0,
       "cl_7n_tk_rate": 0.0,
-      "cl_7n_bt_rate": 5.26,
-      "cl_7n_total_rate": 2.22,
+      "cl_7n_bt_rate": 5.0,
+      "cl_7n_total_rate": 3.85,
       "csat": 0,
-      "tk_over_72h": 1,
+      "tk_over_72h": 0,
       "bt_over_24h": 4,
-      "repontime_tk": 19.1,
-      "repontime_bt": 21.7,
+      "repontime_tk": 0.0,
+      "repontime_bt": 21.6,
       "cl_7n_tk_count": 0,
       "cl_7n_bt_count": 1,
       "kpi_flags": {
         "on_time": true,
         "cll": true,
-        "cl_7n": true,
+        "cl_7n": false,
         "cll3": true,
-        "rt_tk": false,
+        "rt_tk": true,
         "rt_bt": false,
         "csat": true
       },
@@ -4404,16 +4221,7 @@
             "loai_7n": "7N Sau Bảo Trì"
           }
         ],
-        "tk_over_72h": [
-          {
-            "shd": "SGAEA5321",
-            "kh": "LE QUANG HOAI",
-            "goi": "Sky F1",
-            "nv": "PNC01.LINHHNH",
-            "tgxl": 90.3,
-            "block": "Phuong Binh Trung-017"
-          }
-        ],
+        "tk_over_72h": [],
         "bt_over_24h": [
           {
             "shd": "SGH969766",
@@ -4444,18 +4252,7 @@
             "block": "Phuong Binh Trung-017"
           }
         ],
-        "late_tkm": [
-          {
-            "shd": "SGH601440",
-            "kh": "LE QUANG TAN",
-            "goi": "Sky F1",
-            "nv": "PNC01.LINHHNH",
-            "hoantat": "04/10/2026 21:24:30",
-            "loai_gd": "Thay đổi hạ tầng",
-            "block": "Phuong Nam-01",
-            "note": "Trễ hẹn Thay đổi hạ tầng"
-          }
-        ],
+        "late_tkm": [],
         "late_bt": []
       }
     },
@@ -4471,16 +4268,16 @@
       "workdays": 24.0,
       "productivity": 0.0,
       "on_time_rate": 100.0,
-      "cll_rate": 6.98,
+      "cll_rate": 6.67,
       "cll3_rate": 0.0,
-      "cl_7n_tk_rate": 6.67,
-      "cl_7n_bt_rate": 6.98,
-      "cl_7n_total_rate": 6.9,
+      "cl_7n_tk_rate": 0.0,
+      "cl_7n_bt_rate": 6.67,
+      "cl_7n_total_rate": 8.89,
       "csat": 0,
-      "tk_over_72h": 3,
-      "bt_over_24h": 17,
-      "repontime_tk": 40.0,
-      "repontime_bt": 26.2,
+      "tk_over_72h": 0,
+      "bt_over_24h": 18,
+      "repontime_tk": 0.0,
+      "repontime_bt": 26.6,
       "cl_7n_tk_count": 1,
       "cl_7n_bt_count": 3,
       "kpi_flags": {
@@ -4488,16 +4285,16 @@
         "cll": true,
         "cl_7n": false,
         "cll3": true,
-        "rt_tk": false,
+        "rt_tk": true,
         "rt_bt": false,
         "csat": true
       },
-      "kpi_score": 4,
-      "kpi_status": "CẢNH BÁO",
-      "kpi_grade": "warning",
+      "kpi_score": 5,
+      "kpi_status": "ĐẠT",
+      "kpi_grade": "pass",
       "status_on_time": true,
       "status_cll": true,
-      "status_all_kpi": false,
+      "status_all_kpi": true,
       "details": {
         "cll": [
           {
@@ -4627,32 +4424,7 @@
             "loai_7n": "7N Sau Bảo Trì"
           }
         ],
-        "tk_over_72h": [
-          {
-            "shd": "SGACR5730",
-            "kh": "CONG TY TNHH THUONG MAI VA DICH VU CODE CRUSH",
-            "goi": "Meta",
-            "nv": "PNC01.QUANPM5",
-            "tgxl": 130.0,
-            "block": "Phuong An Khanh-016"
-          },
-          {
-            "shd": "SGAFU2094",
-            "kh": "CONG TY CO PHAN BAT DONG SAN HD HOMES",
-            "goi": "Meta F2",
-            "nv": "PNC01.QUANPM5",
-            "tgxl": 173.9,
-            "block": "Phuong An Khanh-016"
-          },
-          {
-            "shd": "SGAFU7155",
-            "kh": "Do Anh Khoa",
-            "goi": "Sky",
-            "nv": "PNC01.QUANPM5",
-            "tgxl": 89.1,
-            "block": "Phuong An Khanh-016"
-          }
-        ],
+        "tk_over_72h": [],
         "bt_over_24h": [
           {
             "shd": "SGACZ5533",
@@ -4767,6 +4539,13 @@
             "block": "Phuong An Khanh-016"
           },
           {
+            "shd": "SGABH6236",
+            "kh": "NGUYEN TRAM HOANG VI",
+            "nv": "PNC01.QUANPM5",
+            "tgxl": 69.2,
+            "block": "Phuong An Khanh-016"
+          },
+          {
             "shd": "SGAEF5437",
             "kh": "CONG TY TNHH 3B MAISON",
             "nv": "PNC01.QUANPM5",
@@ -4789,34 +4568,34 @@
       "au": 0,
       "workdays": 24.0,
       "productivity": 0.0,
-      "on_time_rate": 96.55,
+      "on_time_rate": 97.67,
       "cll_rate": 4.65,
       "cll3_rate": 0.0,
-      "cl_7n_tk_rate": 6.67,
+      "cl_7n_tk_rate": 0.0,
       "cl_7n_bt_rate": 2.33,
-      "cl_7n_total_rate": 3.45,
+      "cl_7n_total_rate": 4.65,
       "csat": 0,
-      "tk_over_72h": 2,
+      "tk_over_72h": 0,
       "bt_over_24h": 15,
-      "repontime_tk": 31.0,
+      "repontime_tk": 0.0,
       "repontime_bt": 25.4,
       "cl_7n_tk_count": 1,
       "cl_7n_bt_count": 1,
       "kpi_flags": {
-        "on_time": false,
+        "on_time": true,
         "cll": true,
         "cl_7n": false,
         "cll3": true,
-        "rt_tk": false,
+        "rt_tk": true,
         "rt_bt": false,
         "csat": true
       },
-      "kpi_score": 3,
-      "kpi_status": "CHƯA ĐẠT",
-      "kpi_grade": "danger",
-      "status_on_time": false,
+      "kpi_score": 5,
+      "kpi_status": "ĐẠT",
+      "kpi_grade": "pass",
+      "status_on_time": true,
       "status_cll": true,
-      "status_all_kpi": false,
+      "status_all_kpi": true,
       "details": {
         "cll": [
           {
@@ -4892,32 +4671,7 @@
             "loai_7n": "7N Sau Bảo Trì"
           }
         ],
-        "tk_over_72h": [
-          {
-            "shd": "SGAFU5749",
-            "kh": "Le Van Thuyet",
-            "goi": "Giga",
-            "nv": "PNC01.TRUNGNT26",
-            "tgxl": 101.3,
-            "block": "Phuong Binh Trung-017"
-          },
-          {
-            "shd": "SGH905661",
-            "kh": "PHAM VAN THAI",
-            "goi": "Meta",
-            "nv": "PNC01.TRUNGNT26",
-            "tgxl": 196.5,
-            "block": "Phuong Binh Trung-017"
-          },
-          {
-            "shd": "SGAEH6318",
-            "kh": "CONG TY CO PHAN SMARTCONS",
-            "goi": "FTTH - Super250",
-            "nv": "PNC01.TRUNGNT26",
-            "tgxl": 117.8,
-            "block": "Phuong Binh Trung-017"
-          }
-        ],
+        "tk_over_72h": [],
         "bt_over_24h": [
           {
             "shd": "SGABH6686",
@@ -5018,28 +4772,7 @@
             "block": "Phuong Binh Trung-017"
           }
         ],
-        "late_tkm": [
-          {
-            "shd": "SGAFV7607",
-            "kh": "Nguyen Thi My Xuyen",
-            "goi": "Sky",
-            "nv": "PNC01.TRUNGNT26",
-            "hoantat": "14/10/2026 17:54:20",
-            "loai_gd": "Triển khai mới",
-            "block": "Phuong Nam-01",
-            "note": "Trễ hẹn Triển khai mới"
-          },
-          {
-            "shd": "SGH905661",
-            "kh": "PHAM VAN THAI",
-            "goi": "Meta",
-            "nv": "PNC01.TRUNGNT26",
-            "hoantat": "08/10/2026 16:32:34",
-            "loai_gd": "Swap WIFI 6",
-            "block": "Phuong Nam-01",
-            "note": "Trễ hẹn Swap WIFI 6"
-          }
-        ],
+        "late_tkm": [],
         "late_bt": [
           {
             "shd": "SGH640703",
@@ -5064,16 +4797,16 @@
       "workdays": 24.0,
       "productivity": 0.0,
       "on_time_rate": 100.0,
-      "cll_rate": 5.26,
+      "cll_rate": 5.13,
       "cll3_rate": 0.0,
-      "cl_7n_tk_rate": 7.14,
-      "cl_7n_bt_rate": 5.26,
-      "cl_7n_total_rate": 5.77,
+      "cl_7n_tk_rate": 50.0,
+      "cl_7n_bt_rate": 5.13,
+      "cl_7n_total_rate": 7.32,
       "csat": 0,
       "tk_over_72h": 0,
       "bt_over_24h": 7,
-      "repontime_tk": 7.8,
-      "repontime_bt": 14.5,
+      "repontime_tk": 0.0,
+      "repontime_bt": 14.2,
       "cl_7n_tk_count": 1,
       "cl_7n_bt_count": 2,
       "kpi_flags": {
@@ -5259,11 +4992,11 @@
       "cll3_rate": 0.0,
       "cl_7n_tk_rate": 0.0,
       "cl_7n_bt_rate": 12.5,
-      "cl_7n_total_rate": 10.0,
+      "cl_7n_total_rate": 12.5,
       "csat": 0,
       "tk_over_72h": 0,
       "bt_over_24h": 8,
-      "repontime_tk": 15.0,
+      "repontime_tk": 0.0,
       "repontime_bt": 80.7,
       "cl_7n_tk_count": 0,
       "cl_7n_bt_count": 1,
@@ -5397,17 +5130,17 @@
       "au": 0,
       "workdays": 24.0,
       "productivity": 0.0,
-      "on_time_rate": 98.44,
-      "cll_rate": 17.65,
+      "on_time_rate": 98.31,
+      "cll_rate": 16.98,
       "cll3_rate": 0.0,
-      "cl_7n_tk_rate": 15.38,
-      "cl_7n_bt_rate": 13.73,
-      "cl_7n_total_rate": 14.06,
+      "cl_7n_tk_rate": 33.33,
+      "cl_7n_bt_rate": 13.21,
+      "cl_7n_total_rate": 15.25,
       "csat": 0,
-      "tk_over_72h": 2,
+      "tk_over_72h": 0,
       "bt_over_24h": 17,
-      "repontime_tk": 38.1,
-      "repontime_bt": 27.1,
+      "repontime_tk": 0.0,
+      "repontime_bt": 26.3,
       "cl_7n_tk_count": 2,
       "cl_7n_bt_count": 7,
       "kpi_flags": {
@@ -5415,13 +5148,13 @@
         "cll": false,
         "cl_7n": false,
         "cll3": true,
-        "rt_tk": false,
+        "rt_tk": true,
         "rt_bt": false,
         "csat": true
       },
-      "kpi_score": 3,
-      "kpi_status": "CHƯA ĐẠT",
-      "kpi_grade": "danger",
+      "kpi_score": 4,
+      "kpi_status": "CẢNH BÁO",
+      "kpi_grade": "warning",
       "status_on_time": true,
       "status_cll": false,
       "status_all_kpi": false,
@@ -5731,24 +5464,7 @@
             "loai_7n": "7N Sau Bảo Trì"
           }
         ],
-        "tk_over_72h": [
-          {
-            "shd": "SGAFU7760",
-            "kh": "Truong Minh Giau",
-            "goi": "Sky",
-            "nv": "PNC01.DONGTD",
-            "tgxl": 92.8,
-            "block": "Phuong An Khanh-016"
-          },
-          {
-            "shd": "SGAFV3399",
-            "kh": "Nguyen Thi Anh Thu",
-            "goi": "Sky",
-            "nv": "PNC01.DONGTD",
-            "tgxl": 120.5,
-            "block": "Phuong An Khanh-009"
-          }
-        ],
+        "tk_over_72h": [],
         "bt_over_24h": [
           {
             "shd": "SGAFR7606",
@@ -5888,10 +5604,10 @@
     {
       "block": "Phuong An Khanh-009",
       "count": 7,
-      "avg_on_time": 99.47,
-      "avg_cll": 3.15,
+      "avg_on_time": 99.32,
+      "avg_cll": 3.0,
       "total_tk_over_72h": 0,
-      "total_bt_over_24h": 26,
+      "total_bt_over_24h": 27,
       "employees": [
         "PNC01.DONGPD",
         "PNC01.TRUNGP",
@@ -5905,10 +5621,10 @@
     {
       "block": "Phuong An Khanh-016",
       "count": 8,
-      "avg_on_time": 97.26,
-      "avg_cll": 7.97,
-      "total_tk_over_72h": 17,
-      "total_bt_over_24h": 97,
+      "avg_on_time": 98.14,
+      "avg_cll": 7.79,
+      "total_tk_over_72h": 0,
+      "total_bt_over_24h": 100,
       "employees": [
         "PNC01.TUONGNQ",
         "PNC01.THAINV12",
@@ -5933,8 +5649,9 @@
     }
   ],
   "yesterday_alerts": {
-    "target_date": "14/10/2026",
+    "target_date": "15/10/2026",
     "available_dates": [
+      "15/10/2026",
       "14/10/2026",
       "13/10/2026",
       "12/10/2026",
@@ -5952,140 +5669,168 @@
       "25/09/2026"
     ],
     "summary": {
-      "target_date": "14/10/2026",
+      "target_date": "15/10/2026",
       "is_yesterday": true,
-      "total_flagged_employees": 12,
+      "total_flagged_employees": 7,
       "total_team_employees": 16,
-      "total_issues": 18,
-      "cll_count": 0,
-      "late_count": 1,
+      "total_issues": 19,
+      "cll_count": 1,
+      "late_count": 0,
       "late_tk_count": 0,
       "late_bt_count": 0,
-      "high_rt_count": 17,
+      "high_rt_count": 18,
       "high_rt_tk_count": 0,
-      "high_rt_bt_count": 16,
+      "high_rt_bt_count": 18,
       "seven_n_count": 0,
-      "severe_rt_count": 5
+      "severe_rt_count": 4
     },
     "by_employee": [
       {
-        "name": "PNC01.TRUNGNT26",
-        "short_name": "TRUNGNT26",
-        "total_issues": 3,
-        "cll_count": 0,
-        "late_count": 1,
-        "high_rt_count": 2,
-        "seven_n_count": 0,
-        "issues": [
-          {
-            "emp": "PNC01.TRUNGNT26",
-            "service": "BT",
-            "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (22.5h > 9h)",
-            "shd": "SGJ101941",
-            "kh": "Nguyen Thi Kim Hang",
-            "rt": 22.5,
-            "hoantat": "14/10/2026 10:17:24",
-            "block": "Phuong Binh Trung-017",
-            "severity": "warning",
-            "note": "RT bảo trì vượt mốc 9h"
-          },
-          {
-            "emp": "PNC01.TRUNGNT26",
-            "service": "TKM",
-            "issue_type": "LATE",
-            "issue_title": "Trễ hẹn Triển khai mới (TKM)",
-            "shd": "SGAFV7607",
-            "kh": "Nguyen Thi My Xuyen",
-            "rt": 24.4,
-            "hoantat": "14/10/2026 17:54:20",
-            "block": "Phuong Binh Trung-017",
-            "severity": "danger",
-            "note": "Giao dịch: Triển khai mới"
-          },
-          {
-            "emp": "PNC01.TRUNGNT26",
-            "service": "TKM",
-            "issue_type": "HIGH_RT",
-            "issue_title": "RT Triển khai cao (24.4h > 18h)",
-            "shd": "SGAFV7607",
-            "kh": "Nguyen Thi My Xuyen",
-            "rt": 24.4,
-            "hoantat": "14/10/2026 17:54:20",
-            "block": "Phuong Binh Trung-017",
-            "severity": "warning",
-            "note": "Giao dịch: Triển khai mới"
-          }
-        ]
-      },
-      {
-        "name": "PNC01.KHANGHHG",
-        "short_name": "KHANGHHG",
-        "total_issues": 2,
-        "cll_count": 0,
+        "name": "PNC01.THAINV12",
+        "short_name": "THAINV12",
+        "total_issues": 6,
+        "cll_count": 1,
         "late_count": 0,
-        "high_rt_count": 2,
+        "high_rt_count": 5,
         "seven_n_count": 0,
         "issues": [
           {
-            "emp": "PNC01.KHANGHHG",
+            "emp": "PNC01.THAINV12",
             "service": "BT",
             "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (21.4h > 9h)",
-            "shd": "SGH815127",
-            "kh": "Nguyen Hong An",
-            "rt": 21.4,
-            "hoantat": "14/10/2026 09:38:46",
-            "block": "Phuong An Khanh-009",
+            "issue_title": "RT Bảo trì cao (74.7h > 9h)",
+            "shd": "SGH944819",
+            "kh": "LE VAN DIEN",
+            "rt": 74.7,
+            "hoantat": "15/10/2026 12:25:32",
+            "block": "Phuong An Khanh-016",
+            "severity": "danger",
+            "note": "RT bảo trì vượt mốc 9h"
+          },
+          {
+            "emp": "PNC01.THAINV12",
+            "service": "BT",
+            "issue_type": "HIGH_RT",
+            "issue_title": "RT Bảo trì cao (22.1h > 9h)",
+            "shd": "SGABW4985",
+            "kh": "NGUYEN THI CHAU HA",
+            "rt": 22.1,
+            "hoantat": "15/10/2026 14:31:30",
+            "block": "Phuong An Khanh-016",
             "severity": "warning",
             "note": "RT bảo trì vượt mốc 9h"
           },
           {
-            "emp": "PNC01.KHANGHHG",
+            "emp": "PNC01.THAINV12",
             "service": "BT",
             "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (14.1h > 9h)",
-            "shd": "SGAAZ4699",
-            "kh": "CONG TY TNHH NAMKHA MIND",
-            "rt": 14.1,
-            "hoantat": "14/10/2026 10:59:25",
-            "block": "Phuong An Khanh-009",
+            "issue_title": "RT Bảo trì cao (20.3h > 9h)",
+            "shd": "SGAFM3949",
+            "kh": "PHUNG DINH SON",
+            "rt": 20.3,
+            "hoantat": "15/10/2026 13:14:18",
+            "block": "Phuong An Khanh-016",
             "severity": "warning",
             "note": "RT bảo trì vượt mốc 9h"
+          },
+          {
+            "emp": "PNC01.THAINV12",
+            "service": "BT",
+            "issue_type": "HIGH_RT",
+            "issue_title": "RT Bảo trì cao (20.7h > 9h)",
+            "shd": "SGJ087602",
+            "kh": "CAO THI BICH TRAM",
+            "rt": 20.7,
+            "hoantat": "15/10/2026 14:30:39",
+            "block": "Phuong An Khanh-016",
+            "severity": "warning",
+            "note": "RT bảo trì vượt mốc 9h"
+          },
+          {
+            "emp": "PNC01.THAINV12",
+            "service": "BT",
+            "issue_type": "HIGH_RT",
+            "issue_title": "RT Bảo trì cao (19.2h > 9h)",
+            "shd": "SGH227537",
+            "kh": "Dam Kieu Anh",
+            "rt": 19.2,
+            "hoantat": "15/10/2026 15:36:15",
+            "block": "Phuong An Khanh-016",
+            "severity": "warning",
+            "note": "RT bảo trì vượt mốc 9h"
+          },
+          {
+            "emp": "PNC01.THAINV12",
+            "service": "CLL",
+            "issue_type": "CLL",
+            "issue_title": "Checklist lặp lại lần 3",
+            "so_lan_lap": 3,
+            "shd": "SGH944819",
+            "kh": "LE VAN DIEN",
+            "checklist": "SO",
+            "hoantat": "15/10/2026 12:25:32",
+            "block": "",
+            "severity": "danger"
           }
         ]
       },
       {
         "name": "PNC01.hunglq2",
         "short_name": "hunglq2",
-        "total_issues": 2,
+        "total_issues": 4,
         "cll_count": 0,
         "late_count": 0,
-        "high_rt_count": 2,
+        "high_rt_count": 4,
         "seven_n_count": 0,
         "issues": [
           {
             "emp": "PNC01.hunglq2",
             "service": "BT",
             "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (30.0h > 9h)",
-            "shd": "SGAEP2575",
-            "kh": "HO BAO LOC",
-            "rt": 30.0,
-            "hoantat": "14/10/2026 13:37:26",
+            "issue_title": "RT Bảo trì cao (19.3h > 9h)",
+            "shd": "SGH210911",
+            "kh": "NGO CHAU HAI",
+            "rt": 19.3,
+            "hoantat": "15/10/2026 17:06:31",
             "block": "Phuong An Khanh-016",
-            "severity": "danger",
+            "severity": "warning",
             "note": "RT bảo trì vượt mốc 9h"
           },
           {
             "emp": "PNC01.hunglq2",
             "service": "BT",
             "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (19.5h > 9h)",
-            "shd": "SGAEL8318",
-            "kh": "TRAN LE QUYNH LAM",
-            "rt": 19.5,
-            "hoantat": "14/10/2026 09:24:00",
+            "issue_title": "RT Bảo trì cao (10.4h > 9h)",
+            "shd": "SGACH4407",
+            "kh": "NGUYEN VAN THANH",
+            "rt": 10.4,
+            "hoantat": "15/10/2026 10:54:56",
+            "block": "Phuong An Khanh-016",
+            "severity": "warning",
+            "note": "RT bảo trì vượt mốc 9h"
+          },
+          {
+            "emp": "PNC01.hunglq2",
+            "service": "BT",
+            "issue_type": "HIGH_RT",
+            "issue_title": "RT Bảo trì cao (11.0h > 9h)",
+            "shd": "SGH361115",
+            "kh": "Nguyen Tan Tai",
+            "rt": 11.0,
+            "hoantat": "15/10/2026 17:08:34",
+            "block": "Phuong An Khanh-016",
+            "severity": "warning",
+            "note": "RT bảo trì vượt mốc 9h"
+          },
+          {
+            "emp": "PNC01.hunglq2",
+            "service": "BT",
+            "issue_type": "HIGH_RT",
+            "issue_title": "RT Bảo trì cao (16.6h > 9h)",
+            "shd": "SGH943728",
+            "kh": "LE HUYNH PHUONG",
+            "rt": 16.6,
+            "hoantat": "15/10/2026 17:03:37",
             "block": "Phuong An Khanh-016",
             "severity": "warning",
             "note": "RT bảo trì vượt mốc 9h"
@@ -6093,121 +5838,49 @@
         ]
       },
       {
-        "name": "PNC01.QUANPM5",
-        "short_name": "QUANPM5",
-        "total_issues": 2,
+        "name": "PNC01.KHANGHHG",
+        "short_name": "KHANGHHG",
+        "total_issues": 3,
         "cll_count": 0,
         "late_count": 0,
-        "high_rt_count": 2,
+        "high_rt_count": 3,
         "seven_n_count": 0,
         "issues": [
           {
-            "emp": "PNC01.QUANPM5",
+            "emp": "PNC01.KHANGHHG",
             "service": "BT",
             "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (27.7h > 9h)",
-            "shd": "SGAFM7174",
-            "kh": "Dang Mai Long",
-            "rt": 27.7,
-            "hoantat": "14/10/2026 11:12:12",
-            "block": "Phuong An Khanh-016",
+            "issue_title": "RT Bảo trì cao (36.6h > 9h)",
+            "shd": "SGAEH5057",
+            "kh": "CONG TY TNHH CMP ADVISORY",
+            "rt": 36.6,
+            "hoantat": "15/10/2026 23:01:51",
+            "block": "Phuong An Khanh-009",
             "severity": "danger",
             "note": "RT bảo trì vượt mốc 9h"
           },
           {
-            "emp": "PNC01.QUANPM5",
+            "emp": "PNC01.KHANGHHG",
             "service": "BT",
             "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (24.6h > 9h)",
-            "shd": "SGAEF5437",
-            "kh": "CONG TY TNHH 3B MAISON",
-            "rt": 24.6,
-            "hoantat": "14/10/2026 17:28:11",
-            "block": "Phuong An Khanh-016",
-            "severity": "danger",
-            "note": "RT bảo trì vượt mốc 9h"
-          }
-        ]
-      },
-      {
-        "name": "PNC01.DONGTD",
-        "short_name": "DONGTD",
-        "total_issues": 2,
-        "cll_count": 0,
-        "late_count": 0,
-        "high_rt_count": 2,
-        "seven_n_count": 0,
-        "issues": [
-          {
-            "emp": "PNC01.DONGTD",
-            "service": "BT",
-            "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (66.8h > 9h)",
-            "shd": "SGACA5640",
-            "kh": "TRINH HUYNH MAI",
-            "rt": 66.8,
-            "hoantat": "14/10/2026 15:25:45",
-            "block": "Phuong An Khanh-016",
-            "severity": "danger",
-            "note": "RT bảo trì vượt mốc 9h"
-          },
-          {
-            "emp": "PNC01.DONGTD",
-            "service": "BT",
-            "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (23.6h > 9h)",
-            "shd": "SGAFU0718",
-            "kh": "DO THI HA XUAN",
-            "rt": 23.6,
-            "hoantat": "14/10/2026 16:06:27",
-            "block": "Phuong An Khanh-016",
-            "severity": "warning",
-            "note": "RT bảo trì vượt mốc 9h"
-          }
-        ]
-      },
-      {
-        "name": "PNC01.DONGPD",
-        "short_name": "DONGPD",
-        "total_issues": 1,
-        "cll_count": 0,
-        "late_count": 0,
-        "high_rt_count": 1,
-        "seven_n_count": 0,
-        "issues": [
-          {
-            "emp": "PNC01.DONGPD",
-            "service": "BT",
-            "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (14.2h > 9h)",
-            "shd": "SGH268700",
-            "kh": "NGUYEN PHUNG THIEN",
-            "rt": 14.2,
-            "hoantat": "14/10/2026 09:41:14",
+            "issue_title": "RT Bảo trì cao (19.2h > 9h)",
+            "shd": "SGAFC2979",
+            "kh": "NGUYEN VAN TIEN",
+            "rt": 19.2,
+            "hoantat": "15/10/2026 09:50:27",
             "block": "Phuong An Khanh-009",
             "severity": "warning",
             "note": "RT bảo trì vượt mốc 9h"
-          }
-        ]
-      },
-      {
-        "name": "PNC01.DUCNH5",
-        "short_name": "DUCNH5",
-        "total_issues": 1,
-        "cll_count": 0,
-        "late_count": 0,
-        "high_rt_count": 1,
-        "seven_n_count": 0,
-        "issues": [
+          },
           {
-            "emp": "PNC01.DUCNH5",
+            "emp": "PNC01.KHANGHHG",
             "service": "BT",
             "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (18.6h > 9h)",
-            "shd": "SGH624400",
-            "kh": "JULIA THUY LINH DOAN",
-            "rt": 18.6,
-            "hoantat": "14/10/2026 09:52:52",
+            "issue_title": "RT Bảo trì cao (13.3h > 9h)",
+            "shd": "SGABS7442",
+            "kh": "PHAN THI THANH MY",
+            "rt": 13.3,
+            "hoantat": "15/10/2026 09:04:03",
             "block": "Phuong An Khanh-009",
             "severity": "warning",
             "note": "RT bảo trì vượt mốc 9h"
@@ -6217,46 +5890,35 @@
       {
         "name": "PNC01.TUONGNQ",
         "short_name": "TUONGNQ",
-        "total_issues": 1,
+        "total_issues": 2,
         "cll_count": 0,
         "late_count": 0,
-        "high_rt_count": 1,
+        "high_rt_count": 2,
         "seven_n_count": 0,
         "issues": [
           {
             "emp": "PNC01.TUONGNQ",
             "service": "BT",
             "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (20.0h > 9h)",
-            "shd": "SGH739004",
-            "kh": "TRUONG THI TUYET HA",
-            "rt": 20.0,
-            "hoantat": "14/10/2026 13:37:49",
+            "issue_title": "RT Bảo trì cao (53.7h > 9h)",
+            "shd": "SGACA1526",
+            "kh": "PHAM THI THU LIEU",
+            "rt": 53.7,
+            "hoantat": "15/10/2026 15:06:18",
             "block": "Phuong An Khanh-016",
-            "severity": "warning",
+            "severity": "danger",
             "note": "RT bảo trì vượt mốc 9h"
-          }
-        ]
-      },
-      {
-        "name": "PNC01.HAIVV",
-        "short_name": "HAIVV",
-        "total_issues": 1,
-        "cll_count": 0,
-        "late_count": 0,
-        "high_rt_count": 1,
-        "seven_n_count": 0,
-        "issues": [
+          },
           {
-            "emp": "PNC01.HAIVV",
+            "emp": "PNC01.TUONGNQ",
             "service": "BT",
             "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (21.6h > 9h)",
-            "shd": "SGD483594",
-            "kh": "Nguyen Thai Vu",
-            "rt": 21.6,
-            "hoantat": "14/10/2026 12:20:19",
-            "block": "Phuong An Khanh-009",
+            "issue_title": "RT Bảo trì cao (9.1h > 9h)",
+            "shd": "SGAFC6722",
+            "kh": "Pham Thi Dung",
+            "rt": 9.1,
+            "hoantat": "15/10/2026 17:21:26",
+            "block": "Phuong An Khanh-016",
             "severity": "warning",
             "note": "RT bảo trì vượt mốc 9h"
           }
@@ -6265,21 +5927,34 @@
       {
         "name": "PNC01.DATQT",
         "short_name": "DATQT",
-        "total_issues": 1,
+        "total_issues": 2,
         "cll_count": 0,
         "late_count": 0,
-        "high_rt_count": 1,
+        "high_rt_count": 2,
         "seven_n_count": 0,
         "issues": [
           {
             "emp": "PNC01.DATQT",
             "service": "BT",
             "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (10.6h > 9h)",
-            "shd": "SGD189600",
-            "kh": "Nguyen Thi Thanh Tinh",
-            "rt": 10.6,
-            "hoantat": "14/10/2026 09:20:01",
+            "issue_title": "RT Bảo trì cao (16.5h > 9h)",
+            "shd": "SGAFM7975",
+            "kh": "WANG ZHENFENG",
+            "rt": 16.5,
+            "hoantat": "15/10/2026 09:33:34",
+            "block": "Phuong Binh Trung-017",
+            "severity": "warning",
+            "note": "RT bảo trì vượt mốc 9h"
+          },
+          {
+            "emp": "PNC01.DATQT",
+            "service": "BT",
+            "issue_type": "HIGH_RT",
+            "issue_title": "RT Bảo trì cao (9.3h > 9h)",
+            "shd": "SGACE2096",
+            "kh": "LE QUANG NHUT",
+            "rt": 9.3,
+            "hoantat": "15/10/2026 17:23:18",
             "block": "Phuong Binh Trung-017",
             "severity": "warning",
             "note": "RT bảo trì vượt mốc 9h"
@@ -6287,8 +5962,8 @@
         ]
       },
       {
-        "name": "PNC01.QUANGNM1",
-        "short_name": "QUANGNM1",
+        "name": "PNC01.LINHHNH",
+        "short_name": "LINHHNH",
         "total_issues": 1,
         "cll_count": 0,
         "late_count": 0,
@@ -6296,23 +5971,23 @@
         "seven_n_count": 0,
         "issues": [
           {
-            "emp": "PNC01.QUANGNM1",
+            "emp": "PNC01.LINHHNH",
             "service": "BT",
             "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (14.0h > 9h)",
-            "shd": "SGAEN0070",
-            "kh": "NGUYEN BAO DINH",
-            "rt": 14.0,
-            "hoantat": "14/10/2026 11:18:47",
-            "block": "Phuong An Khanh-009",
+            "issue_title": "RT Bảo trì cao (20.4h > 9h)",
+            "shd": "SGACP7246",
+            "kh": "NGUYEN TRUNG HIEU",
+            "rt": 20.4,
+            "hoantat": "15/10/2026 08:15:28",
+            "block": "Phuong Binh Trung-017",
             "severity": "warning",
             "note": "RT bảo trì vượt mốc 9h"
           }
         ]
       },
       {
-        "name": "PNC01.TRIHH",
-        "short_name": "TRIHH",
+        "name": "PNC01.QUANPM5",
+        "short_name": "QUANPM5",
         "total_issues": 1,
         "cll_count": 0,
         "late_count": 0,
@@ -6320,15 +5995,15 @@
         "seven_n_count": 0,
         "issues": [
           {
-            "emp": "PNC01.TRIHH",
+            "emp": "PNC01.QUANPM5",
             "service": "BT",
             "issue_type": "HIGH_RT",
-            "issue_title": "RT Bảo trì cao (286.3h > 9h)",
-            "shd": "SGH220392",
-            "kh": "CONG TY TNHH NEO NAM VIET",
-            "rt": 286.3,
-            "hoantat": "14/10/2026 15:27:51",
-            "block": "Thanh pho Thu Duc-008",
+            "issue_title": "RT Bảo trì cao (69.2h > 9h)",
+            "shd": "SGABH6236",
+            "kh": "NGUYEN TRAM HOANG VI",
+            "rt": 69.2,
+            "hoantat": "15/10/2026 17:38:59",
+            "block": "Phuong An Khanh-016",
             "severity": "danger",
             "note": "RT bảo trì vượt mốc 9h"
           }
@@ -6713,45 +6388,6 @@
           "block": "Phuong Binh Trung-017",
           "severity": "warning",
           "note": "RT bảo trì vượt mốc 9h"
-        },
-        {
-          "emp": "PNC01.LINHHNH",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (26.4h > 18h)",
-          "shd": "SGAFU7829",
-          "kh": "Kieu Thi Huyen",
-          "rt": 26.4,
-          "hoantat": "03/10/2026 12:21:11",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.DONGPD",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (18.6h > 18h)",
-          "shd": "SGAFU7801",
-          "kh": "Hoang Le Quoc Hung",
-          "rt": 18.6,
-          "hoantat": "03/10/2026 12:05:20",
-          "block": "Phuong An Khanh-009",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.THAINV12",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (22.0h > 18h)",
-          "shd": "SGACP6232",
-          "kh": "CHI NHANH VENESA HO CHI MINH - CONG TY TNHH VENESA",
-          "rt": 22.0,
-          "hoantat": "03/10/2026 13:31:54",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Chuyển địa điểm"
         },
         {
           "emp": "PNC01.QUANPM5",
@@ -7180,136 +6816,6 @@
           "block": "Phuong An Khanh-009",
           "severity": "danger",
           "note": "Trễ hẹn bảo trì dịch vụ"
-        },
-        {
-          "emp": "PNC01.DONGTD",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (28.9h > 18h)",
-          "shd": "SGAFU6534",
-          "kh": "Bui Thi Dan Anh",
-          "rt": 28.9,
-          "hoantat": "02/10/2026 14:52:19",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.DATQT",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (96.5h > 18h)",
-          "shd": "SGAFU3112",
-          "kh": "Le Trung Man",
-          "rt": 96.5,
-          "hoantat": "02/10/2026 15:59:10",
-          "block": "Phuong Binh Trung-017",
-          "severity": "danger",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.DATQT",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (53.8h > 18h)",
-          "shd": "SGAFU7178",
-          "kh": "CONG TY CO PHAN XAY DUNG NHA VIET DUONG DAI",
-          "rt": 53.8,
-          "hoantat": "02/10/2026 15:45:20",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.hunglq2",
-          "service": "TK",
-          "issue_type": "LATE",
-          "issue_title": "Trễ hẹn KH nâng cấp dịch vụ gia tăng",
-          "shd": "SGH715857",
-          "kh": "TRAN LE THE ANH",
-          "rt": 55.5,
-          "hoantat": "02/10/2026 17:28:46",
-          "block": "Phuong An Khanh-016",
-          "severity": "danger",
-          "note": "Giao dịch: KH nâng cấp dịch vụ gia tăng"
-        },
-        {
-          "emp": "PNC01.hunglq2",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (55.5h > 18h)",
-          "shd": "SGH715857",
-          "kh": "TRAN LE THE ANH",
-          "rt": 55.5,
-          "hoantat": "02/10/2026 17:28:46",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: KH nâng cấp dịch vụ gia tăng"
-        },
-        {
-          "emp": "PNC01.DATQT",
-          "service": "TK",
-          "issue_type": "LATE",
-          "issue_title": "Trễ hẹn Chuyển địa điểm",
-          "shd": "SGH214992",
-          "kh": "HO VAN VU BAO",
-          "rt": 101.7,
-          "hoantat": "02/10/2026 15:39:49",
-          "block": "Phuong Binh Trung-017",
-          "severity": "danger",
-          "note": "Giao dịch: Chuyển địa điểm"
-        },
-        {
-          "emp": "PNC01.DATQT",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (101.7h > 18h)",
-          "shd": "SGH214992",
-          "kh": "HO VAN VU BAO",
-          "rt": 101.7,
-          "hoantat": "02/10/2026 15:39:49",
-          "block": "Phuong Binh Trung-017",
-          "severity": "danger",
-          "note": "Giao dịch: Chuyển địa điểm"
-        },
-        {
-          "emp": "PNC01.DONGTD",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (30.3h > 18h)",
-          "shd": "SGFD82049",
-          "kh": "CONG TY CO PHAN GIAI TRI SIDUS AND TEU",
-          "rt": 30.3,
-          "hoantat": "02/10/2026 21:50:56",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Chuyển địa điểm"
-        },
-        {
-          "emp": "PNC01.LINHHNH",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (30.6h > 18h)",
-          "shd": "SGH911286",
-          "kh": "TIEU MY TRINH",
-          "rt": 30.6,
-          "hoantat": "02/10/2026 16:33:21",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Khách hàng mua/đổi thiết bị"
-        },
-        {
-          "emp": "PNC01.TRIHH",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (22.0h > 18h)",
-          "shd": "SGAAK6501",
-          "kh": "CONG TY TNHH SKILLS BRIDGE",
-          "rt": 22.0,
-          "hoantat": "02/10/2026 15:28:12",
-          "block": "Thanh pho Thu Duc-008",
-          "severity": "warning",
-          "note": "Giao dịch: Khách hàng mua/đổi thiết bị"
         },
         {
           "emp": "PNC01.THAINV12",
@@ -7751,110 +7257,6 @@
           "block": "Phuong An Khanh-009",
           "severity": "warning",
           "note": "RT bảo trì vượt mốc 9h"
-        },
-        {
-          "emp": "PNC01.DATQT",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (135.4h > 18h)",
-          "shd": "SGAFU6585",
-          "kh": "CONG TY TNHH KINH DOANH NHA AQUA",
-          "rt": 135.4,
-          "hoantat": "06/10/2026 08:52:03",
-          "block": "Phuong Binh Trung-017",
-          "severity": "danger",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.HAIVV",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (19.5h > 18h)",
-          "shd": "SGAFV0851",
-          "kh": "Pham Bich Chi",
-          "rt": 19.5,
-          "hoantat": "06/10/2026 11:02:12",
-          "block": "Phuong An Khanh-009",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.hunglq2",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (27.4h > 18h)",
-          "shd": "SGAFV0398",
-          "kh": "TRAN THI LUONG",
-          "rt": 27.4,
-          "hoantat": "06/10/2026 15:24:58",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.LINHHNH",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (68.0h > 18h)",
-          "shd": "SGAEA5321",
-          "kh": "LE QUANG HOAI",
-          "rt": 68.0,
-          "hoantat": "06/10/2026 07:58:06",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Chuyển địa điểm"
-        },
-        {
-          "emp": "PNC01.TRUNGNT26",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (20.6h > 18h)",
-          "shd": "SGAFU8727",
-          "kh": "Doan Thi Trang",
-          "rt": 20.6,
-          "hoantat": "06/10/2026 12:08:46",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.DATQT",
-          "service": "TK",
-          "issue_type": "LATE",
-          "issue_title": "Trễ hẹn Khách hàng mua/đổi thiết bị",
-          "shd": "SGAAZ5319",
-          "kh": "NGUYEN TRUNG KIEN",
-          "rt": 70.1,
-          "hoantat": "06/10/2026 15:35:25",
-          "block": "Phuong Binh Trung-017",
-          "severity": "danger",
-          "note": "Giao dịch: Khách hàng mua/đổi thiết bị"
-        },
-        {
-          "emp": "PNC01.DATQT",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (70.1h > 18h)",
-          "shd": "SGAAZ5319",
-          "kh": "NGUYEN TRUNG KIEN",
-          "rt": 70.1,
-          "hoantat": "06/10/2026 15:35:25",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Khách hàng mua/đổi thiết bị"
-        },
-        {
-          "emp": "PNC01.TRUNGNT26",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (114.7h > 18h)",
-          "shd": "SGAEH6318",
-          "kh": "CONG TY CO PHAN SMARTCONS",
-          "rt": 114.7,
-          "hoantat": "06/10/2026 12:09:02",
-          "block": "Phuong Binh Trung-017",
-          "severity": "danger",
-          "note": "Giao dịch: Chuyển địa điểm"
         },
         {
           "emp": "PNC01.QUANGNM1",
@@ -8522,84 +7924,6 @@
           "note": "RT bảo trì vượt mốc 9h"
         },
         {
-          "emp": "PNC01.TUONGNQ",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (24.3h > 18h)",
-          "shd": "SGAFV2989",
-          "kh": "Do Thi Loan",
-          "rt": 24.3,
-          "hoantat": "09/10/2026 17:48:19",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.LINHHNH",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (44.0h > 18h)",
-          "shd": "SGAFV3082",
-          "kh": "Nguyen Nu Minh Anh",
-          "rt": 44.0,
-          "hoantat": "09/10/2026 13:32:56",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.DONGPD",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (19.6h > 18h)",
-          "shd": "SGAFV3697",
-          "kh": "Tran Thi Phuong Trinh",
-          "rt": 19.6,
-          "hoantat": "09/10/2026 13:07:59",
-          "block": "Phuong An Khanh-009",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.THAINV12",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (26.8h > 18h)",
-          "shd": "SGAFV3406",
-          "kh": "PHAM THANH TUAN",
-          "rt": 26.8,
-          "hoantat": "09/10/2026 12:48:07",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.QUANPM5",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (25.7h > 18h)",
-          "shd": "SGAFV3636",
-          "kh": "Tran Dang Khoa",
-          "rt": 25.7,
-          "hoantat": "09/10/2026 17:10:01",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.hunglq2",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (91.0h > 18h)",
-          "shd": "SGAFV1030",
-          "kh": "CONG TY TNHH SK QUOC TE",
-          "rt": 91.0,
-          "hoantat": "09/10/2026 10:31:30",
-          "block": "Phuong An Khanh-016",
-          "severity": "danger",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
           "emp": "PNC01.hunglq2",
           "service": "CLL",
           "issue_type": "CLL",
@@ -9113,123 +8437,6 @@
           "note": "RT bảo trì vượt mốc 9h"
         },
         {
-          "emp": "PNC01.QUANPM5",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (104.0h > 18h)",
-          "shd": "SGACR5730",
-          "kh": "CONG TY TNHH THUONG MAI VA DICH VU CODE CRUSH",
-          "rt": 104.0,
-          "hoantat": "04/10/2026 17:58:25",
-          "block": "Phuong An Khanh-016",
-          "severity": "danger",
-          "note": "Giao dịch: KH nâng cấp dịch vụ gia tăng"
-        },
-        {
-          "emp": "PNC01.QUANPM5",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (173.4h > 18h)",
-          "shd": "SGAFU2094",
-          "kh": "CONG TY CO PHAN BAT DONG SAN HD HOMES",
-          "rt": 173.4,
-          "hoantat": "04/10/2026 17:24:49",
-          "block": "Phuong An Khanh-016",
-          "severity": "danger",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.TRUNGNT26",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (93.7h > 18h)",
-          "shd": "SGAFU5749",
-          "kh": "Le Van Thuyet",
-          "rt": 93.7,
-          "hoantat": "04/10/2026 15:11:29",
-          "block": "Phuong Binh Trung-017",
-          "severity": "danger",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.THAINV12",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (20.4h > 18h)",
-          "shd": "SGAFU9333",
-          "kh": "LUU NGOC DIEU",
-          "rt": 20.4,
-          "hoantat": "04/10/2026 11:51:31",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.hunglq2",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (21.1h > 18h)",
-          "shd": "SGAFU9423",
-          "kh": "Nguyen Quoc Khoi",
-          "rt": 21.1,
-          "hoantat": "04/10/2026 14:38:40",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.DUCNH5",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (20.5h > 18h)",
-          "shd": "SGAFU7477",
-          "kh": "Shoriful Islam",
-          "rt": 20.5,
-          "hoantat": "04/10/2026 14:01:44",
-          "block": "Phuong An Khanh-009",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.hunglq2",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (99.5h > 18h)",
-          "shd": "SGAEF4937",
-          "kh": "CONG TY TNHH KINGKONG PQ",
-          "rt": 99.5,
-          "hoantat": "04/10/2026 15:27:35",
-          "block": "Phuong An Khanh-016",
-          "severity": "danger",
-          "note": "Giao dịch: Khách hàng mua/đổi thiết bị"
-        },
-        {
-          "emp": "PNC01.LINHHNH",
-          "service": "TK",
-          "issue_type": "LATE",
-          "issue_title": "Trễ hẹn Thay đổi hạ tầng",
-          "shd": "SGH601440",
-          "kh": "LE QUANG TAN",
-          "rt": 29.9,
-          "hoantat": "04/10/2026 21:24:30",
-          "block": "Phuong Binh Trung-017",
-          "severity": "danger",
-          "note": "Giao dịch: Thay đổi hạ tầng"
-        },
-        {
-          "emp": "PNC01.LINHHNH",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (29.9h > 18h)",
-          "shd": "SGH601440",
-          "kh": "LE QUANG TAN",
-          "rt": 29.9,
-          "hoantat": "04/10/2026 21:24:30",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Thay đổi hạ tầng"
-        },
-        {
           "emp": "PNC01.DONGTD",
           "service": "CLL",
           "issue_type": "CLL",
@@ -9580,84 +8787,6 @@
           "note": "RT bảo trì vượt mốc 9h"
         },
         {
-          "emp": "PNC01.DATQT",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (22.6h > 18h)",
-          "shd": "SGH681432",
-          "kh": "CONG TY TNHH BAT DONG SAN NGUYEN PHUONG",
-          "rt": 22.6,
-          "hoantat": "08/10/2026 10:34:15",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Chuyển địa điểm"
-        },
-        {
-          "emp": "PNC01.TRUNGNT26",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (24.2h > 18h)",
-          "shd": "SGAFV2959",
-          "kh": "Ton That Phuoc Hoa",
-          "rt": 24.2,
-          "hoantat": "08/10/2026 17:43:48",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.DATQT",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (67.7h > 18h)",
-          "shd": "SGACY1313",
-          "kh": "CONG TY CO PHAN XAY DUNG COTECCONS",
-          "rt": 67.7,
-          "hoantat": "08/10/2026 11:14:04",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Chuyển địa điểm"
-        },
-        {
-          "emp": "PNC01.TRUNGNT26",
-          "service": "TK",
-          "issue_type": "LATE",
-          "issue_title": "Trễ hẹn Swap WIFI 6",
-          "shd": "SGH905661",
-          "kh": "PHAM VAN THAI",
-          "rt": 174.5,
-          "hoantat": "08/10/2026 16:32:34",
-          "block": "Phuong Binh Trung-017",
-          "severity": "danger",
-          "note": "Giao dịch: Swap WIFI 6"
-        },
-        {
-          "emp": "PNC01.TRUNGNT26",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (174.5h > 18h)",
-          "shd": "SGH905661",
-          "kh": "PHAM VAN THAI",
-          "rt": 174.5,
-          "hoantat": "08/10/2026 16:32:34",
-          "block": "Phuong Binh Trung-017",
-          "severity": "danger",
-          "note": "Giao dịch: Swap WIFI 6"
-        },
-        {
-          "emp": "PNC01.TRUNGNT26",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (26.6h > 18h)",
-          "shd": "SGAFU7409",
-          "kh": "Phan Ba Dat",
-          "rt": 26.6,
-          "hoantat": "08/10/2026 14:38:30",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
           "emp": "PNC01.DONGTD",
           "service": "CLL",
           "issue_type": "CLL",
@@ -9927,30 +9056,24 @@
           "note": "RT bảo trì vượt mốc 9h"
         },
         {
-          "emp": "PNC01.TRUNGNT26",
-          "service": "TKM",
-          "issue_type": "LATE",
-          "issue_title": "Trễ hẹn Triển khai mới (TKM)",
-          "shd": "SGAFV7607",
-          "kh": "Nguyen Thi My Xuyen",
-          "rt": 24.4,
-          "hoantat": "14/10/2026 17:54:20",
-          "block": "Phuong Binh Trung-017",
-          "severity": "danger",
-          "note": "Giao dịch: Triển khai mới"
+          "emp": "PNC01.DONGPD",
+          "service": "7N_TK",
+          "issue_type": "7N",
+          "issue_title": "Checklist 7 ngày sau TK",
+          "shd": "SGAFC2979",
+          "kh": "NGUYEN VAN TIEN",
+          "note": "Hỏng FC (không có tín hiệu)",
+          "severity": "warning"
         },
         {
-          "emp": "PNC01.TRUNGNT26",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (24.4h > 18h)",
-          "shd": "SGAFV7607",
-          "kh": "Nguyen Thi My Xuyen",
-          "rt": 24.4,
-          "hoantat": "14/10/2026 17:54:20",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
+          "emp": "PNC01.KHANGHHG",
+          "service": "7N_TK",
+          "issue_type": "7N",
+          "issue_title": "Checklist 7 ngày sau TK",
+          "shd": "SGAEN3496",
+          "kh": "CONG TY CO PHAN MAISON FRAVIA SAI GON",
+          "note": "Hỏng FC (không có tín hiệu)",
+          "severity": "warning"
         }
       ],
       "01/10/2026": [
@@ -10355,19 +9478,6 @@
           "block": "Phuong An Khanh-009",
           "severity": "danger",
           "note": "Trễ hẹn bảo trì dịch vụ"
-        },
-        {
-          "emp": "PNC01.DONGPD",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (32.7h > 18h)",
-          "shd": "SGAFU8589",
-          "kh": "BRITISH CITIZEN KILPATTICK",
-          "rt": 32.7,
-          "hoantat": "05/10/2026 18:43:35",
-          "block": "Phuong An Khanh-009",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
         },
         {
           "emp": "PNC01.DONGTD",
@@ -10786,84 +9896,6 @@
           "note": "RT bảo trì vượt mốc 9h"
         },
         {
-          "emp": "PNC01.DATQT",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (41.4h > 18h)",
-          "shd": "SGAFV3828",
-          "kh": "CONG TY TNHH FOCUS GOLF EXPERIENCE",
-          "rt": 41.4,
-          "hoantat": "10/10/2026 10:51:19",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.HAIVV",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (23.0h > 18h)",
-          "shd": "SGAFR7835",
-          "kh": "Vo Ngoc Quynh Anh",
-          "rt": 23.0,
-          "hoantat": "10/10/2026 09:00:14",
-          "block": "Phuong An Khanh-009",
-          "severity": "warning",
-          "note": "Giao dịch: Chuyển địa điểm"
-        },
-        {
-          "emp": "PNC01.DONGTD",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (32.1h > 18h)",
-          "shd": "SGAEQ1686",
-          "kh": "CHO SUNG JOONG",
-          "rt": 32.1,
-          "hoantat": "10/10/2026 18:07:57",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Chuyển địa điểm"
-        },
-        {
-          "emp": "PNC01.KHANGHHG",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (27.6h > 18h)",
-          "shd": "SGAFV3113",
-          "kh": "NGUYEN ANH VU",
-          "rt": 27.6,
-          "hoantat": "10/10/2026 13:37:49",
-          "block": "Phuong An Khanh-009",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.THAINV12",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (26.9h > 18h)",
-          "shd": "SGAFV4364",
-          "kh": "Nguyen Thi Xuan",
-          "rt": 26.9,
-          "hoantat": "10/10/2026 18:23:03",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.DATQT",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (18.3h > 18h)",
-          "shd": "SGAFV3114",
-          "kh": "Nguyen Ba Vu",
-          "rt": 18.3,
-          "hoantat": "10/10/2026 11:50:33",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
           "emp": "PNC01.TRUNGNT26",
           "service": "CLL",
           "issue_type": "CLL",
@@ -11141,19 +10173,6 @@
           "block": "Phuong Binh Trung-017",
           "severity": "warning",
           "note": "RT bảo trì vượt mốc 9h"
-        },
-        {
-          "emp": "PNC01.TUONGNQ",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (18.8h > 18h)",
-          "shd": "SGAFV2035",
-          "kh": "Ta Minh Tien",
-          "rt": 18.8,
-          "hoantat": "11/10/2026 10:17:20",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
         },
         {
           "emp": "PNC01.DONGTD",
@@ -11503,110 +10522,6 @@
           "note": "RT bảo trì vượt mốc 9h"
         },
         {
-          "emp": "PNC01.DONGTD",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (75.3h > 18h)",
-          "shd": "SGAFU7760",
-          "kh": "Truong Minh Giau",
-          "rt": 75.3,
-          "hoantat": "12/10/2026 13:16:57",
-          "block": "Phuong An Khanh-016",
-          "severity": "danger",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.hunglq2",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (29.3h > 18h)",
-          "shd": "SGAFV4837",
-          "kh": "CONG TY CO PHAN DAU TU PHAT TRIEN SG HOLDINGS",
-          "rt": 29.3,
-          "hoantat": "12/10/2026 17:18:35",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.DUCNH5",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (27.4h > 18h)",
-          "shd": "SGAFV4807",
-          "kh": "CONG TY TNHH NHAN HERITAGE",
-          "rt": 27.4,
-          "hoantat": "12/10/2026 13:24:27",
-          "block": "Phuong An Khanh-009",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.hunglq2",
-          "service": "TKM",
-          "issue_type": "LATE",
-          "issue_title": "Trễ hẹn Triển khai mới (TKM)",
-          "shd": "SGAFV2638",
-          "kh": "Tong Viet Quang",
-          "rt": 121.6,
-          "hoantat": "12/10/2026 11:33:56",
-          "block": "Phuong An Khanh-016",
-          "severity": "danger",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.hunglq2",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (121.6h > 18h)",
-          "shd": "SGAFV2638",
-          "kh": "Tong Viet Quang",
-          "rt": 121.6,
-          "hoantat": "12/10/2026 11:33:56",
-          "block": "Phuong An Khanh-016",
-          "severity": "danger",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.THAINV12",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (52.6h > 18h)",
-          "shd": "SGH657237",
-          "kh": "NGUYEN THI THU HUONG",
-          "rt": 52.6,
-          "hoantat": "12/10/2026 20:08:39",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Khách hàng mua/đổi thiết bị"
-        },
-        {
-          "emp": "PNC01.DONGTD",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (23.7h > 18h)",
-          "shd": "SGAFV4992",
-          "kh": "Nguyen Thai Son",
-          "rt": 23.7,
-          "hoantat": "12/10/2026 09:39:52",
-          "block": "Phuong An Khanh-016",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.TRUNGNT26",
-          "service": "TK",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (24.3h > 18h)",
-          "shd": "SGABE7234",
-          "kh": "THAI THI DU",
-          "rt": 24.3,
-          "hoantat": "12/10/2026 17:48:16",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Chuyển địa điểm"
-        },
-        {
           "emp": "PNC01.LINHHNH",
           "service": "CLL",
           "issue_type": "CLL",
@@ -11912,45 +10827,6 @@
           "note": "RT bảo trì vượt mốc 9h"
         },
         {
-          "emp": "PNC01.DONGTD",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (116.5h > 18h)",
-          "shd": "SGAFV3399",
-          "kh": "Nguyen Thi Anh Thu",
-          "rt": 116.5,
-          "hoantat": "13/10/2026 12:02:26",
-          "block": "Phuong An Khanh-016",
-          "severity": "danger",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.DONGPD",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (20.8h > 18h)",
-          "shd": "SGAFV6000",
-          "kh": "CONG TY CO PHAN DAU TU 17 TND",
-          "rt": 20.8,
-          "hoantat": "13/10/2026 12:18:10",
-          "block": "Phuong An Khanh-009",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
-          "emp": "PNC01.DATQT",
-          "service": "TKM",
-          "issue_type": "HIGH_RT",
-          "issue_title": "RT Triển khai cao (24.2h > 18h)",
-          "shd": "SGAFV4908",
-          "kh": "Nguyen Minh Tri",
-          "rt": 24.2,
-          "hoantat": "13/10/2026 12:14:42",
-          "block": "Phuong Binh Trung-017",
-          "severity": "warning",
-          "note": "Giao dịch: Triển khai mới"
-        },
-        {
           "emp": "PNC01.TRIHH",
           "service": "CLL",
           "issue_type": "CLL",
@@ -12056,6 +10932,255 @@
           "severity": "warning"
         }
       ],
+      "15/10/2026": [
+        {
+          "emp": "PNC01.THAINV12",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (74.7h > 9h)",
+          "shd": "SGH944819",
+          "kh": "LE VAN DIEN",
+          "rt": 74.7,
+          "hoantat": "15/10/2026 12:25:32",
+          "block": "Phuong An Khanh-016",
+          "severity": "danger",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.QUANPM5",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (69.2h > 9h)",
+          "shd": "SGABH6236",
+          "kh": "NGUYEN TRAM HOANG VI",
+          "rt": 69.2,
+          "hoantat": "15/10/2026 17:38:59",
+          "block": "Phuong An Khanh-016",
+          "severity": "danger",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.TUONGNQ",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (53.7h > 9h)",
+          "shd": "SGACA1526",
+          "kh": "PHAM THI THU LIEU",
+          "rt": 53.7,
+          "hoantat": "15/10/2026 15:06:18",
+          "block": "Phuong An Khanh-016",
+          "severity": "danger",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.KHANGHHG",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (36.6h > 9h)",
+          "shd": "SGAEH5057",
+          "kh": "CONG TY TNHH CMP ADVISORY",
+          "rt": 36.6,
+          "hoantat": "15/10/2026 23:01:51",
+          "block": "Phuong An Khanh-009",
+          "severity": "danger",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.LINHHNH",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (20.4h > 9h)",
+          "shd": "SGACP7246",
+          "kh": "NGUYEN TRUNG HIEU",
+          "rt": 20.4,
+          "hoantat": "15/10/2026 08:15:28",
+          "block": "Phuong Binh Trung-017",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.KHANGHHG",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (19.2h > 9h)",
+          "shd": "SGAFC2979",
+          "kh": "NGUYEN VAN TIEN",
+          "rt": 19.2,
+          "hoantat": "15/10/2026 09:50:27",
+          "block": "Phuong An Khanh-009",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.THAINV12",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (22.1h > 9h)",
+          "shd": "SGABW4985",
+          "kh": "NGUYEN THI CHAU HA",
+          "rt": 22.1,
+          "hoantat": "15/10/2026 14:31:30",
+          "block": "Phuong An Khanh-016",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.THAINV12",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (20.3h > 9h)",
+          "shd": "SGAFM3949",
+          "kh": "PHUNG DINH SON",
+          "rt": 20.3,
+          "hoantat": "15/10/2026 13:14:18",
+          "block": "Phuong An Khanh-016",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.DATQT",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (16.5h > 9h)",
+          "shd": "SGAFM7975",
+          "kh": "WANG ZHENFENG",
+          "rt": 16.5,
+          "hoantat": "15/10/2026 09:33:34",
+          "block": "Phuong Binh Trung-017",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.THAINV12",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (20.7h > 9h)",
+          "shd": "SGJ087602",
+          "kh": "CAO THI BICH TRAM",
+          "rt": 20.7,
+          "hoantat": "15/10/2026 14:30:39",
+          "block": "Phuong An Khanh-016",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.KHANGHHG",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (13.3h > 9h)",
+          "shd": "SGABS7442",
+          "kh": "PHAN THI THANH MY",
+          "rt": 13.3,
+          "hoantat": "15/10/2026 09:04:03",
+          "block": "Phuong An Khanh-009",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.THAINV12",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (19.2h > 9h)",
+          "shd": "SGH227537",
+          "kh": "Dam Kieu Anh",
+          "rt": 19.2,
+          "hoantat": "15/10/2026 15:36:15",
+          "block": "Phuong An Khanh-016",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.hunglq2",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (19.3h > 9h)",
+          "shd": "SGH210911",
+          "kh": "NGO CHAU HAI",
+          "rt": 19.3,
+          "hoantat": "15/10/2026 17:06:31",
+          "block": "Phuong An Khanh-016",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.hunglq2",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (10.4h > 9h)",
+          "shd": "SGACH4407",
+          "kh": "NGUYEN VAN THANH",
+          "rt": 10.4,
+          "hoantat": "15/10/2026 10:54:56",
+          "block": "Phuong An Khanh-016",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.hunglq2",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (11.0h > 9h)",
+          "shd": "SGH361115",
+          "kh": "Nguyen Tan Tai",
+          "rt": 11.0,
+          "hoantat": "15/10/2026 17:08:34",
+          "block": "Phuong An Khanh-016",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.hunglq2",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (16.6h > 9h)",
+          "shd": "SGH943728",
+          "kh": "LE HUYNH PHUONG",
+          "rt": 16.6,
+          "hoantat": "15/10/2026 17:03:37",
+          "block": "Phuong An Khanh-016",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.DATQT",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (9.3h > 9h)",
+          "shd": "SGACE2096",
+          "kh": "LE QUANG NHUT",
+          "rt": 9.3,
+          "hoantat": "15/10/2026 17:23:18",
+          "block": "Phuong Binh Trung-017",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.TUONGNQ",
+          "service": "BT",
+          "issue_type": "HIGH_RT",
+          "issue_title": "RT Bảo trì cao (9.1h > 9h)",
+          "shd": "SGAFC6722",
+          "kh": "Pham Thi Dung",
+          "rt": 9.1,
+          "hoantat": "15/10/2026 17:21:26",
+          "block": "Phuong An Khanh-016",
+          "severity": "warning",
+          "note": "RT bảo trì vượt mốc 9h"
+        },
+        {
+          "emp": "PNC01.THAINV12",
+          "service": "CLL",
+          "issue_type": "CLL",
+          "issue_title": "Checklist lặp lại lần 3",
+          "so_lan_lap": 3,
+          "shd": "SGH944819",
+          "kh": "LE VAN DIEN",
+          "checklist": "SO",
+          "hoantat": "15/10/2026 12:25:32",
+          "block": "",
+          "severity": "danger"
+        }
+      ],
       "25/09/2026": [
         {
           "emp": "PNC01.QUANPM5",
@@ -12069,10 +11194,10 @@
         }
       ]
     },
-    "zalo_message": "🚨 [CẢNH BÁO SỰ CỐ NGÀY 14/10/2026] - ĐỘI ĐỖ VĂN TIÊN\n📅 Ngày soát lỗi: 14/10/2026 (Các ca hoàn tất trong ngày)\n📊 Tổng kết: 12/16 nhân sự phát sinh sự cố\n  • 🔁 Checklist Lặp (CLL): 0 ca\n  • ❌ Trễ Hẹn Tổng: 1 ca (Triển khai mới TKM: 1 ca | Bảo trì BT: 0 ca)\n  • ⏱️ Response Time (RT) Cao: 17 ca\n-----------------------------------------\n1. 👤 TRUNGNT26 (Nguyễn Thành Trung):\n   ❌ Trễ hẹn TKM (1 ca): SGAFV7607(TKM)\n   ⏱️ RT cao: 2 ca (RT TB: 23.4h)\n2. 👤 KHANGHHG (Huỳnh Hà Gia Khang):\n   ⏱️ RT cao: 2 ca (RT TB: 17.8h)\n3. 👤 hunglq2:\n   ⏱️ RT cao: 2 ca (RT TB: 24.8h)\n4. 👤 QUANPM5 (Phan Minh Quân):\n   ⏱️ RT cao: 2 ca (RT TB: 26.1h)\n5. 👤 DONGTD (Trần Duy Đông):\n   ⏱️ RT cao: 2 ca (RT TB: 45.2h)\n6. 👤 DONGPD (Phạm Danh Đông):\n   ⏱️ RT cao: 1 ca (RT TB: 14.2h)\n7. 👤 DUCNH5 (Nguyễn Huỳnh Đức):\n   ⏱️ RT cao: 1 ca (RT TB: 18.6h)\n8. 👤 TUONGNQ (Nguyễn Quốc Tường):\n   ⏱️ RT cao: 1 ca (RT TB: 20.0h)\n9. 👤 HAIVV (Vũ Văn Hải):\n   ⏱️ RT cao: 1 ca (RT TB: 21.6h)\n10. 👤 DATQT (Quách Thành Đạt):\n   ⏱️ RT cao: 1 ca (RT TB: 10.6h)\n11. 👤 QUANGNM1 (Nguyễn Minh Quang):\n   ⏱️ RT cao: 1 ca (RT TB: 14.0h)\n12. 👤 TRIHH (Hồ Hữu Trí):\n   ⏱️ RT cao: 1 ca (RT TB: 286.3h)\n-----------------------------------------\n💡 Chi tiết từng hợp đồng RT cao xem trực tiếp trên Web Dashboard!\n👉 Đề nghị các bạn KTV rà soát lại nguyên nhân và báo cáo hướng xử lý!"
+    "zalo_message": "🚨 [CẢNH BÁO SỰ CỐ NGÀY 15/10/2026] - ĐỘI ĐỖ VĂN TIÊN\n📅 Ngày soát lỗi: 15/10/2026 (Các ca hoàn tất trong ngày)\n📊 Tổng kết: 7/16 nhân sự phát sinh sự cố\n  • 🔁 Checklist Lặp (CLL): 1 ca\n  • ❌ Trễ Hẹn Tổng: 0 ca (Triển khai mới TKM: 0 ca | Bảo trì BT: 0 ca)\n  • ⏱️ Response Time (RT) Cao: 18 ca\n-----------------------------------------\n1. 👤 THAINV12 (Nguyễn Văn Thài):\n   🔁 CLL (1 ca): SGH944819(L3)\n   ⏱️ RT cao: 5 ca (RT TB: 31.4h)\n2. 👤 hunglq2:\n   ⏱️ RT cao: 4 ca (RT TB: 14.3h)\n3. 👤 KHANGHHG (Huỳnh Hà Gia Khang):\n   ⏱️ RT cao: 3 ca (RT TB: 23.0h)\n4. 👤 TUONGNQ (Nguyễn Quốc Tường):\n   ⏱️ RT cao: 2 ca (RT TB: 31.4h)\n5. 👤 DATQT (Quách Thành Đạt):\n   ⏱️ RT cao: 2 ca (RT TB: 12.9h)\n6. 👤 LINHHNH (Hồ Nguyễn Hoàng Linh):\n   ⏱️ RT cao: 1 ca (RT TB: 20.4h)\n7. 👤 QUANPM5 (Phan Minh Quân):\n   ⏱️ RT cao: 1 ca (RT TB: 69.2h)\n-----------------------------------------\n💡 Chi tiết từng hợp đồng RT cao xem trực tiếp trên Web Dashboard!\n👉 Đề nghị các bạn KTV rà soát lại nguyên nhân và báo cáo hướng xử lý!"
   },
   "cll_table": {
-    "target_date": "14/10/2026",
+    "target_date": "15/10/2026",
     "rows": [
       {
         "name": "PNC01.DONGPD",
@@ -12080,9 +11205,9 @@
         "cll2_luyke": 1,
         "cll3_luyke": 0,
         "tong_cll_luyke": 1,
-        "tong_ht": 28,
-        "rate_cll": "3.57%",
-        "rate_cll_val": 3.57,
+        "tong_ht": 29,
+        "rate_cll": "3.45%",
+        "rate_cll_val": 3.45,
         "t1_cll2": 0,
         "t1_cll3": 0,
         "t1_cll_total": 0,
@@ -12137,15 +11262,15 @@
         "cll2_luyke": 3,
         "cll3_luyke": 0,
         "tong_cll_luyke": 3,
-        "tong_ht": 32,
-        "rate_cll": "9.38%",
-        "rate_cll_val": 9.38,
+        "tong_ht": 35,
+        "rate_cll": "8.57%",
+        "rate_cll_val": 8.57,
         "t1_cll2": 0,
         "t1_cll3": 0,
         "t1_cll_total": 0,
         "rate_cll3": "0.00%",
         "rate_cll3_val": 0.0,
-        "needed_for_7": 11,
+        "needed_for_7": 8,
         "status": "danger",
         "status_label": "Vượt trần (>7%)",
         "t1_cases": []
@@ -12156,7 +11281,7 @@
         "cll2_luyke": 0,
         "cll3_luyke": 0,
         "tong_cll_luyke": 0,
-        "tong_ht": 20,
+        "tong_ht": 21,
         "rate_cll": "0.00%",
         "rate_cll_val": 0.0,
         "t1_cll2": 0,
@@ -12175,9 +11300,9 @@
         "cll2_luyke": 1,
         "cll3_luyke": 0,
         "tong_cll_luyke": 1,
-        "tong_ht": 21,
-        "rate_cll": "4.76%",
-        "rate_cll_val": 4.76,
+        "tong_ht": 23,
+        "rate_cll": "4.35%",
+        "rate_cll_val": 4.35,
         "t1_cll2": 0,
         "t1_cll3": 0,
         "t1_cll_total": 0,
@@ -12192,20 +11317,28 @@
         "name": "PNC01.THAINV12",
         "block": "Phuong An Khanh-016",
         "cll2_luyke": 4,
-        "cll3_luyke": 0,
-        "tong_cll_luyke": 4,
-        "tong_ht": 30,
-        "rate_cll": "13.33%",
-        "rate_cll_val": 13.33,
+        "cll3_luyke": 1,
+        "tong_cll_luyke": 5,
+        "tong_ht": 35,
+        "rate_cll": "14.29%",
+        "rate_cll_val": 14.29,
         "t1_cll2": 0,
-        "t1_cll3": 0,
-        "t1_cll_total": 0,
-        "rate_cll3": "0.00%",
-        "rate_cll3_val": 0.0,
-        "needed_for_7": 28,
+        "t1_cll3": 1,
+        "t1_cll_total": 1,
+        "rate_cll3": "2.86%",
+        "rate_cll3_val": 2.86,
+        "needed_for_7": 37,
         "status": "danger",
         "status_label": "Vượt trần (>7%)",
-        "t1_cases": []
+        "t1_cases": [
+          {
+            "shd": "SGH944819",
+            "kh": "LE VAN DIEN",
+            "lap": 3,
+            "tg": "15/10/2026 12:25:32",
+            "chk": "SO"
+          }
+        ]
       },
       {
         "name": "PNC01.HAIVV",
@@ -12232,15 +11365,15 @@
         "cll2_luyke": 6,
         "cll3_luyke": 0,
         "tong_cll_luyke": 6,
-        "tong_ht": 54,
-        "rate_cll": "11.11%",
-        "rate_cll_val": 11.11,
+        "tong_ht": 58,
+        "rate_cll": "10.34%",
+        "rate_cll_val": 10.34,
         "t1_cll2": 0,
         "t1_cll3": 0,
         "t1_cll_total": 0,
         "rate_cll3": "0.00%",
         "rate_cll3_val": 0.0,
-        "needed_for_7": 32,
+        "needed_for_7": 28,
         "status": "danger",
         "status_label": "Vượt trần (>7%)",
         "t1_cases": []
@@ -12251,7 +11384,7 @@
         "cll2_luyke": 0,
         "cll3_luyke": 0,
         "tong_cll_luyke": 0,
-        "tong_ht": 37,
+        "tong_ht": 40,
         "rate_cll": "0.00%",
         "rate_cll_val": 0.0,
         "t1_cll2": 0,
@@ -12270,9 +11403,9 @@
         "cll2_luyke": 1,
         "cll3_luyke": 0,
         "tong_cll_luyke": 1,
-        "tong_ht": 19,
-        "rate_cll": "5.26%",
-        "rate_cll_val": 5.26,
+        "tong_ht": 20,
+        "rate_cll": "5.00%",
+        "rate_cll_val": 5.0,
         "t1_cll2": 0,
         "t1_cll3": 0,
         "t1_cll_total": 0,
@@ -12289,9 +11422,9 @@
         "cll2_luyke": 3,
         "cll3_luyke": 0,
         "tong_cll_luyke": 3,
-        "tong_ht": 43,
-        "rate_cll": "6.98%",
-        "rate_cll_val": 6.98,
+        "tong_ht": 45,
+        "rate_cll": "6.67%",
+        "rate_cll_val": 6.67,
         "t1_cll2": 0,
         "t1_cll3": 0,
         "t1_cll_total": 0,
@@ -12327,9 +11460,9 @@
         "cll2_luyke": 2,
         "cll3_luyke": 0,
         "tong_cll_luyke": 2,
-        "tong_ht": 38,
-        "rate_cll": "5.26%",
-        "rate_cll_val": 5.26,
+        "tong_ht": 39,
+        "rate_cll": "5.13%",
+        "rate_cll_val": 5.13,
         "t1_cll2": 0,
         "t1_cll3": 0,
         "t1_cll_total": 0,
@@ -12365,15 +11498,15 @@
         "cll2_luyke": 8,
         "cll3_luyke": 1,
         "tong_cll_luyke": 9,
-        "tong_ht": 51,
-        "rate_cll": "17.65%",
-        "rate_cll_val": 17.65,
+        "tong_ht": 53,
+        "rate_cll": "16.98%",
+        "rate_cll_val": 16.98,
         "t1_cll2": 0,
         "t1_cll3": 0,
         "t1_cll_total": 0,
-        "rate_cll3": "1.96%",
-        "rate_cll3_val": 1.96,
-        "needed_for_7": 78,
+        "rate_cll3": "1.89%",
+        "rate_cll3_val": 1.89,
+        "needed_for_7": 76,
         "status": "danger",
         "status_label": "Vượt trần (>7%)",
         "t1_cases": []
@@ -12383,18 +11516,18 @@
       "name": "TỔNG CỘNG",
       "block": "16 KTV",
       "cll2_luyke": 33,
-      "cll3_luyke": 3,
-      "tong_cll_luyke": 36,
-      "tong_ht": 509,
-      "rate_cll": "7.07%",
-      "rate_cll_val": 7.07,
+      "cll3_luyke": 4,
+      "tong_cll_luyke": 37,
+      "tong_ht": 534,
+      "rate_cll": "6.93%",
+      "rate_cll_val": 6.93,
       "t1_cll2": 0,
-      "t1_cll3": 0,
-      "t1_cll_total": 0,
-      "rate_cll3": "0.59%",
-      "rate_cll3_val": 0.59,
-      "needed_for_7": 6,
-      "status": "danger"
+      "t1_cll3": 1,
+      "t1_cll_total": 1,
+      "rate_cll3": "0.75%",
+      "rate_cll3_val": 0.75,
+      "needed_for_7": 0,
+      "status": "warning"
     }
   }
 }
